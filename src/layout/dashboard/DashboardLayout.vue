@@ -18,6 +18,16 @@
           name="Gestionar Categorias"
           icon="ti-view-list-alt"
         />
+        <sidebar-link
+          to="/subcategorias"
+          name="Gestionar Subcategorias"
+          icon="ti-view-list-alt"
+        />
+        <sidebar-link
+          to="/usuario"
+          name="Listar Usuario"
+          icon="ti-view-list-alt"
+        />
         
       </template>
       <mobile-menu>

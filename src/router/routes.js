@@ -11,6 +11,8 @@ import Maps from "@/pages/Maps.vue";
 import Typography from "@/pages/Typography.vue";
 import TableList from "@/pages/TableList.vue";
 import GestionarCategorias from "@/pages/GestionarCategorias.vue"
+import GestionarSubCategorias from "@/pages/GestionarSubcategorias.vue"
+import ListarUsuario from "@/pages/ListarUsuario.vue"
 
 const routes = [
   {
@@ -57,6 +59,16 @@ const routes = [
         path: "categorias",
         name: "categorias",
         component: GestionarCategorias,
+      },
+      {
+        path: "subcategorias",
+        name: "subcategorias",
+        component: GestionarSubCategorias,
+      },
+      {
+        path: "usuario",
+        name: "usuario",
+        component: ListarUsuario,
       },
     ],
   },
