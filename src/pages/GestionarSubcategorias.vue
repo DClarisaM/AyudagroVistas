@@ -18,6 +18,16 @@
   </template>
   <script>
   import { PaperTable } from "@/components";
+  import axios from 'axios';
+
+
+  axios.get("http://localhost:3000/listarCategoria")
+  .then((res) => {
+    console.log(res);
+  })
+  .catch((err) => {
+    console.log(err);
+  })
   const tableColumns = ["Id", "name", "age", "otra columna"];
   
   const tableData =

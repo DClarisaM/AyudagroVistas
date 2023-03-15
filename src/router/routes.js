@@ -13,6 +13,8 @@ import TableList from "@/pages/TableList.vue";
 import GestionarCategorias from "@/pages/GestionarCategorias.vue"
 import GestionarSubCategorias from "@/pages/GestionarSubcategorias.vue"
 import ListarUsuario from "@/pages/ListarUsuario.vue"
+import ListarPregunta from "@/pages/ListarPregunta.vue"
+import ListarRespuesta from "@/pages/ListarRespuesta.vue"
 
 const routes = [
   {
@@ -69,6 +71,16 @@ const routes = [
         path: "usuario",
         name: "usuario",
         component: ListarUsuario,
+      },
+      {
+        path: "pregunta",
+        name: "pregunta",
+        component: ListarPregunta,
+      },
+      {
+        path: "respuesta",
+        name: "respuesta",
+        component: ListarRespuesta,
       },
     ],
   },

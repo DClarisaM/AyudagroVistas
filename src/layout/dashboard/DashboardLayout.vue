@@ -29,6 +29,17 @@
           icon="ti-view-list-alt"
         />
         
+        <sidebar-link
+          to="/pregunta"
+          name="Listar Pregunta"
+          icon="ti-view-list-alt"
+        />
+        <sidebar-link
+          to="/respuesta"
+          name="Listar Respuesta"
+          icon="ti-view-list-alt"
+        />
+
       </template>
       <mobile-menu>
         <li class="nav-item">
