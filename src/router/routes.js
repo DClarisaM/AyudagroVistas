@@ -10,9 +10,11 @@ import Icons from "@/pages/Icons.vue";
 import Maps from "@/pages/Maps.vue";
 import Typography from "@/pages/Typography.vue";
 import TableList from "@/pages/TableList.vue";
-import GestionarCategorias from "@/pages/GestionarCategorias.vue"
-import GestionarSubCategorias from "@/pages/GestionarSubcategorias.vue"
-import ListarUsuario from "@/pages/ListarUsuario.vue"
+import GestionarCategorias from "@/pages/GestionarCategorias.vue";
+import GestionarSubCategorias from "@/pages/GestionarSubcategorias.vue";
+import ListarUsuario from "@/pages/ListarUsuario.vue";
+import ListarSugerencias from "@/pages/ListarSugerencias.vue";
+import ListarValoroR from "@/pages/ListarValoroR.vue";
 
 const routes = [
   {
@@ -69,6 +71,16 @@ const routes = [
         path: "usuario",
         name: "usuario",
         component: ListarUsuario,
+      },
+      {
+        path: "sugerencias",
+        name: "sugerencias",
+        component: ListarSugerencias,
+      },
+      {
+        path: "valorR",
+        name: "valorR",
+        component: ListarValoroR,
       },
     ],
   },
