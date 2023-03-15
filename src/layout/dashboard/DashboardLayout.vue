@@ -11,7 +11,7 @@
         />
         <sidebar-link to="/typography" name="Typography" icon="ti-text" />
         <sidebar-link to="/icons" name="Icons" icon="ti-pencil-alt2" />
-        <sidebar-link to="/maps" name="Map" icon="ti-map" />
+      <sidebar-link to="/maps" name="Map" icon="ti-map" />
         <sidebar-link to="/notifications" name="Notifications" icon="ti-bell" />
         <sidebar-link
           to="/categorias"
@@ -26,6 +26,16 @@
         <sidebar-link
           to="/usuario"
           name="Listar Usuario"
+          icon="ti-view-list-alt"
+        />
+        <sidebar-link
+          to="/sugerencias"
+          name="Listar Sugerencias"
+          icon="ti-view-list-alt"
+        />
+        <sidebar-link
+          to="/valorR"
+          name="Listar Valor_R"
           icon="ti-view-list-alt"
         />
         

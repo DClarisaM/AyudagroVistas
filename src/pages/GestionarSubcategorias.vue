@@ -18,6 +18,7 @@
   </template>
   <script>
   import { PaperTable } from "@/components";
+<<<<<<< HEAD
   import axios from 'axios';
 
 
@@ -29,33 +30,36 @@
     console.log(err);
   })
   const tableColumns = ["Id", "name", "age", "otra columna"];
+=======
+  const tableColumns = ["Id", "nombre","categoria" ];
+>>>>>>> 43ef2be40ee390e9d598ca16186e6acc040e0173
   
   const tableData =
   [
     {
       id: 1,
-      name: "Dakota Rice",
-      age: 2
+      nombre: "Dakota Rice",
+      categoria:"verduras"
     },
     {
       id: 2,
-      name: "Minerva Hooper",
-      age: 2
+      nombre: "Minerva Hooper",
+      categoria: "Verduras"
     },
     {
       id: 3,
-      name: "Sage Rodriguez",
-      age: 2
+      nombre: "Sage Rodriguez",
+      categoria:"Frutas"
     },
     {
       id: 4,
-      name: "Philip Chaney",
-      age: 2
+      nombre: "Philip Chaney",
+      categoria:"Animales"
     },
     {
       id: 5,
-      name: "daira",
-      age: 2
+      nombre: "daira",
+      categoria:"Hortalizas"
     },
   ];
   
