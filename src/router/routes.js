@@ -18,6 +18,7 @@ import ListarRespuesta from "@/pages/ListarRespuesta.vue";
 import ListarUsuario from "@/pages/ListarUsuario.vue";
 import ListarSugerencias from "@/pages/ListarSugerencias.vue";
 import ListarValoroR from "@/pages/ListarValoroR.vue";
+import ListarArchivo from "@/pages/ListarArchivo.vue";
 
 
 const routes = [
@@ -96,6 +97,13 @@ const routes = [
         name: "valorR",
         component: ListarValoroR,
       },
+      {
+        path: "archivo",
+        name: "archivo",
+        component: ListarArchivo,
+      },
+
+
     ],
   },
   { path: "*", component: NotFound },

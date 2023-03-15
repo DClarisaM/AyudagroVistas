@@ -49,6 +49,11 @@
           name="Listar Respuesta"
           icon="ti-view-list-alt"
         />
+        <sidebar-link
+          to="/archivo"
+          name="Listar Archivo"
+          icon="ti-view-list-alt"
+        />
 
       </template>
       <mobile-menu>
