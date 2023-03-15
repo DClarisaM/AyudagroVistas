@@ -10,19 +10,15 @@ import Icons from "@/pages/Icons.vue";
 import Maps from "@/pages/Maps.vue";
 import Typography from "@/pages/Typography.vue";
 import TableList from "@/pages/TableList.vue";
-<<<<<<< HEAD
+
 import GestionarCategorias from "@/pages/GestionarCategorias.vue"
-import GestionarSubCategorias from "@/pages/GestionarSubcategorias.vue"
-import ListarUsuario from "@/pages/ListarUsuario.vue"
-import ListarPregunta from "@/pages/ListarPregunta.vue"
-import ListarRespuesta from "@/pages/ListarRespuesta.vue"
-=======
-import GestionarCategorias from "@/pages/GestionarCategorias.vue";
 import GestionarSubCategorias from "@/pages/GestionarSubcategorias.vue";
+import ListarPregunta from "@/pages/ListarPregunta.vue";
+import ListarRespuesta from "@/pages/ListarRespuesta.vue";
 import ListarUsuario from "@/pages/ListarUsuario.vue";
 import ListarSugerencias from "@/pages/ListarSugerencias.vue";
 import ListarValoroR from "@/pages/ListarValoroR.vue";
->>>>>>> 43ef2be40ee390e9d598ca16186e6acc040e0173
+
 
 const routes = [
   {
@@ -81,7 +77,6 @@ const routes = [
         component: ListarUsuario,
       },
       {
-<<<<<<< HEAD
         path: "pregunta",
         name: "pregunta",
         component: ListarPregunta,
@@ -90,7 +85,8 @@ const routes = [
         path: "respuesta",
         name: "respuesta",
         component: ListarRespuesta,
-=======
+      },
+      {
         path: "sugerencias",
         name: "sugerencias",
         component: ListarSugerencias,
@@ -99,7 +95,6 @@ const routes = [
         path: "valorR",
         name: "valorR",
         component: ListarValoroR,
->>>>>>> 43ef2be40ee390e9d598ca16186e6acc040e0173
       },
     ],
   },
