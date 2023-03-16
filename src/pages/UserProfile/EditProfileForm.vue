@@ -44,19 +44,11 @@
             </fg-input>
           </div>
         </div>
-        <div class="col-md-12">
-           <fg-input
-             type="email"
-             label="Correo Electrónico"
-             placeholder="daniertt2016@"
-             v-model="user.email"
-           >
-           </fg-input>
-         </div>
+        
 
         <div class="text-center">
           <p-button type="info" round @click.native.prevent="updateProfile">
-            guardar Cambios 
+            guardar Cambios
           </p-button>
         </div>
         <div class="clearfix"></div>
