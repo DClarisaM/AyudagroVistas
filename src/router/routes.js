@@ -5,11 +5,21 @@ import NotFound from "@/pages/NotFoundPage.vue";
 // Admin pages
 import Dashboard from "@/pages/Dashboard.vue";
 import UserProfile from "@/pages/UserProfile.vue";
-import Notifications from "@/pages/Notifications.vue";
-import Icons from "@/pages/Icons.vue";
-import Maps from "@/pages/Maps.vue";
-import Typography from "@/pages/Typography.vue";
-import TableList from "@/pages/TableList.vue";
+//import Notifications from "@/pages/Notifications.vue";
+//import Icons from "@/pages/Icons.vue";
+//import Maps from "@/pages/Maps.vue";
+//import Typography from "@/pages/Typography.vue";
+//import TableList from "@/pages/TableList.vue";
+
+import GestionarCategorias from "@/pages/GestionarCategorias.vue"
+import GestionarSubCategorias from "@/pages/GestionarSubcategorias.vue";
+import ListarPregunta from "@/pages/ListarPregunta.vue";
+import ListarRespuesta from "@/pages/ListarRespuesta.vue";
+import ListarUsuario from "@/pages/ListarUsuario.vue";
+import ListarSugerencias from "@/pages/ListarSugerencias.vue";
+import ListarValoroR from "@/pages/ListarValoroR.vue";
+import GestionarRol from "@/pages/GestionarRol.vue"
+
 
 
 const routes = [
@@ -28,30 +38,55 @@ const routes = [
         name: "stats",
         component: UserProfile,
       },
+    
+     
+      //{
+        //path: "maps",
+        //name: "maps",
+        //component: Maps,
+     // },
+     
+      
+
       {
-        path: "notifications",
-        name: "notifications",
-        component: Notifications,
+        path: "categorias",
+        name: "categorias",
+        component: GestionarCategorias,
       },
       {
-        path: "icons",
-        name: "icons",
-        component: Icons,
+        path: "subcategorias",
+        name: "subcategorias",
+        component: GestionarSubCategorias,
       },
       {
-        path: "maps",
-        name: "maps",
-        component: Maps,
+        path: "usuario",
+        name: "usuario",
+        component: ListarUsuario,
       },
       {
-        path: "typography",
-        name: "typography",
-        component: Typography,
+        path: "pregunta",
+        name: "pregunta",
+        component: ListarPregunta,
       },
       {
-        path: "table-list",
-        name: "table-list",
-        component: TableList,
+        path: "respuesta",
+        name: "respuesta",
+        component: ListarRespuesta,
+      },
+      {
+        path: "sugerencias",
+        name: "sugerencias",
+        component: ListarSugerencias,
+      },
+      {
+        path: "valorR",
+        name: "valorR",
+        component: ListarValoroR,
+      },
+      {
+        path: "rol",
+        name: "rol",
+        component: GestionarRol,
       },
     ],
   },

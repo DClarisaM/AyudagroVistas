@@ -13,13 +13,15 @@
             </fg-input>
           </div>
           <div class="col-md-6">
-            <fg-input
+            <!-- <fg-input
               type="text"
               label="Apellido"
               placeholder="Trochez"
               v-model="user.apelllido"
             >
-            </fg-input>
+            </fg-input> -->
+            <input type="text" name="" id="" class="form-control" placeholder="aqui texto">
+            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
           </div>
         </div>
   
