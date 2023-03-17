@@ -13,6 +13,7 @@
             :columns="table2.columns"
           >
           </paper-table>
+       
         </div>
       </card>
     </div>
