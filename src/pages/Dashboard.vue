@@ -1,5 +1,5 @@
 <template>
-<div class="row">
+<div class="carsP">
   <div class="col-6 offset-3">
 
     <card class="card-user">
@@ -19,6 +19,7 @@
          </div>
          <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
        </div>
+       <p-button  class="BP" type="info" > Publiacar Pregunta </p-button>
      </card>
   </div>
   
