@@ -1,21 +1,47 @@
 <template>
     <div class="row">
       
-  
       <div class="col-12">
-        <card class="card-plain">
-          <div class="table-full-width table-responsive">
-            <paper-table
-              type="hover"
-              :title="table2.title"
-              :sub-title="table2.subTitle"
-              :data="table2.data"
-              :columns="table2.columns"
-            >
-            </paper-table>
-          </div>
-        </card>
-      </div>
+      <card class="card-plain">
+        <div class="table-full-width table-responsive">
+          <table class="table table-striped table-hover">
+            <thead>
+              <tr>
+                <th scope="col">Id</th>
+                <th scope="col">Nombre</th>
+                <th scope="col">Descripción</th>
+                <th scope="col">Acciones</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr v-for="categoria in listaCategorias">
+                <th scope="row">{{ categoria.id_categoria }}</th>
+                <td>{{ categoria.titulo }}</td>
+                <td>{{ categoria.descripcion }}</td>
+                <td>
+                  <button class="btn btn-sm bg-primary text-white">
+                    <i class="fas fa-eye"></i>
+                  </button>
+                  <button class="btn btn-sm bg-success text-white">
+                    <i class="fas fa-edit"></i>
+                  </button>
+                  <button class="btn btn-sm bg-danger text-white">
+                    <i class="fas fa-trash-alt"></i>
+                  </button>
+
+
+                </td>
+              </tr>
+
+            </tbody>
+          </table>
+          
+        </div>
+      </card>
+    </div>
+  
+     
+    
     </div>
   </template>
   <script>
