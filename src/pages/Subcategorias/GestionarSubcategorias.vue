@@ -1,5 +1,14 @@
 <template>
   <div class="row">
+    <div class="col-8 offset-2">
+      <router-link
+      class="btn"
+      :to="{
+        name: 'Registrarsubcategorias'
+      }">
+        Agregar
+    </router-link>
+    </div>
     <div class="col-12">
       <card class="card-plain">
         <div class="table-full-width table-responsive">

@@ -12,7 +12,9 @@ import UserProfile from "@/pages/UserProfile.vue";
 //import TableList from "@/pages/TableList.vue";
 
 import GestionarCategorias from "@/pages/GestionarCategorias.vue"
-import GestionarSubCategorias from "@/pages/GestionarSubcategorias.vue";
+import GestionarSubCategorias from "@/pages/Subcategorias/GestionarSubcategorias.vue";
+import RegistrarSubCategorias from "@/pages/Subcategorias/RegistrarSubcategorias.vue";
+
 import ListarPregunta from "@/pages/ListarPregunta.vue";
 import ListarRespuesta from "@/pages/ListarRespuesta.vue";
 import ListarUsuario from "@/pages/ListarUsuario.vue";
@@ -37,26 +39,36 @@ const routes = [
         name: "stats",
         component: UserProfile,
       },
-    
-     
+
+
       //{
-        //path: "maps",
-        //name: "maps",
-        //component: Maps,
-     // },
-     
-      
+      //path: "maps",
+      //name: "maps",
+      //component: Maps,
+      // },
+
+
 
       {
         path: "categorias",
         name: "categorias",
         component: GestionarCategorias,
       },
+
+      //rutas subcategorias
       {
         path: "subcategorias",
         name: "subcategorias",
         component: GestionarSubCategorias,
       },
+
+      {
+        path: "Registrarsubcategorias",
+        name: "Registrarsubcategorias",
+        component: RegistrarSubCategorias,
+      },
+
+      //fin rutas subcategorias
       {
         path: "usuario",
         name: "usuario",
