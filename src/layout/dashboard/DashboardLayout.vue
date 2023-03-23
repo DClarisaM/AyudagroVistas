@@ -2,20 +2,54 @@
   <div class="wrapper">
     <side-bar>
       <template slot="links">
-        <sidebar-link to="/dashboard" name="Preguntar" icon="ti-panel" />
-        <!-- <sidebar-link to="/stats" name="User Profile" icon="ti-user" /> -->
+        <sidebar-link to="/dashboard" name="Dashboard" icon="ti-panel" />
+        <sidebar-link to="/stats" name="User Profile" icon="ti-user" />
         
        
         
         
         
-        <sidebar-link to="/stats" name="Editar Perfil" icon="ti-user" />
         <sidebar-link
           to="/categorias"
           name="Gestionar Categorias"
           icon="ti-view-list-alt"
         />
-       
+        <sidebar-link
+          to="/subcategorias"
+          name="Gestionar Subcategorias"
+          icon="ti-view-list-alt"
+        />
+        <sidebar-link
+          to="/usuario"
+          name="Listar Usuario"
+          icon="ti-view-list-alt"
+        />
+        <sidebar-link
+          to="/sugerencias"
+          name="Listar Sugerencias"
+          icon="ti-view-list-alt"
+        />
+        <sidebar-link
+          to="/valorR"
+          name="Listar Valor_R"
+          icon="ti-view-list-alt"
+        />
+        
+        <sidebar-link
+          to="/pregunta"
+          name="Listar Pregunta"
+          icon="ti-view-list-alt"
+        />
+        <sidebar-link
+          to="/respuesta"
+          name="Listar Respuesta"
+          icon="ti-view-list-alt"
+        />
+        <sidebar-link
+          to="/rol"
+          name="Gestionar Rol"
+          icon="ti-view-list-alt"
+        />
 
       </template>
       <mobile-menu>
