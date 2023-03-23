@@ -11,7 +11,7 @@
           alt="..."
         />
         <h4 class="title">
-          Chet Faker
+          Danier
         </h4>
       </div>
      
