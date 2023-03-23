@@ -11,14 +11,16 @@ import UserProfile from "@/pages/UserProfile.vue";
 //import Typography from "@/pages/Typography.vue";
 //import TableList from "@/pages/TableList.vue";
 
-import GestionarCategorias from "@/pages/GestionarCategorias.vue"
-import GestionarSubCategorias from "@/pages/GestionarSubcategorias.vue";
-import ListarPregunta from "@/pages/ListarPregunta.vue";
-import ListarRespuesta from "@/pages/ListarRespuesta.vue";
-import ListarUsuario from "@/pages/ListarUsuario.vue";
-import ListarSugerencias from "@/pages/ListarSugerencias.vue";
-import ListarValoroR from "@/pages/ListarValoroR.vue";
-import GestionarRol from "@/pages/GestionarRol.vue"
+import GestionarSubCategorias from "@/pages/Subcategorias/GestionarSubcategorias.vue";
+import RegistrarSubCategorias from "@/pages/Subcategorias/RegistrarSubcategorias.vue";
+
+import GestionarCategorias from "@/pages/Categorias/GestionarCategorias.vue"
+import ListarPregunta from "@/pages/Preguntas/ListarPregunta.vue";
+import ListarRespuesta from "@/pages/Respuestas/ListarRespuesta.vue";
+import ListarUsuario from "@/pages/Usuarios/ListarUsuario.vue";
+import ListarSugerencias from "@/pages/Sugerencias/ListarSugerencias.vue";
+import ListarValoroR from "@/pages/ValoresR/ListarValoroR.vue";
+import GestionarRol from "@/pages/Roles/GestionarRol.vue"
 
 
 
@@ -38,26 +40,38 @@ const routes = [
         name: "stats",
         component: UserProfile,
       },
-    
-     
-      //{
-        //path: "maps",
-        //name: "maps",
-        //component: Maps,
-     // },
-     
-      
+
+
 
       {
         path: "categorias",
         name: "categorias",
         component: GestionarCategorias,
       },
+
+      //rutas subcategorias
+      {
+        path: "categorias",
+        name: "categorias",
+        component: GestionarCategorias,
+      },
+
+
+
+      //finrutas Categorias
       {
         path: "subcategorias",
         name: "subcategorias",
         component: GestionarSubCategorias,
       },
+
+      {
+        path: "Registrarsubcategorias",
+        name: "Registrarsubcategorias",
+        component: RegistrarSubCategorias,
+      },
+
+      //fin rutas subcategorias
       {
         path: "usuario",
         name: "usuario",
