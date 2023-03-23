@@ -15,10 +15,18 @@ import GestionarSubCategorias from "@/pages/Subcategorias/GestionarSubcategorias
 import RegistrarSubCategorias from "@/pages/Subcategorias/RegistrarSubcategorias.vue";
 
 import GestionarCategorias from "@/pages/Categorias/GestionarCategorias.vue"
+import RegistrarCategorias from "@/pages/Categorias/RegistrarCategorias.vue"
+
 import ListarPregunta from "@/pages/Preguntas/ListarPregunta.vue";
+
 import ListarRespuesta from "@/pages/Respuestas/ListarRespuesta.vue";
+
 import ListarUsuario from "@/pages/Usuarios/ListarUsuario.vue";
+import RegistrarUsuario from "@/pages/Usuarios/RegistrarUsuario.vue"
+
 import ListarSugerencias from "@/pages/Sugerencias/ListarSugerencias.vue";
+import RegistrarSugerencias from "@/pages/Sugerencias/RegistrarSugerencias.vue"
+
 import ListarValoroR from "@/pages/ValoresR/ListarValoroR.vue";
 import GestionarRol from "@/pages/Roles/GestionarRol.vue"
 
@@ -42,17 +50,22 @@ const routes = [
 
 
 
+      // {
+      //   path: "categorias",
+      //   name: "categorias",
+      //   component: GestionarCategorias,
+      // },
+
+      
       {
         path: "categorias",
         name: "categorias",
         component: GestionarCategorias,
       },
-
-      //rutas subcategorias
       {
-        path: "categorias",
-        name: "categorias",
-        component: GestionarCategorias,
+        path: "Registrarcategorias",
+        name: "Registrarcategorias",
+        component: RegistrarCategorias,
       },
 
 
@@ -71,10 +84,17 @@ const routes = [
       },
 
       //fin rutas subcategorias
+
+      // inicio de rutas usuario
       {
         path: "usuario",
         name: "usuario",
         component: ListarUsuario,
+      },
+      {
+        path: "Registrarusuario",
+        name: "Registrarusuario",
+        component: RegistrarUsuario,
       },
       {
         path: "pregunta",
@@ -86,10 +106,16 @@ const routes = [
         name: "respuesta",
         component: ListarRespuesta,
       },
+      // inicio de rutas sugerencias
       {
         path: "sugerencias",
         name: "sugerencias",
         component: ListarSugerencias,
+      },
+      {
+        path: "Registrarsugerencias",
+        name: "Registrarsugerencias",
+        component: RegistrarSugerencias,
       },
       {
         path: "valorR",

@@ -1,5 +1,15 @@
 <template>
     <div class="row">
+
+      <div class="col-8 offset-2">
+      <router-link
+      class="btn"
+      :to="{
+        name: 'Registrarusuario'
+      }">
+        Agregar
+    </router-link>
+    </div>
       
   
       <div class="col-12">
@@ -10,15 +20,23 @@
               <tr>
                 <th scope="col">Id</th>
                 <th scope="col">Nombre</th>
-                <th scope="col">Descripción</th>
+                <th scope="col">Apellido</th>
+                <th scope="col">Correo_electronico</th>
+                <th scope="col">Telefono</th>
+                <th scope="col">Direccion</th>
+                <th scope="col">Estado</th>
                 <th scope="col">Acciones</th>
               </tr>
             </thead>
             <tbody>
-              <tr v-for="categoria in listaCategorias">
-                <th scope="row">{{ categoria.id_categoria }}</th>
-                <td>{{ categoria.titulo }}</td>
-                <td>{{ categoria.descripcion }}</td>
+              <tr v-for="usuario in listaUsuarios">
+                <th scope="row">{{ usuario.id_usuario }}</th>
+                <td>{{ usuario.nombre }}</td>
+                <td>{{ usuario.apellido }}</td>
+                <td>{{ usuario.correo_electronico }}</td>
+                <td>{{ usuario.telefono }}</td>
+                <td>{{ usuario.direccion }}</td>
+                <td>{{ usuario.estado }}</td>
                 <td>
                   <button class="btn btn-sm bg-primary text-white">
                     <i class="fas fa-eye"></i>
@@ -43,49 +61,38 @@
     </div>
   </template>
   <script>
-  import { PaperTable } from "@/components";
-  const tableColumns = ["Id", "Name", "Acciones"];
+
+
+  import axios from 'axios';
   
-  const tableData =
-  [
-    {
-      id: 1,
-      name: "Dakota Rice"
-    },
-    {
-      id: 2,
-      name: "Minerva Hooper"
-    },
-    {
-      id: 3,
-      name: "Sage Rodriguez"
-    },
-    {
-      id: 4,
-      name: "Philip Chaney"
-    },
-    {
-      id: 5,
-      name: "Doris Greene"
-    },
-  ];
   
   export default {
     components: {
-      PaperTable,
+   
     },
     data() {
       return {
-        listaCategorias:[],
-        table2: {
-          title: "Valor_R",
-          subTitle: "Aquì veràs el listado de las categorias",
-          columns: [...tableColumns],
-          data: [...tableData],
-        },
+        listaUsuarios:[],
+       
       };
     },
+    mounted(){
+      this.listarUsuarios()
+    },
+    methods: {
+      listarUsuarios() {
+        //  alert("jahahsa")
+        axios.get("http://localhost:3000/listarUsuario")
+        .then((res) => {
+  
+          this.listaUsuarios = res.data
+          console.log(res.data);
+        })
+        .catch((err) => {
+          alert("error del servidor")
+        })
+      }
+    }
   };
   </script>
   <style></style>
-  
