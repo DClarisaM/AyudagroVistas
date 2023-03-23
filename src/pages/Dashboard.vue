@@ -17,9 +17,13 @@
              Danier
            </h4>
          </div>
-         <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+         
        </div>
-       <p-button  class="BP" type="info" > Publiacar Pregunta </p-button>
+       <div class="text-center">
+          <p-button type="info" round @click.native.prevent="">
+            Preguntar
+          </p-button>
+        </div>
      </card>
   </div>
 
@@ -47,8 +51,11 @@
     <b-icon-exclamation-triangle-fill></b-icon-exclamation-triangle-fill>
   </div>
    
-   
-   <p-button  class="Responder" type="info" >Responder</p-button>
+  <div class="text-right">
+          <p-button type="info" round @click.native.prevent="">
+            Responder
+          </p-button>
+        </div>
  </card>
 </div>
 
