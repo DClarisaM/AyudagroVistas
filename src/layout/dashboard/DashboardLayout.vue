@@ -2,13 +2,13 @@
   <div class="wrapper">
     <side-bar>
       <template slot="links">
-        <sidebar-link to="/dashboard" name="Dashboard" icon="ti-panel" />
+        <sidebar-link to="/dashboard" name="Ayudagro" icon="ti-panel" />
         <sidebar-link to="/stats" name="User Profile" icon="ti-user" />
         
        
         
         
-        
+       
         <sidebar-link
           to="/categorias"
           name="Gestionar Categorias"
@@ -48,6 +48,11 @@
         <sidebar-link
           to="/rol"
           name="Gestionar Rol"
+          icon="ti-view-list-alt"
+        />
+        <sidebar-link
+          to="/preguntar"
+          name="preguntar"
           icon="ti-view-list-alt"
         />
 
