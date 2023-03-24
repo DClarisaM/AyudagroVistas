@@ -47,11 +47,8 @@
               <!-- <p-button type="info" round @click.native.prevent="">
                 Responder
               </p-button> -->
-              <router-link
-              :to="{
-                name: "RespuestaP",
-                params: {idPregunta: pregunta.id_pregunta}
-              }">
+              <router-link class="btn"
+              :to="{ name: 'RespuestaP', params: { preguntaId: pregunta.id_pregunta }}">
                 Responder
               </router-link>
             </div>
