@@ -17,12 +17,27 @@
               Danier
             </h4>
           </div>
-          
-        </div>
+          </div>
+          <div class="form-group">
+                <label for="exampleFormControlSelect1">Categoria</label>
+                <select class="form-control" id="exampleFormControlSelect1">
+                    <option value="1">Frutas</option>
+                    <option value="2">verduras</option>
+                    <option value="3">animales</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="exampleFormControlSelect1">Subcategoria</label>
+                <select class="form-control" id="exampleFormControlSelect1">
+                    <option value="1">Mango</option>
+                    <option value="2">Manzana</option>
+                    <option value="3">Vaca</option>
+                </select>
+              </div>
         <input type="text">
         <div class="text-center">
            <p-button type="info" round @click.native.prevent="">
-             Preguntar
+             Publicar
            </p-button>
          </div>
       </card>

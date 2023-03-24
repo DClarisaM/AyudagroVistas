@@ -1,5 +1,18 @@
 <template>
     <div class="row">
+  
+             <!-- boton agregar -->
+    <div class="col-8 offset-2">
+      <router-link
+      class="btn"
+      :to="{
+        name: 'Registrarrespuesta'
+      }">
+        Agregar
+    </router-link>
+    </div>
+    <!-- aqui termin el boton -->
+
       <div class="col-12">
       <card class="card-plain">
         <div class="table-full-width table-responsive">
@@ -7,16 +20,16 @@
             <thead>
               <tr>
                 <th scope="col">Id</th>
-                <th scope="col">Nombre</th>
                 <th scope="col">Descripción</th>
+                <th scope="col">Hora-Fecha</th>
                 <th scope="col">Acciones</th>
               </tr>
             </thead>
             <tbody>
-              <tr v-for="categoria in listaCategorias">
-                <th scope="row">{{ categoria.id_categoria }}</th>
-                <td>{{ categoria.titulo }}</td>
-                <td>{{ categoria.descripcion }}</td>
+              <tr v-for="respuesta in listaRespuestas">
+                <th scope="row">{{ respuesta.id_respuesta }}</th>
+                <td>{{ respuesta.descripcion }}</td>
+                <td>{{ respuesta.hora_fecha }}</td>
                 <td>
                   <button class="btn btn-sm bg-primary text-white">
                     <i class="fas fa-eye"></i>
@@ -43,50 +56,40 @@
       
     </div>
   </template>
-  <script>
-  import { PaperTable } from "@/components";
-  const tableColumns = ["Id", "Name", "Acciones"];
   
-  const tableData =
-  [
-    {
-      id: 1,
-      name: "Dakota Rice"
-    },
-    {
-      id: 2,
-      name: "Minerva Hooper"
-    },
-    {
-      id: 3,
-      name: "Sage Rodriguez"
-    },
-    {
-      id: 4,
-      name: "Philip Chaney"
-    },
-    {
-      id: 5,
-      name: "Doris Greene"
-    },
-  ];
+  <script>
+
+
+  import axios from 'axios';
+  
   
   export default {
     components: {
-      PaperTable,
+   
     },
     data() {
       return {
-        listaCategorias:[],
-        table2: {
-          title: "Categorias",
-          subTitle: "Aquì veràs el listado de las categorias",
-          columns: [...tableColumns],
-          data: [...tableData],
-        },
+        listaRespuestas:[],
+       
       };
     },
+    mounted(){
+      this.listarRespuestas()
+    },
+    methods: {
+      listarRespuestas() {
+        //  alert("jahahsa")
+        axios.get("http://localhost:3000/listarRespuesta")
+        .then((res) => {
+  
+          this.listaRespuestas = res.data
+          console.log(res.data);
+        })
+        .catch((err) => {
+          alert("error del servidor")
+        })
+      }
+    }
   };
   </script>
   <style></style>
-  

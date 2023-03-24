@@ -1,40 +1,34 @@
 <template>
-  <div class="row">
-    <!-- aqui empieza el boton agregar -->
+    <div class="row">
+             <!-- boton agregar -->
     <div class="col-8 offset-2">
       <router-link
       class="btn"
       :to="{
-        name: 'Registrarcategorias'
+        name: 'RegistrarsugerenciaArchivo'
       }">
         Agregar
     </router-link>
     </div>
-    <!-- aqui termina el boton -->
-    
-
-<div class="col-8">
-  <router-link>
-    Agregar
-  </router-link>
-</div>
-    <div class="col-12">
+    <!-- aqui termin el boton -->
+  
+      <div class="col-12">
       <card class="card-plain">
         <div class="table-full-width table-responsive">
           <table class="table table-striped table-hover">
             <thead>
               <tr>
                 <th scope="col">Id</th>
-                <th scope="col">Nombre</th>
-                <th scope="col">Descripción</th>
+                <th scope="col">Archivo</th>
+                <th scope="col">Sugerencia</th>
                 <th scope="col">Acciones</th>
               </tr>
             </thead>
             <tbody>
-              <tr v-for="categoria in listaCategorias">
-                <th scope="row">{{ categoria.id_categoria }}</th>
-                <td>{{ categoria.titulo }}</td>
-                <td>{{ categoria.descripcion }}</td>
+              <tr v-for="sugerencia_archivo in listaSugerenciaArchivo">
+                <th scope="row">{{ sugerencia_archivo.id_sugerencia_archivo }}</th>
+                <td>{{ sugerencia_archivo.archivo_id }}</td>
+                <td>{{ sugerencia_archivo.sugerencia_id }}</td>
                 <td>
                   <button class="btn btn-sm bg-primary text-white">
                     <i class="fas fa-eye"></i>
@@ -45,51 +39,53 @@
                   <button class="btn btn-sm bg-danger text-white">
                     <i class="fas fa-trash-alt"></i>
                   </button>
-
-
+  
+  
                 </td>
               </tr>
-
+  
             </tbody>
           </table>
-       
-
+          
         </div>
       </card>
     </div>
-  </div>
-</template>
-<script>
-import axios from "axios";
-
-export default {
-  components: {
-    
-  },
-  data() {
-    return {
-      listaCategorias: [],
-      
-    };
-  },
-  mounted() {
-    this.listarCategorias()
-  },
-  methods: {
-    listarCategorias() {
-      // alert("aaaa")
-      axios.get("http://localhost:3000/listarCategoria")
+    </div>
+  </template>
+  <script>
+  
+  
+  import axios from 'axios';
+  
+  
+  export default {
+    components: {
+   
+    },
+    data() {
+      return {
+        listaSugerenciaArchivo:[],
+       
+      };
+    },
+    mounted(){
+      this.listarSugerenciaArchivos()
+    },
+    methods: {
+      listarSugerenciaArchivos() {
+         //alert("jahahsa")
+        axios.get("http://localhost:3000/listarSugerencia_archivo")
         .then((res) => {
-          //codigo
-          this.listaCategorias = res.data
+  
+          this.listaSugerenciaArchivo = res.data
           console.log(res.data);
         })
         .catch((err) => {
           alert("error del servidor")
         })
+      }
     }
-  }
-};
-</script>
-<style></style>
+  };
+  </script>
+  <style></style>
   
