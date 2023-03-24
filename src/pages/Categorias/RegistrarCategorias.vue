@@ -1,15 +1,15 @@
 <template>
     <div>
-        {{ registrarCategoria }}
+        
         
         <form>
             <div class="form-group">
                 <label for="exampleFormControlInput1">Nombre categoria:</label>
-                <input type="text" class="form-control" placeholder="frutas" v-model="categoria.titulo" required>
+                <input type="text" class="form-control" placeholder="Categoria" v-model="categoria.titulo" required>
             </div>
             <div class="form-group">
                 <label for="exampleFormControlInput1">Descripción:</label>
-                <input type="text" class="form-control"  placeholder="frutas" v-model="categoria.descripcion" required>
+                <input type="text" class="form-control"  placeholder="Descripcion" v-model="categoria.descripcion" required>
             </div>
             
 

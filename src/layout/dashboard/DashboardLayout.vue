@@ -50,6 +50,21 @@
           name="Gestionar Rol"
           icon="ti-view-list-alt"
         />
+        <sidebar-link
+          to="/archivo"
+          name="Gestionar Archivo"
+          icon="ti-view-list-alt"
+        />
+        <sidebar-link
+          to="/sugerenciaArchivo"
+          name="Listar Sugerencias Archivo"
+          icon="ti-view-list-alt"
+        />
+        <sidebar-link
+          to="/preguntaArchivo"
+          name="Listar Pregunta Archivo"
+          icon="ti-view-list-alt"
+        />
 
       </template>
       <mobile-menu>

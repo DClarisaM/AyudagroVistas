@@ -4,11 +4,11 @@
         <form>
             <div class="form-group">
                 <label for="exampleFormControlInput1">Nombre subcategoria:</label>
-                <input type="text" class="form-control" placeholder="frutas" v-model="subcategoria.titulo" required>
+                <input type="text" class="form-control" placeholder="Subcategoria" v-model="subcategoria.titulo" required>
             </div>
             <div class="form-group">
                 <label for="exampleFormControlInput1">Descripción:</label>
-                <input type="text" class="form-control"  placeholder="frutas" v-model="subcategoria.descripcion" required>
+                <input type="text" class="form-control"  placeholder="Descripcion" v-model="subcategoria.descripcion" required>
             </div>
             <div class="form-group">
                 <label for="exampleFormControlSelect1">Categoria</label>

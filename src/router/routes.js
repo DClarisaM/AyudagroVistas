@@ -18,8 +18,10 @@ import GestionarCategorias from "@/pages/Categorias/GestionarCategorias.vue"
 import RegistrarCategorias from "@/pages/Categorias/RegistrarCategorias.vue"
 
 import ListarPregunta from "@/pages/Preguntas/ListarPregunta.vue";
+import RegistrarPregunta from "@/pages/Preguntas/RegistrarPregunta.vue"
 
 import ListarRespuesta from "@/pages/Respuestas/ListarRespuesta.vue";
+import RegistrarRespuesta from "@/pages/Respuestas/RegistrarRespuesta.vue"
 
 import ListarUsuario from "@/pages/Usuarios/ListarUsuario.vue";
 import RegistrarUsuario from "@/pages/Usuarios/RegistrarUsuario.vue"
@@ -28,7 +30,19 @@ import ListarSugerencias from "@/pages/Sugerencias/ListarSugerencias.vue";
 import RegistrarSugerencias from "@/pages/Sugerencias/RegistrarSugerencias.vue"
 
 import ListarValoroR from "@/pages/ValoresR/ListarValoroR.vue";
-import GestionarRol from "@/pages/Roles/GestionarRol.vue"
+import RegistrarValorR from "@/pages/ValoresR/RegistrarValorR.vue"
+
+import GestionarRol from "@/pages/Roles/GestionarRol.vue";
+import RegistrarRol from "@/pages/Roles/RegistrarRol.vue";
+
+import ListarArchivo from "@/pages/Archivos/ListarArchivo.vue";
+import RegistrarArchivo from "@/pages/Archivos/RegistrarArchivo.vue"
+
+import SugerenciasArchivo from "@/pages/SugerenciasArchivo/SugerenciasArchivo.vue";
+import RegistrarSugerenciaArchivo from "@/pages/SugerenciasArchivo/RegistrarSugerenciaArchivo.vue"
+
+import PreguntaArchivo from "@/pages/PreguntasArchivos/PreguntaArchivo.vue"
+import RegistrarPreguntaArchivo from "@/pages/PreguntasArchivos/RegistrarPreguntaArchivo.vue"
 
 
 const routes = [
@@ -56,7 +70,7 @@ const routes = [
       //   component: GestionarCategorias,
       // },
 
-      
+      //inicio de rutas de categorias
       {
         path: "categorias",
         name: "categorias",
@@ -68,9 +82,7 @@ const routes = [
         component: RegistrarCategorias,
       },
 
-
-
-      //finrutas Categorias
+      //inicio de rutas de subcategorias
       {
         path: "subcategorias",
         name: "subcategorias",
@@ -83,8 +95,6 @@ const routes = [
         component: RegistrarSubCategorias,
       },
 
-      //fin rutas subcategorias
-
       // inicio de rutas usuario
       {
         path: "usuario",
@@ -96,16 +106,31 @@ const routes = [
         name: "Registrarusuario",
         component: RegistrarUsuario,
       },
+
+      //inicio de rutas de preguntas
       {
         path: "pregunta",
         name: "pregunta",
         component: ListarPregunta,
       },
       {
+        path: "Registrarpregunta",
+        name: "Registrarpregunta",
+        component: RegistrarPregunta,
+      },
+
+      //inicio de rutas respuesta
+      {
         path: "respuesta",
         name: "respuesta",
         component: ListarRespuesta,
       },
+      {
+        path: "Registrarrespuesta",
+        name: "Registrarrespuesta",
+        component: RegistrarRespuesta,
+      },
+
       // inicio de rutas sugerencias
       {
         path: "sugerencias",
@@ -117,15 +142,65 @@ const routes = [
         name: "Registrarsugerencias",
         component: RegistrarSugerencias,
       },
+
+      //inicio de rutas de Valor Respuesta
       {
         path: "valorR",
         name: "valorR",
         component: ListarValoroR,
       },
       {
+        path: "RegistrarvalorR",
+        name: "RegistrarvalorR",
+        component: RegistrarValorR,
+      },
+
+      //aqui inicia las rutas de rol
+      {
         path: "rol",
         name: "rol",
         component: GestionarRol,
+      },
+      {
+        path: "Registrarrol",
+        name: "Registrarrol",
+        component: RegistrarRol,
+      },
+
+      // rutas de archivo
+      {
+        path: "archivo",
+        name: "archivo",
+        component: ListarArchivo,
+      },
+      {
+        path: "Registrararchivo",
+        name: "Registrararchivo",
+        component: RegistrarArchivo,
+      },
+
+      //inicio de rutas sugerencia archivo
+      {
+        path: "sugerenciaArchivo",
+        name: "sugerenciaArchivo",
+        component: SugerenciasArchivo,
+      },
+      {
+        path: "RegistrarsugerenciaArchivo",
+        name: "RegistrarsugerenciaArchivo",
+        component: RegistrarSugerenciaArchivo,
+      },
+
+       //inicio de rutas pregunta archivo
+      {
+        path: "preguntaArchivo",
+        name: "preguntaArchivo",
+        component: PreguntaArchivo,
+      },
+      {
+        path: "RegistrarpreguntaArchivo",
+        name: "RegistrarpreguntaArchivo",
+        component: RegistrarPreguntaArchivo,
       },
     ],
   },

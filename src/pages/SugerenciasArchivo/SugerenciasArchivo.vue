@@ -1,18 +1,17 @@
 <template>
     <div class="row">
-  
              <!-- boton agregar -->
     <div class="col-8 offset-2">
       <router-link
       class="btn"
       :to="{
-        name: 'Registrarrespuesta'
+        name: 'RegistrarsugerenciaArchivo'
       }">
         Agregar
     </router-link>
     </div>
     <!-- aqui termin el boton -->
-
+  
       <div class="col-12">
       <card class="card-plain">
         <div class="table-full-width table-responsive">
@@ -20,16 +19,16 @@
             <thead>
               <tr>
                 <th scope="col">Id</th>
-                <th scope="col">Descripción</th>
-                <th scope="col">Hora-Fecha</th>
+                <th scope="col">Archivo</th>
+                <th scope="col">Sugerencia</th>
                 <th scope="col">Acciones</th>
               </tr>
             </thead>
             <tbody>
-              <tr v-for="respuesta in listaRespuestas">
-                <th scope="row">{{ respuesta.id_respuesta }}</th>
-                <td>{{ respuesta.descripcion }}</td>
-                <td>{{ respuesta.hora_fecha }}</td>
+              <tr v-for="sugerencia_archivo in listaSugerenciaArchivo">
+                <th scope="row">{{ sugerencia_archivo.id_sugerencia_archivo }}</th>
+                <td>{{ sugerencia_archivo.archivo_id }}</td>
+                <td>{{ sugerencia_archivo.sugerencia_id }}</td>
                 <td>
                   <button class="btn btn-sm bg-primary text-white">
                     <i class="fas fa-eye"></i>
@@ -40,26 +39,22 @@
                   <button class="btn btn-sm bg-danger text-white">
                     <i class="fas fa-trash-alt"></i>
                   </button>
-
-
+  
+  
                 </td>
               </tr>
-
+  
             </tbody>
           </table>
-         
+          
         </div>
       </card>
     </div>
-      
-  
-      
     </div>
   </template>
-  
   <script>
-
-
+  
+  
   import axios from 'axios';
   
   
@@ -69,20 +64,20 @@
     },
     data() {
       return {
-        listaRespuestas:[],
+        listaSugerenciaArchivo:[],
        
       };
     },
     mounted(){
-      this.listarRespuestas()
+      this.listarSugerenciaArchivos()
     },
     methods: {
-      listarRespuestas() {
-        //  alert("jahahsa")
-        axios.get("http://localhost:3000/listarRespuesta")
+      listarSugerenciaArchivos() {
+         //alert("jahahsa")
+        axios.get("http://localhost:3000/listarSugerencia_archivo")
         .then((res) => {
   
-          this.listaRespuestas = res.data
+          this.listaSugerenciaArchivo = res.data
           console.log(res.data);
         })
         .catch((err) => {
@@ -93,3 +88,4 @@
   };
   </script>
   <style></style>
+  

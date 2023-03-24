@@ -8,7 +8,7 @@
                 <input type="text" class="form-control" placeholder="" v-model="usuario.nombre" required>
             </div>
             <div class="form-group">
-                <label for="exampleFormControlInput1">apellido:</label>
+                <label for="exampleFormControlInput1">Apellido:</label>
                 <input type="text" class="form-control"  placeholder="" v-model="usuario.apellido" required>
             </div>
             <div class="form-group">
@@ -72,7 +72,7 @@ export default {
         telefono: "",
         direccion:"",
         estado: "",
-        rol_id: null,
+        rol_id: null
         
         
       }
