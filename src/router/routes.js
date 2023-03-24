@@ -22,6 +22,7 @@ import ListarSugerencias from "@/pages/Sugerencias/ListarSugerencias.vue";
 import ListarValoroR from "@/pages/ValoresR/ListarValoroR.vue";
 import GestionarRol from "@/pages/Roles/GestionarRol.vue"
 import Preguntar from "@/pages/VistasUsuario/Preguntar.vue"
+import MisPreguntas from "@/pages/VistasUsuario/MisPreguntas.vue"
 
 
 
@@ -107,6 +108,11 @@ const routes = [
         path: "preguntar",
         name: "preguntar",
         component: Preguntar,
+      },
+      {
+        path: "MisPreguntas",
+        name: "MisPreguntas",
+        component: MisPreguntas,
       },
     ],
   },

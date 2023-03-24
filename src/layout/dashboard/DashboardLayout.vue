@@ -55,6 +55,11 @@
           name="preguntar"
           icon="ti-view-list-alt"
         />
+        <sidebar-link
+          to="/MisPreguntas"
+          name="MisPreguntas"
+          icon="ti-view-list-alt"
+        />
 
       </template>
       <mobile-menu>

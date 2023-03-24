@@ -257,6 +257,62 @@
   }
 
 }
+.card-Mpregunta{
+  
+  .Mimagen {
+    border-radius: 8px 8px 0 0;
+    height: 58px;
+    position: relative;
+    overflow: hidden;
+
+    img {
+      width: 100%;
+    }
+  }
+  .image-plain {
+    height: 0;
+    margin-top: 110px;
+  }
+  .Mfoto {
+    
+    text-transform: none;
+    margin-top: -56.5px;
+    .Mnombre {
+      position: relative;
+      margin-left: 60px;
+      margin-top: -50px;
+      color: $default-states-color;
+      small {
+        color: $card-muted-color;
+      }
+    }
+  }
+  .Musuario {
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    position: relative;
+    margin-bottom: 15px;
+
+    &.border-white {
+      border: 5px solid $white-color;
+    }
+    &.border-gray {
+      border: 5px solid $card-muted-color;
+    }
+  }
+  .card-title {
+    font-weight: 600;
+    line-height: 24px;
+  }
+
+  .card-body {
+    min-height: 150px;
+  }
+
+ 
+}
+
 .card-Pregunta{
   
   .imagen {
