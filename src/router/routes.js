@@ -43,6 +43,9 @@ import RegistrarSugerenciaArchivo from "@/pages/SugerenciasArchivo/RegistrarSuge
 
 import PreguntaArchivo from "@/pages/PreguntasArchivos/PreguntaArchivo.vue"
 import RegistrarPreguntaArchivo from "@/pages/PreguntasArchivos/RegistrarPreguntaArchivo.vue"
+import Preguntar from "@/pages/VistasUsuario/Preguntar.vue"
+import MisPreguntas from "@/pages/VistasUsuario/MisPreguntas.vue"
+
 
 
 const routes = [
@@ -201,6 +204,14 @@ const routes = [
         path: "RegistrarpreguntaArchivo",
         name: "RegistrarpreguntaArchivo",
         component: RegistrarPreguntaArchivo,
+        path: "preguntar",
+        name: "preguntar",
+        component: Preguntar,
+      },
+      {
+        path: "MisPreguntas",
+        name: "MisPreguntas",
+        component: MisPreguntas,
       },
     ],
   },
