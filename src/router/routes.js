@@ -23,6 +23,8 @@ import ListarValoroR from "@/pages/ValoresR/ListarValoroR.vue";
 import GestionarRol from "@/pages/Roles/GestionarRol.vue"
 import Preguntar from "@/pages/VistasUsuario/Preguntar.vue"
 import MisPreguntas from "@/pages/VistasUsuario/MisPreguntas.vue"
+import SinRespuesta from "@/pages/VistasUsuario/SinRespuesta.vue"
+import RespuestaP from "@/pages/VistasUsuario/RespuestaP.vue"
 
 
 
@@ -113,6 +115,16 @@ const routes = [
         path: "MisPreguntas",
         name: "MisPreguntas",
         component: MisPreguntas,
+      },
+      {
+        path: "SinRespuesta",
+        name: "SinRespuesta",
+        component: SinRespuesta,
+      },
+      {
+        path: "RespuestaP",
+        name: "RespuestaP",
+        component:RespuestaP,
       },
     ],
   },

@@ -52,7 +52,7 @@
   </div>
    
   <div class="text-right">
-          <p-button type="info" round @click.native.prevent="">
+          <p-button type="info" @click.native="Responder()">
             Responder
           </p-button>
         </div>
@@ -63,3 +63,19 @@
 </div>
 
 </template>
+<script>
+export default {
+  data() {
+    return {
+      user: {
+     
+      },
+    };
+  },
+  methods: {
+   Responder(){
+    this.$router.push("/RespuestaP");
+   }
+  },
+};
+</script>

@@ -60,6 +60,13 @@
           name="MisPreguntas"
           icon="ti-view-list-alt"
         />
+        <sidebar-link
+          to="/SinRespuesta"
+          name="SinRespuesta"
+          icon="ti-view-list-alt"
+        />
+        />
+       
 
       </template>
       <mobile-menu>
