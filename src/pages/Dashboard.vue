@@ -19,9 +19,18 @@
          
        </div>
        <div class="text-center">
-          <p-button type="info" round @click.native.prevent="">
+          <!-- <p-button type="info" round @click.native.prevent="">
             Preguntar
-          </p-button>
+          </p-button> -->
+          <div class="col-8 offset-2">
+      <router-link
+      class="btn"
+      :to="{
+        name: 'preguntar'
+      }">
+        Preguntar
+    </router-link>
+    </div>
         </div>
      </card>
   </div>

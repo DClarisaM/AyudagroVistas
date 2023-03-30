@@ -46,7 +46,8 @@ import RegistrarPreguntaArchivo from "@/pages/PreguntasArchivos/RegistrarPregunt
 import Preguntar from "@/pages/VistasUsuario/Preguntar.vue"
 import MisPreguntas from "@/pages/VistasUsuario/MisPreguntas.vue"
 import SinRespuesta from "@/pages/VistasUsuario/SinRespuesta.vue"
-import RespuestaP from "@/pages/VistasUsuario/RespuestaP.vue"
+import RespuestaP from "@/pages/VistasUsuario/RespuestaP.vue";
+
 
  
 
@@ -224,7 +225,9 @@ const routes = [
         path: "RespuestaP/:preguntaId",
         name: "RespuestaP",
         component:RespuestaP,
+      
       },
+      
     ],
   },
   { path: "*", component: NotFound },
