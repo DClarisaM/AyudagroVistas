@@ -38,7 +38,7 @@
                     <i class="fas fa-edit"></i>
                   </button>
                   <button class="btn btn-sm bg-danger text-white">
-                    <i class="fas fa-trash-alt"></i>
+                    <i class="fas fa-trash-alt" @click="eliminar()"></i>
                   </button>
 
 
@@ -61,6 +61,7 @@
 
 
   import axios from 'axios';
+  import Swal from 'sweetalert2'
   
   
   export default {
@@ -74,7 +75,8 @@
       };
     },
     mounted(){
-      this.listarRespuestas()
+      this.listarRespuestas(),
+      eliminar()
     },
     methods: {
       listarRespuestas() {
@@ -88,7 +90,46 @@
         .catch((err) => {
           alert("error del servidor")
         })
-      }
+      },
+      eliminar(){
+      // alert("hahaha")
+      const swalWithBootstrapButtons = Swal.mixin({
+  customClass: {
+    confirmButton: 'btn btn-success',
+    cancelButton: 'btn btn-danger'
+  },
+  buttonsStyling: false
+})
+
+swalWithBootstrapButtons.fire({
+  title: 'Estas seguro ?',
+  text: "Esto se eliminara definitivo!",
+  icon: 'warning',
+  showCancelButton: true,
+  confirmButtonText: 'Si,estoy seguro!',
+  cancelButtonText: 'No, cancelar!',
+  reverseButtons: true
+}).then((result) => {
+  if (result.isConfirmed) {
+    axios.delete("http://localhost:3000/eliminarRespuesta/3")
+    swalWithBootstrapButtons.fire(
+      'Eliminado!',
+      'Se elimino con exito.',
+      'success'
+    )
+  } else if (
+    /* Read more about handling dismissals below */
+    result.dismiss === Swal.DismissReason.cancel
+  ) {
+    swalWithBootstrapButtons.fire(
+      'Cancelado',
+      'No se eliminara :)',
+      'error'
+    )
+  }
+})
+
+    }
     }
   };
   </script>

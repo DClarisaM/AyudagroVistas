@@ -1,6 +1,6 @@
 <template>
   <div>
-    <!-- <div class="col-6 offset-3">
+    <div class="col-6 offset-3">
     <card class="card-user">
        <div class="image">
          <img src="@/assets/img/background.jpg" alt="..." />
@@ -24,7 +24,7 @@
           </p-button>
         </div>
      </card>
-  </div> -->
+  </div>
 
 
     <div class="col-10 offset-1" v-for="pregunta in listaPreguntas">
