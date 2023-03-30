@@ -46,8 +46,13 @@
           icon="ti-view-list-alt"
         />
         <sidebar-link
+          to="/archivo"
+          name="Listar Archivo"
+          icon="ti-view-list-alt"
+        />
+        <sidebar-link
           to="/rol"
-          name="Gestionar Rol"
+          name="Listar Rol"
           icon="ti-view-list-alt"
         />
         <sidebar-link

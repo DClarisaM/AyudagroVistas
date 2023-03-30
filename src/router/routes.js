@@ -48,6 +48,7 @@ import MisPreguntas from "@/pages/VistasUsuario/MisPreguntas.vue"
 import SinRespuesta from "@/pages/VistasUsuario/SinRespuesta.vue"
 import RespuestaP from "@/pages/VistasUsuario/RespuestaP.vue"
 
+ 
 
 
 const routes = [
@@ -154,13 +155,9 @@ const routes = [
         name: "valorR",
         component: ListarValoroR,
       },
-      {
-        path: "RegistrarvalorR",
-        name: "RegistrarvalorR",
-        component: RegistrarValorR,
-      },
 
       //aqui inicia las rutas de rol
+
       {
         path: "rol",
         name: "rol",
@@ -206,6 +203,9 @@ const routes = [
         path: "RegistrarpreguntaArchivo",
         name: "RegistrarpreguntaArchivo",
         component: RegistrarPreguntaArchivo,
+      },
+
+      {
         path: "preguntar",
         name: "preguntar",
         component: Preguntar,
