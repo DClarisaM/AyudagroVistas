@@ -1,4 +1,5 @@
 import DashboardLayout from "@/layout/dashboard/DashboardLayout.vue";
+import LoginUsuario from "@/layout/dashboard/LoginUsuario.vue";
 // GeneralViews
 import NotFound from "@/pages/NotFoundPage.vue";
 
@@ -68,6 +69,11 @@ const routes = [
         path: "preguntar",
         name: "preguntar",
         component: Preguntar,
+      },
+      {
+        path: "login",
+        name: "login",
+        component: LoginUsuario,
       },
 
 
