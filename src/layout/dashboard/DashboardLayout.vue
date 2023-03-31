@@ -56,23 +56,8 @@
           icon="ti-view-list-alt"
         />
         <sidebar-link
-<<<<<<< HEAD
-          to="/archivo"
-          name="Gestionar Archivo"
-          icon="ti-view-list-alt"
-        />
-        <sidebar-link
-          to="/sugerenciaArchivo"
-          name="Listar Sugerencias Archivo"
-          icon="ti-view-list-alt"
-        />
-        <sidebar-link
-          to="/preguntaArchivo"
-          name="Listar Pregunta Archivo"
-=======
           to="/MisPreguntas"
           name="MisPreguntas"
->>>>>>> Danier
           icon="ti-view-list-alt"
         />
 
