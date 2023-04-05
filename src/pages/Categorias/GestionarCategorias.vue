@@ -2,16 +2,14 @@
   <div class="row">
     <!-- aqui empieza el boton agregar -->
     <div class="col-8 offset-2">
-      <router-link
-      class="btn"
-      :to="{
+      <router-link class="btn" :to="{
         name: 'Registrarcategorias'
       }">
         Agregar
-    </router-link>
+      </router-link>
     </div>
     <!-- aqui termina el boton -->
-    
+
 
 
     <div class="col-12">
@@ -32,23 +30,22 @@
                 <td>{{ categoria.titulo }}</td>
                 <td>{{ categoria.descripcion }}</td>
                 <td>
-                  <button class="btn btn-sm bg-primary text-white">
+                  <router-link class="btn bg-primary text-white" :to="{ name: 'Vercategoria', params: { idCategoria: categoria.id_categoria } }">
                     <i class="fas fa-eye"></i>
-                  </button>
-                  <button class="btn btn-sm bg-success text-white">
+                  </router-link>
+                  <router-link class="btn bg-success text-white" :to="{ name: 'Editarcategoria', params: { idCategoria: categoria.id_categoria } }">
                     <i class="fas fa-edit"></i>
+                  </router-link>
+                  <button class="btn  bg-danger text-white" @click="eliminar()">
+                    <i class="fas fa-trash-alt"></i>
                   </button>
-                  <button 
-                  class="btn btn-sm bg-danger text-white" @click="eliminar()" >
-                   <i class="fas fa-trash-alt" @click="eliminar()"></i>
-                  </button>
-                  
+
                 </td>
               </tr>
 
             </tbody>
           </table>
-       
+
 
         </div>
       </card>
@@ -61,14 +58,14 @@ import Swal from 'sweetalert2'
 
 export default {
   components: {
-    
+
   },
   data() {
     return {
       listaCategorias: [],
-     
 
-      
+
+
     };
   },
   mounted() {
@@ -88,45 +85,45 @@ export default {
           alert("error del servidor")
         })
     },
-    eliminar(){
+    eliminar() {
       // alert("hahaha")
       const swalWithBootstrapButtons = Swal.mixin({
-  customClass: {
-    confirmButton: 'btn btn-success',
-    cancelButton: 'btn btn-danger'
-  },
-  buttonsStyling: false
-})
+        customClass: {
+          confirmButton: 'btn btn-success',
+          cancelButton: 'btn btn-danger'
+        },
+        buttonsStyling: false
+      })
 
-swalWithBootstrapButtons.fire({
-  title: 'Estas seguro ?',
-  text: "Esto se eliminara definitivo!",
-  icon: 'warning',
-  showCancelButton: true,
-  confirmButtonText: 'Si,estoy seguro!',
-  cancelButtonText: 'No, cancelar!',
-  reverseButtons: true
-}).then((result) => {
-  if (result.isConfirmed) {
-    axios.delete("http://localhost:3000/eliminarCategoria/6")
-    swalWithBootstrapButtons.fire(
-      'Eliminado!',
-      'Se elimino con exito.',
-      'success'
-    )
-  } else if (
-    /* Read more about handling dismissals below */
-    result.dismiss === Swal.DismissReason.cancel
-  ) {
-    swalWithBootstrapButtons.fire(
-      'Cancelado',
-      'No se eliminara :)',
-      'error'
-    )
-  }
-})
+      swalWithBootstrapButtons.fire({
+        title: 'Estas seguro ?',
+        text: "Esto se eliminara definitivo!",
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonText: 'Si, estoy seguro!',
+        cancelButtonText: 'No, cancelar!',
+        reverseButtons: true
+      }).then((result) => {
+        if (result.isConfirmed) {
+          axios.delete("http://localhost:3000/eliminarCategoria/6")
+          swalWithBootstrapButtons.fire(
+            'Eliminado!',
+            'Se elimino con exito.',
+            'success'
+          )
+        } else if (
+          /* Read more about handling dismissals below */
+          result.dismiss === Swal.DismissReason.cancel
+        ) {
+          swalWithBootstrapButtons.fire(
+            'Cancelado',
+            'No se eliminara :)',
+            'error'
+          )
+        }
+      })
 
-    } 
+    }
   }
 };
 </script>

@@ -14,8 +14,10 @@ import UserProfile from "@/pages/UserProfile.vue";
 import GestionarSubCategorias from "@/pages/Subcategorias/GestionarSubcategorias.vue";
 import RegistrarSubCategorias from "@/pages/Subcategorias/RegistrarSubcategorias.vue";
 
-import GestionarCategorias from "@/pages/Categorias/GestionarCategorias.vue"
-import RegistrarCategorias from "@/pages/Categorias/RegistrarCategorias.vue"
+import GestionarCategorias from "@/pages/Categorias/GestionarCategorias.vue";
+import RegistrarCategorias from "@/pages/Categorias/RegistrarCategorias.vue";
+import EditarCategoria from "@/pages/Categorias/EditarCategoria.vue";
+import VerCategoria from "@/pages/Categorias/VerCategoria.vue";
 
 import ListarPregunta from "@/pages/Preguntas/ListarPregunta.vue";
 import RegistrarPregunta from "@/pages/Preguntas/RegistrarPregunta.vue"
@@ -88,6 +90,17 @@ const routes = [
         name: "Registrarcategorias",
         component: RegistrarCategorias,
       },
+      {
+        path: "Editarcategoria/:idCategoria",
+        name: "Editarcategoria",
+        component: EditarCategoria,
+      },
+      {
+        path: "Vercategoria/:idCategoria",
+        name: "Vercategoria",
+        component: VerCategoria,
+      },
+
 
       //inicio de rutas de subcategorias
       {

@@ -107,12 +107,12 @@ swalWithBootstrapButtons.fire({
   text: "Esto se eliminara definitivo!",
   icon: 'warning',
   showCancelButton: true,
-  confirmButtonText: 'Si,estoy seguro!',
+  confirmButtonText: 'Si, estoy seguro!',
   cancelButtonText: 'No, cancelar!',
   reverseButtons: true
 }).then((result) => {
   if (result.isConfirmed) {
-    axios.delete("http://localhost:3000/eliminarSubcategoria/4")
+    axios.delete("http://localhost:3000/eliminarSubcategoria/5")
     swalWithBootstrapButtons.fire(
       'Eliminado!',
       'Se elimino con exito.',

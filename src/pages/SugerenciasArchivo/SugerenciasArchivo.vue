@@ -100,7 +100,7 @@ swalWithBootstrapButtons.fire({
   text: "Esto se eliminara definitivo!",
   icon: 'warning',
   showCancelButton: true,
-  confirmButtonText: 'Si,estoy seguro!',
+  confirmButtonText: 'Si, estoy seguro!',
   cancelButtonText: 'No, cancelar!',
   reverseButtons: true
 }).then((result) => {
