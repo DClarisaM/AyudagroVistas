@@ -4,13 +4,13 @@
    <div class="col-10 offset-1">
  <card class="card-Mpregunta">
     <div class="Mimagen">
-      <img src="@/assets/img/background.jpg" alt="..." />
+      <img src="@/assets/img/background2.jpg" alt="..." />
     </div>
     <div>
       <div class="Mfoto">
         <img
           class="Musuario border-white"
-          src="@/assets/img/faces/face-2.jpg"
+          src="@/assets/img/faces/face-4.jpg"
           alt="..."
         />
         <h4 class="Mnombre">

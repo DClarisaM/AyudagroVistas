@@ -25,6 +25,10 @@ import Preguntar from "@/pages/VistasUsuario/Preguntar.vue"
 import MisPreguntas from "@/pages/VistasUsuario/MisPreguntas.vue"
 import SinRespuesta from "@/pages/VistasUsuario/SinRespuesta.vue"
 import RespuestaP from "@/pages/VistasUsuario/RespuestaP.vue"
+import ListaPreguntas from "@/pages/Profesional/ListaPreguntas.vue"
+import Inicio from "@/pages/Registro/Inicio.vue"
+// import dashlogin from "@/pages/Registro/dashlogin.vue"
+// import DashboardLogin from "@/layout/dashboard/DashboardLogin.vue";
 
 
 
@@ -36,17 +40,14 @@ const routes = [
     children: [
       {
         path: "dashboard",
-        name: "dashboard",
+        name: "INICIO",
         component: Dashboard,
       },
       {
         path: "stats",
-        name: "stats",
+        name: "Perfil",
         component: UserProfile,
       },
-
-
-
       {
         path: "categorias",
         name: "categorias",
@@ -59,9 +60,6 @@ const routes = [
         name: "categorias",
         component: GestionarCategorias,
       },
-
-
-
       //finrutas Categorias
       {
         path: "subcategorias",
@@ -124,10 +122,35 @@ const routes = [
       {
         path: "RespuestaP",
         name: "RespuestaP",
-        component:RespuestaP,
+        component: RespuestaP,
       },
+      {
+        path: "ListaPreguntas",
+        name: "ListaPreguntas",
+        component: ListaPreguntas,
+      },
+      {
+        path: "Inicio",
+        name: "Inicio",
+        component: Inicio,
+      },
+
     ],
   },
+  // {
+  //   path: "/",
+  //   redirect: "/dashlogin",
+  //   component: DashboardLogin,
+  //   children: [
+  //     {
+  //       path: "dashlogin",
+  //       name: "dashlogin",
+  //       component: dashlogin,
+  //     },
+      
+
+  //   ],
+  // },
   { path: "*", component: NotFound },
 ];
 

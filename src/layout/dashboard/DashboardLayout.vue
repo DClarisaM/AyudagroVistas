@@ -3,70 +3,29 @@
     <side-bar>
       <template slot="links">
         <sidebar-link to="/dashboard" name="Ayudagro" icon="ti-panel" />
-        <sidebar-link to="/stats" name="User Profile" icon="ti-user" />
-        
-       
-        
-        
-       
-        <sidebar-link
-          to="/categorias"
-          name="Gestionar Categorias"
-          icon="ti-view-list-alt"
+        <sidebar-link to="/stats" name="Editar Perfil" icon="ti-user" />
+
+
+
+
+
+        <sidebar-link to="/categorias" name="Gestionar Categorias" icon="ti-view-list-alt" />
+        <sidebar-link to="/subcategorias" name="Gestionar Subcategorias" icon="ti-view-list-alt" />
+        <sidebar-link to="/usuario" name="Listar Usuario" icon="ti-view-list-alt" />
+        <sidebar-link to="/sugerencias" name="Listar Sugerencias" icon="ti-view-list-alt" />
+        <sidebar-link to="/valorR" name="Listar Valor_R" icon="ti-view-list-alt" />
+
+        <sidebar-link to="/pregunta" name="Listar Pregunta" icon="ti-view-list-alt" />
+        <sidebar-link to="/respuesta" name="Listar Respuesta" icon="ti-view-list-alt" />
+        <sidebar-link to="/rol" name="Gestionar Rol" icon="ti-view-list-alt" />
+        <sidebar-link to="/preguntar" name="preguntar" icon="ti-view-list-alt" />
+        <sidebar-link to="/MisPreguntas" name="Mis Preguntas" icon="ti-view-list-alt" />
+        <sidebar-link to="/SinRespuesta" name="Sin Respuesta" icon="ti-view-list-alt" />
+        <sidebar-link to="/ListaPreguntas" name="preguntas" icon="ti-view-list-alt" />
+        <sidebar-link to="/Inicio" name="Login" icon="ti-view-list-alt" />
+
         />
-        <sidebar-link
-          to="/subcategorias"
-          name="Gestionar Subcategorias"
-          icon="ti-view-list-alt"
-        />
-        <sidebar-link
-          to="/usuario"
-          name="Listar Usuario"
-          icon="ti-view-list-alt"
-        />
-        <sidebar-link
-          to="/sugerencias"
-          name="Listar Sugerencias"
-          icon="ti-view-list-alt"
-        />
-        <sidebar-link
-          to="/valorR"
-          name="Listar Valor_R"
-          icon="ti-view-list-alt"
-        />
-        
-        <sidebar-link
-          to="/pregunta"
-          name="Listar Pregunta"
-          icon="ti-view-list-alt"
-        />
-        <sidebar-link
-          to="/respuesta"
-          name="Listar Respuesta"
-          icon="ti-view-list-alt"
-        />
-        <sidebar-link
-          to="/rol"
-          name="Gestionar Rol"
-          icon="ti-view-list-alt"
-        />
-        <sidebar-link
-          to="/preguntar"
-          name="preguntar"
-          icon="ti-view-list-alt"
-        />
-        <sidebar-link
-          to="/MisPreguntas"
-          name="MisPreguntas"
-          icon="ti-view-list-alt"
-        />
-        <sidebar-link
-          to="/SinRespuesta"
-          name="SinRespuesta"
-          icon="ti-view-list-alt"
-        />
-        />
-       
+
 
       </template>
       <mobile-menu>
@@ -76,12 +35,7 @@
             <p>Stats</p>
           </a>
         </li>
-        <drop-down
-          class="nav-item"
-          title="5 Notifications"
-          title-classes="nav-link"
-          icon="ti-bell"
-        >
+        <drop-down class="nav-item" title="5 Notifications" title-classes="nav-link" icon="ti-bell">
           <a class="dropdown-item">Notification 1</a>
           <a class="dropdown-item">Notification 2</a>
           <a class="dropdown-item">Notification 3</a>
@@ -100,8 +54,15 @@
     <div class="main-panel">
       <top-navbar></top-navbar>
 
-      <dashboard-content @click.native="toggleSidebar"> </dashboard-content>
-
+      <!--<dashboard-content @click.native="toggleSidebar"> </dashboard-content>-->
+      <div class="content">
+        <div class="container-fluid">
+          <transition name="fade" mode="out-in">
+            <!-- your content here -->
+            <router-view></router-view>
+          </transition>
+        </div>
+      </div>
       <content-footer></content-footer>
     </div>
   </div>
@@ -126,5 +87,8 @@ export default {
       }
     },
   },
+  mounted(){
+   localStorage.setItem('usuario')
+  }
 };
 </script>

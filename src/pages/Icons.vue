@@ -739,10 +739,7 @@
               <span class="ti-book"></span>
               <span class="icon-name"> ti-book</span>
             </div>
-            <div class="icon-container">
-              <span class="ti-bell"></span>
-              <span class="icon-name"> ti-bell</span>
-            </div>
+            
             <div class="icon-container">
               <span class="ti-basketball"></span>
               <span class="icon-name"> ti-basketball</span>

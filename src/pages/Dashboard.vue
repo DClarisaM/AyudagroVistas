@@ -4,13 +4,13 @@
 
     <card class="card-user">
        <div class="image">
-         <img src="@/assets/img/background.jpg" alt="..." />
+         <img src="@/assets/img/background2.jpg" alt="..." />
        </div>
        <div>
          <div class="author">
            <img
              class="avatar border-white"
-             src="@/assets/img/faces/face-2.jpg"
+             src="@/assets/img/faces/face-4.jpg"
              alt="..."
            />
            <h4 class="title">
@@ -31,13 +31,13 @@
   <div class="col-10 offset-1">
 <card class="card-Pregunta">
    <div class="imagen">
-     <img src="@/assets/img/background.jpg" alt="..." />
+     <img src="@/assets/img/background2.jpg" alt="..." />
    </div>
    <div>
      <div class="Foto">
        <img
          class="Fusuario border-white"
-         src="@/assets/img/faces/face-2.jpg"
+         src="@/assets/img/faces/face-4.jpg"
          alt="..."
        />
        <h4 class="Nombre">
