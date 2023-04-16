@@ -53,6 +53,10 @@ export default {
     updateProfile() {
       alert("Your data: " + JSON.stringify(this.user));
     },
+
+    newUser(){
+
+    },
   },
 };
 </script>
