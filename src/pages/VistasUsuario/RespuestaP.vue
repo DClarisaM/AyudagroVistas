@@ -1,6 +1,7 @@
 <template>
   <div>
-    <!-- <div class="col-6 offset-3">
+    <div >
+    <div class="col-6 offset-3" >
     <card class="card-user">
        <div class="image">
          <img src="@/assets/img/background.jpg" alt="..." />
@@ -12,19 +13,33 @@
              src="@/assets/img/faces/face-2.jpg"
              alt="..."
            />
-           <h4 >
-             Como hacer arroz
+           <div>
+           <h4 v-for="pregunta in listaPregunta">
+              {{ pregunta.descripcion  }}
            </h4>
+           </div>
          </div>
-         <div class="text-right">
+         <!-- <div class="text-right">
            <p-button type="info" round @click.native.prevent="">
              Responder
            </p-button>
-         </div>
+         </div> -->
+         <div class="form-group">
+                
+                <textarea class="form-control" placeholder="Escriba aquí su respuesta" id="floatingTextarea2" style="height: 50px"
+                 v-model="respuesta.descripcion">
+                </textarea>
+                <div class="text-center">
+                <button class="btn btn-primary" @click="nuevaRespuesta()" >
+                    Preguntar
+                </button>
+                </div>
+            </div>
          
        </div>
      </card>
-  </div> -->
+    </div>
+  </div>
 
     <div class="col-10 offset-1" v-for="respuesta in listaRespuestas">
       <card class="card-Mpregunta">
@@ -34,31 +49,32 @@
         <div>
           <div class="Mfoto">
             <img class="Musuario border-white" src="@/assets/img/faces/face-2.jpg" alt="..." />
-            <h4>
-
-            </h4>
+            <!-- <h4>
+             hola
+            </h4> -->
           </div>
-          <!-- <h5>
+          <h5>
           {{ respuesta.pregunta_id }}
           {{ respuesta.descripcion }}
-        </h5> -->
+        </h5>
           <small class="text-right">
             {{ respuesta.createdAt }}
           </small>
         </div>
-        <div v-for="preguntas in listaRespuestas">
+       
+        <!-- <div v-for="preguntas in listaRespuestas">
           <label for="floatingTextarea2">
             {{ preguntas.descripcion }}
           </label>
-        </div>
-        <div class="form-floating">
+        </div> -->
+        <!-- <div class="form-floating">
           <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea2"></textarea>
-        </div>
-        <div class="text-right">
+        </div> -->
+        <!-- <div class="text-right">
           <p-button type="info" round @click.native.prevent="">
             Responder
           </p-button>
-        </div>
+        </div> -->
       </card>
     </div>
 
@@ -77,12 +93,19 @@ export default {
     return {
       idPregunta: null,
       listaRespuestas: [],
+      listaPregunta: [],
+
+      respuesta: {
+        descripcion: "",
+      },
+      pregunta:[]
 
     };
   },
   async mounted() {
     this.idPregunta = this.$route.params.preguntaId
-    await this.listarRespuestas()
+    await this.listarRespuestas(),
+    await this.verPregunta()
   },
   methods: {
     listarRespuestas() {
@@ -95,6 +118,34 @@ export default {
         })
         .catch((err) => {
           //TODO mostrar ventana emergente sweetalert2 con el error
+          alert("error del servidor")
+        })
+    },
+
+
+    verPregunta() {
+        // alert("aaaa")
+        axios.get("http://localhost:3000/verDetallePregunta/"+this.idPregunta)
+          .then((res) => {
+            //codigo
+            // alert("bbbb")
+            console.log(res.data);
+            this.listaPregunta = res.data
+          })
+          .catch((err) => {
+            //TODO mostrar ventana emergente sweetalert2 con el error
+            alert("error del servidor")
+          })
+      },
+
+      
+      nuevaRespuesta(){
+         alert("jahkajs")
+        axios.post("http://localhost:3000/ListarRespuestasPorPreguntaId/1")
+        .then((res) => {
+            console.log(res);
+        })
+        .catch((err) => {
           alert("error del servidor")
         })
     }

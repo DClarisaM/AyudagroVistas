@@ -8,7 +8,21 @@
         Agregar
       </router-link>
     </div>
+    <div class="col-8 offset-2">
+      <button class="btn" @click="setlocalstorage()">
+        set
+    </button>
+    </div>
+
+    <div class="col-8 offset-2">
+      <button class="btn" @click="obtenerlocalstorage()">
+        local
+    </button>
+    </div>
+    {{ userloger }}
+    
     <!-- aqui termina el boton -->
+
 
 
 
@@ -63,6 +77,7 @@ export default {
   data() {
     return {
       listaCategorias: [],
+      userloger: ""
 
 
 
@@ -71,6 +86,7 @@ export default {
   mounted() {
     this.listarCategorias()
     eliminar()
+    
   },
   methods: {
     listarCategorias() {
@@ -123,6 +139,14 @@ export default {
         }
       })
 
+    },
+    obtenerlocalstorage(){
+      alert("jajajaj")
+      this.userloger = localStorage.getItem('usuario')
+    },
+    setlocalstorage(){
+        alert("set")
+      localStorage.setItem('usuario', 'yennifer no ama a nadie')
     }
   }
 };

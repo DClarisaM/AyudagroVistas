@@ -1,5 +1,12 @@
 <template>
   <div>
+    <div class="col-8 offset-2">
+      <button class="btn" @click="obtenerlocalstorage()">
+        local
+    </button>
+    </div>
+        {{ userloger }}
+
  <div class="col-6 offset-3">
     <card class="card-user">
       <div class="image">
@@ -27,9 +34,9 @@
                   <option value="3">animales</option>
               </select>
             </div>
-            <div class="form-floating">
+            <!-- <div class="form-floating">
                 <textarea class="form-control" placeholder="Detalle de la categoria" id="floatingTextarea2" style="height: 50px"></textarea>
-            </div>
+            </div> -->
         </div>
           <div class="col-6">
           <div class="form-group">
@@ -44,17 +51,36 @@
                 <!-- <textarea class="form-control" placeholder="Detalle de la Subcategoria" id="floatingTextarea2" style="height: 50px"
                 
                 ></textarea> -->
-                <h6 class="descrip" >
+                <!-- <h6 class="descrip" >
                  {{ pregunta.subcategoria_id }}
-                </h6>
+                </h6> -->
             </div>
             </div>
           </div>
             <div class="col-10 offset-1">
           <card class="card-Pregunta">
-            <div class="form-floating">
-                <textarea class="form-control" placeholder="Escriba aquí su pregunta" id="floatingTextarea2" style="height: 100px"></textarea>
-              </div>
+            <!-- <div class="form-floating">
+                <textarea class="form-control" placeholder="Escriba aquí su pregunta" id="floatingTextarea2" style="height: 100px"
+                 v-model="pregunta.descripcion">
+                </textarea>
+              </div> -->
+              <form>
+            <div class="form-group">
+                <label for="exampleFormControlInput1">Pregunta</label>
+                
+                <textarea class="form-control" placeholder="Escriba aquí su pregunta" id="floatingTextarea2" style="height: 100px"
+                 v-model="pregunta.descripcion">
+                </textarea>
+            </div>
+            
+            
+
+            <!-- <div>
+                <button class="btn" @click="registrarPregunta()">
+                    Preguntar
+                </button>
+            </div> -->
+        </form>
             <div class="h2 mb-0">
               <b-icon-arrow-up></b-icon-arrow-up>
               <b-icon-exclamation-triangle-fill></b-icon-exclamation-triangle-fill>
@@ -62,9 +88,9 @@
           </card>
         </div>  
       <div class="text-center">
-         <p-button type="info" round @click.native.prevent="">
-           Publicar
-         </p-button>
+        <button class="btn btn-primary" @click="registrarPregunta()">
+                    Preguntar
+                </button>
        </div>
     </card>
  </div>
@@ -80,11 +106,19 @@ export default {
   data() {
     return {
       listaPreguntas: [],
+      pregunta: {
+        descripcion: "",
+        
+        
+        
+      },
+      userloger:"",
 
     };
   },
   mounted() {
-    this.listarPreguntas()
+    this.listarPreguntas();
+    
   },
   methods: {
     listarPreguntas() {
@@ -99,6 +133,20 @@ export default {
           //TODO mostrar ventana emergente sweetalert2 con el error
           alert("error del servidor")
         })
+    },
+    registrarPregunta(){
+        //  alert("jahkajs")
+        axios.post("http://localhost:3000/nuevaPregunta",this.pregunta)
+        .then((res) => {
+            console.log(res);
+        })
+        .catch((err) => {
+          alert("error del servidor")
+        })
+    },
+    obtenerlocalstorage(){
+      alert("jajajaj")
+      this.userloger = localStorage.getItem('usuario')
     }
   }
 };

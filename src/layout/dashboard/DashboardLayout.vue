@@ -71,6 +71,7 @@
           icon="ti-view-list-alt"
           />
           <sidebar-link
+          v-if="usuariologueado != 1"
           to="/preguntar"
           name="preguntar"
           icon="ti-view-list-alt"
@@ -85,11 +86,18 @@
           name="SinRespuesta"
           icon="ti-view-list-alt"
         />
+        <sidebar-link
+          to="/vistas"
+          name="vistas"
+          icon="ti-view-list-alt"
+        />
         />
        
 
       </template>
+
       <mobile-menu>
+
         <li class="nav-item">
           <a class="nav-link">
             <i class="ti-panel"></i>
@@ -116,9 +124,13 @@
         </li>
         <li class="divider"></li>
       </mobile-menu>
+
     </side-bar>
     <div class="main-panel">
       <top-navbar></top-navbar>
+     <h1>
+    {{ usuariologueado }} 
+    </h1>
 
       <dashboard-content @click.native="toggleSidebar"> </dashboard-content>
 
@@ -133,12 +145,20 @@ import ContentFooter from "./ContentFooter.vue";
 import DashboardContent from "./Content.vue";
 import MobileMenu from "./MobileMenu";
 export default {
+  data() {
+      return {
+       usuariologueado:""
+      };
+    },
   components: {
     TopNavbar,
     ContentFooter,
     DashboardContent,
     MobileMenu,
   },
+  mounted(){
+      this.usuariologueado=localStorage.getItem('usuario')
+    },
   methods: {
     toggleSidebar() {
       if (this.$sidebar.showSidebar) {

@@ -20,7 +20,8 @@ import EditarCategoria from "@/pages/Categorias/EditarCategoria.vue";
 import VerCategoria from "@/pages/Categorias/VerCategoria.vue";
 
 import ListarPregunta from "@/pages/Preguntas/ListarPregunta.vue";
-import RegistrarPregunta from "@/pages/Preguntas/RegistrarPregunta.vue"
+import RegistrarPregunta from "@/pages/Preguntas/RegistrarPregunta.vue";
+import VerPregunta from "@/pages/Preguntas/VerPregunta.vue";
 
 import ListarRespuesta from "@/pages/Respuestas/ListarRespuesta.vue";
 import RegistrarRespuesta from "@/pages/Respuestas/RegistrarRespuesta.vue"
@@ -38,17 +39,21 @@ import GestionarRol from "@/pages/Roles/GestionarRol.vue";
 import RegistrarRol from "@/pages/Roles/RegistrarRol.vue";
 
 import ListarArchivo from "@/pages/Archivos/ListarArchivo.vue";
-import RegistrarArchivo from "@/pages/Archivos/RegistrarArchivo.vue"
+import RegistrarArchivo from "@/pages/Archivos/RegistrarArchivo.vue";
+import VerArchivo from "@/pages/Archivos/VerArchivos.vue"
 
 import SugerenciasArchivo from "@/pages/SugerenciasArchivo/SugerenciasArchivo.vue";
 import RegistrarSugerenciaArchivo from "@/pages/SugerenciasArchivo/RegistrarSugerenciaArchivo.vue"
 
 import PreguntaArchivo from "@/pages/PreguntasArchivos/PreguntaArchivo.vue"
-import RegistrarPreguntaArchivo from "@/pages/PreguntasArchivos/RegistrarPreguntaArchivo.vue"
+import RegistrarPreguntaArchivo from "@/pages/PreguntasArchivos/RegistrarPreguntaArchivo.vue";
+import VerPreguntasArchivo from "@/pages/PreguntasArchivos/VerPreguntasArchivo.vue";
+
 import Preguntar from "@/pages/VistasUsuario/Preguntar.vue"
 import MisPreguntas from "@/pages/VistasUsuario/MisPreguntas.vue"
 import SinRespuesta from "@/pages/VistasUsuario/SinRespuesta.vue"
 import RespuestaP from "@/pages/VistasUsuario/RespuestaP.vue";
+import Vistas from "@/pages/VistasUsuario/vistas.vue"
 
 
  
@@ -138,6 +143,12 @@ const routes = [
         name: "Registrarpregunta",
         component: RegistrarPregunta,
       },
+      {
+        path: "Verpregunta/:idPregunta",
+        name: "Verpregunta",
+        component: VerPregunta,
+      },
+      
 
       //inicio de rutas respuesta
       {
@@ -194,6 +205,12 @@ const routes = [
         name: "Registrararchivo",
         component: RegistrarArchivo,
       },
+      {
+        path: "Verarchivo",
+        name: "Verarchivo",
+        component: VerArchivo,
+      },
+      
 
       //inicio de rutas sugerencia archivo
       {
@@ -218,6 +235,12 @@ const routes = [
         name: "RegistrarpreguntaArchivo",
         component: RegistrarPreguntaArchivo,
       },
+      {
+        path: "VerpreguntaArchivo/:idPreguntaArchivo",
+        name: "VerpreguntaArchivo",
+        component: VerPreguntasArchivo ,
+      },
+
 
       {
         path: "preguntar",
@@ -240,7 +263,11 @@ const routes = [
         component:RespuestaP,
       
       },
-      
+      {
+        path: "vistas",
+        name: "vistas",
+        component: Vistas,
+      },
     ],
   },
   { path: "*", component: NotFound },

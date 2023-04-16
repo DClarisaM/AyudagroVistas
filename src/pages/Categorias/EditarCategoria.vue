@@ -49,7 +49,7 @@ export default {
   methods: {
     EditarCategoria() {
       // alert("aaaa")
-      axios.put("http://localhost:3000/editarCategoria/1")
+      axios.put("http://localhost:3000/editarCategoria/+ id")
         .then((res) => {
           //codigo
           console.log(res);
