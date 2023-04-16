@@ -14,7 +14,7 @@ import UserProfile from "@/pages/UserProfile.vue";
 import GestionarSubCategorias from "@/pages/Subcategorias/GestionarSubcategorias.vue";
 import RegistrarSubCategorias from "@/pages/Subcategorias/RegistrarSubcategorias.vue";
 
-import GestionarCategorias from "@/pages/Categorias/GestionarCategorias.vue"
+import GestionarCategorias from "@/pages/Categorias/GestionarCategorias.vue";
 import ListarPregunta from "@/pages/Preguntas/ListarPregunta.vue";
 import ListarRespuesta from "@/pages/Respuestas/ListarRespuesta.vue";
 import ListarUsuario from "@/pages/Usuarios/ListarUsuario.vue";
@@ -27,6 +27,7 @@ import SinRespuesta from "@/pages/VistasUsuario/SinRespuesta.vue"
 import RespuestaP from "@/pages/VistasUsuario/RespuestaP.vue"
 import ListaPreguntas from "@/pages/Profesional/ListaPreguntas.vue"
 import Inicio from "@/pages/Registro/Inicio.vue"
+import login from "@/pages/Registro/login.vue"
 // import dashlogin from "@/pages/Registro/dashlogin.vue"
 // import DashboardLogin from "@/layout/dashboard/DashboardLogin.vue";
 
@@ -38,6 +39,11 @@ const routes = [
     component: DashboardLayout,
     redirect: "/dashboard",
     children: [
+
+      {path:"logiin",
+       name:"logiin",
+       component:login,  
+      },
       {
         path: "dashboard",
         name: "INICIO",

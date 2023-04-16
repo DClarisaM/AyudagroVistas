@@ -13,9 +13,7 @@
               src="@/assets/img/faces/face-4.jpg"
               alt="..."
             />
-            <h4 class="title">
-              Danier
-            </h4>
+            <h4 class="title">Danier</h4>
           </div>
           
         </div>
