@@ -1,7 +1,6 @@
 <template>
-   <div>
-  <div class="col-6 offset-3">
-
+  <div>
+    <div class="col-6 offset-3">
     <card class="card-user">
        <div class="image">
          <img src="@/assets/img/background2.jpg" alt="..." />
@@ -20,62 +19,89 @@
          
        </div>
        <div class="text-center">
-          <p-button type="info" round @click.native.prevent="">
+          <!-- <p-button type="info" round @click.native.prevent="">
             Preguntar
-          </p-button>
+          </p-button> -->
+          <div class="col-8 offset-2">
+      <router-link
+      class="btn"
+      :to="{
+        name: 'preguntar'
+      }">
+        Preguntar
+    </router-link>
+    </div>
         </div>
      </card>
   </div>
 
 
-  <div class="col-10 offset-1">
-<card class="card-Pregunta">
-   <div class="imagen">
-     <img src="@/assets/img/background2.jpg" alt="..." />
-   </div>
-   <div>
-     <div class="Foto">
-       <img
-         class="Fusuario border-white"
-         src="@/assets/img/faces/face-4.jpg"
-         alt="..."
-       />
-       <h4 class="Nombre">
-         Danier
-       </h4>
-     </div>
-      <h5>como hacer el amarre a la dairita  </h5>
-   </div>
-   <div class="h2 mb-0">
-    <b-icon-arrow-up></b-icon-arrow-up>
-    <b-icon-exclamation-triangle-fill></b-icon-exclamation-triangle-fill>
-  </div>
-   
-  <div class="text-right">
-          <p-button type="info" @click.native="Responder()">
-            Responder
-          </p-button>
+    <div class="col-10 offset-1" v-for="pregunta in listaPreguntas">
+      <card class="card-Pregunta">
+        <div class="imagen">
+          <img src="@/assets/img/background.jpg" alt="..." />
         </div>
- </card>
-</div>
+        <div>
+          <div class="Foto">
+            <img class="Fusuario border-white" src="@/assets/img/faces/face-2.jpg" alt="..." />
+            <h4 class="Nombre">
+              Pregunta #{{ pregunta.id_pregunta }}
+            </h4>
+          </div>
+          <h5>{{ pregunta.descripcion }}</h5> 
+          <div class="text-muted">
+            <small>autor de la pregunta:{{ pregunta.usuario_id }}</small>
+            <small>subcategoria de la pregunta{{ pregunta.subcategoria_id }}</small>
+            <div class="text-right">
+              <!-- <p-button type="info" round @click.native.prevent="">
+                Responder
+              </p-button> -->
+              <router-link class="btn"
+              :to="{ name: 'RespuestaP', params: { preguntaId: pregunta.id_pregunta }}">
+                Responder
+              </router-link>
+            </div>
+  </div>
+          
+
+        </div>
+
+      </card>
+    </div>
 
 
-</div>
-
+  </div>
 </template>
 <script>
+import axios from "axios";
+
 export default {
+  components: {
+
+  },
   data() {
     return {
-      user: {
-     
-      },
+      listaPreguntas: [],
+
     };
   },
-  methods: {
-   Responder(){
-    this.$router.push("/RespuestaP");
-   }
+  mounted() {
+    this.listarPreguntas()
   },
+  methods: {
+    listarPreguntas() {
+      // alert("aaaa")
+      axios.get("http://localhost:3000/listarPregunta")
+        .then((res) => {
+          //codigo
+          this.listaPreguntas = res.data
+          console.log(res.data);
+        })
+        .catch((err) => {
+          //TODO mostrar ventana emergente sweetalert2 con el error
+          alert("error del servidor")
+        })
+    }
+  }
 };
 </script>

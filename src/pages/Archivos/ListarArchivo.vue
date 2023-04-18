@@ -1,16 +1,16 @@
 <template>
     <div class="row">
-
-      <div class="col-8 offset-2">
+             <!-- boton agregar -->
+    <div class="col-8 offset-2">
       <router-link
       class="btn"
       :to="{
-        name: 'Registrarusuario'
+        name: 'Registrararchivo'
       }">
         Agregar
     </router-link>
     </div>
-      
+    <!-- aqui termin el boton -->
   
       <div class="col-12">
       <card class="card-plain">
@@ -19,52 +19,45 @@
             <thead>
               <tr>
                 <th scope="col">Id</th>
-                <th scope="col">Nombre</th>
-                <th scope="col">Apellido</th>
-                <th scope="col">Correo_electronico</th>
-                <th scope="col">Telefono</th>
-                <th scope="col">Direccion</th>
-                <th scope="col">Estado</th>
+                <th scope="col">Nombre Archivo</th>
+                <th scope="col">Url</th>
                 <th scope="col">Acciones</th>
               </tr>
             </thead>
             <tbody>
-              <tr v-for="usuario in listaUsuarios">
-                <th scope="row">{{ usuario.id_usuario }}</th>
-                <td>{{ usuario.nombre }}</td>
-                <td>{{ usuario.apellido }}</td>
-                <td>{{ usuario.correo_electronico }}</td>
-                <td>{{ usuario.telefono }}</td>
-                <td>{{ usuario.direccion }}</td>
-                <td>{{ usuario.estado }}</td>
+              <tr v-for="archivo in listaArchivos">
+                <th scope="row">{{ archivo.id_archivo }}</th>
+                <td>{{ archivo.nombre_archivo }}</td>
+                <td>{{ archivo.url }}</td>
                 <td>
-                  <button class="btn btn-sm bg-primary text-white">
+                  <router-link class="btn bg-primary text-white" :to="{name: 'Verarchivo', params: {idArchivo: archivo.id_archivo} }">
                     <i class="fas fa-eye"></i>
-                  </button>
-                  <button class="btn btn-sm bg-success text-white">
+                  </router-link>
+                  <router-link class="btn bg-success text-white">
                     <i class="fas fa-edit"></i>
-                  </button>
-                  <button class="btn btn-sm bg-danger text-white" @click="eliminar()">
+                  </router-link>
+                  <button class="btn  bg-danger text-white" @click="eliminar()">
                     <i class="fas fa-trash-alt"></i>
                   </button>
-
-
+  
+  
                 </td>
               </tr>
-
+  
             </tbody>
           </table>
-         
+          
         </div>
       </card>
     </div>
     </div>
   </template>
   <script>
-
-
+  
+  
   import axios from 'axios';
   import Swal from 'sweetalert2'
+  
   
   export default {
     components: {
@@ -72,21 +65,21 @@
     },
     data() {
       return {
-        listaUsuarios:[],
+        listaArchivos:[],
        
       };
     },
     mounted(){
-      this.listarUsuarios(),
+      this.listarArchivos(),
       eliminar()
     },
     methods: {
-      listarUsuarios() {
-        //  alert("jahahsa")
-        axios.get("http://localhost:3000/listarUsuario")
+      listarArchivos() {
+         //alert("jahahsa")
+        axios.get("http://localhost:3000/listarArchivo")
         .then((res) => {
   
-          this.listaUsuarios = res.data
+          this.listaArchivos = res.data
           console.log(res.data);
         })
         .catch((err) => {
@@ -113,7 +106,7 @@ swalWithBootstrapButtons.fire({
   reverseButtons: true
 }).then((result) => {
   if (result.isConfirmed) {
-    axios.delete("http://localhost:3000/eliminarUsuario/2")
+    axios.delete("http://localhost:3000/eliminarArchivo/2")
     swalWithBootstrapButtons.fire(
       'Eliminado!',
       'Se elimino con exito.',
@@ -136,3 +129,4 @@ swalWithBootstrapButtons.fire({
   };
   </script>
   <style></style>
+  

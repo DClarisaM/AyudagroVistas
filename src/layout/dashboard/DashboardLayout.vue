@@ -4,31 +4,30 @@
       <template slot="links">
         <sidebar-link to="/dashboard" name="Ayudagro" icon="ti-panel" />
         <sidebar-link to="/stats" name="Editar Perfil" icon="ti-user" />
-
-
-
-
-
         <sidebar-link to="/categorias" name="Gestionar Categorias" icon="ti-view-list-alt" />
         <sidebar-link to="/subcategorias" name="Gestionar Subcategorias" icon="ti-view-list-alt" />
         <sidebar-link to="/usuario" name="Listar Usuario" icon="ti-view-list-alt" />
         <sidebar-link to="/sugerencias" name="Listar Sugerencias" icon="ti-view-list-alt" />
         <sidebar-link to="/valorR" name="Listar Valor_R" icon="ti-view-list-alt" />
-
         <sidebar-link to="/pregunta" name="Listar Pregunta" icon="ti-view-list-alt" />
         <sidebar-link to="/respuesta" name="Listar Respuesta" icon="ti-view-list-alt" />
         <sidebar-link to="/rol" name="Gestionar Rol" icon="ti-view-list-alt" />
-        <sidebar-link to="/preguntar" name="preguntar" icon="ti-view-list-alt" />
-        <sidebar-link to="/MisPreguntas" name="Mis Preguntas" icon="ti-view-list-alt" />
-        <sidebar-link to="/SinRespuesta" name="Sin Respuesta" icon="ti-view-list-alt" />
         <sidebar-link to="/ListaPreguntas" name="preguntas" icon="ti-view-list-alt" />
         <sidebar-link to="/Inicio" name="Login" icon="ti-view-list-alt" />
-
+        <sidebar-link to="/archivo" name="Gestionar Archivo" icon="ti-view-list-alt" />
+        <sidebar-link to="/sugerenciaArchivo" name="Listar Sugerencias Archivo" icon="ti-view-list-alt" />
+        <sidebar-link to="/preguntaArchivo" name="Listar Pregunta Archivo" icon="ti-view-list-alt" />
+        <sidebar-link v-if="usuariologueado != 1" to="/preguntar" name="preguntar" icon="ti-view-list-alt" />
+        <sidebar-link to="/MisPreguntas" name="MisPreguntas" icon="ti-view-list-alt" />
+        <sidebar-link to="/SinRespuesta" name="SinRespuesta" icon="ti-view-list-alt" />
+        <sidebar-link to="/vistas" name="vistas" icon="ti-view-list-alt" />
         />
 
 
       </template>
+
       <mobile-menu>
+
         <li class="nav-item">
           <a class="nav-link">
             <i class="ti-panel"></i>
@@ -50,9 +49,13 @@
         </li>
         <li class="divider"></li>
       </mobile-menu>
+
     </side-bar>
     <div class="main-panel">
       <top-navbar></top-navbar>
+      <h1>
+        {{ usuariologueado }}
+      </h1>
 
       <!--<dashboard-content @click.native="toggleSidebar"> </dashboard-content>-->
       <div class="content">
@@ -74,11 +77,19 @@ import ContentFooter from "./ContentFooter.vue";
 import DashboardContent from "./Content.vue";
 import MobileMenu from "./MobileMenu";
 export default {
+  data() {
+    return {
+      usuariologueado: ""
+    };
+  },
   components: {
     TopNavbar,
     ContentFooter,
     DashboardContent,
     MobileMenu,
+  },
+  mounted() {
+    this.usuariologueado = localStorage.getItem('usuario')
   },
   methods: {
     toggleSidebar() {
@@ -87,8 +98,8 @@ export default {
       }
     },
   },
-  mounted(){
-   localStorage.setItem('usuario')
+  mounted() {
+    localStorage.setItem('usuario')
   }
 };
 </script>
