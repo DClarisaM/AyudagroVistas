@@ -6,12 +6,12 @@
         <div class="row">
           <div class="col-md-6">
             <fg-input type="text" label="Nombre" 
-             id="nombre" placeholder="Danier" v-model="user.nombre">
+             id="nombre" placeholder="Danier" v-model="user.nombre" >
             </fg-input>
           </div>
           <div class="col-md-6">
             <fg-input type="text" label="Apellido"
-            id="apellido" placeholder="Trochez" v-model="user.apellido">
+            id="apellido" placeholder="Trochez" v-model="user.apellido" >
             </fg-input>
           </div>
         </div>
@@ -19,36 +19,36 @@
         <div class="row">
           <div class="col-md-6">
             <fg-input type="text" label="Correo Electronico"
-            id="email" placeholder="gmail.com" v-model="user.email">
+            id="email" placeholder="gmail.com" v-model="user.correo_electronico" >
             </fg-input>
           </div>
 
           <div class="col-md-6">
             <fg-input type="text" label="Contraseña"
-            id="contrasena" placeholder="******" v-model="user.contrasena">
+            id="contrasena" placeholder="******" v-model="user.contrasena" >
             </fg-input>
           </div>
           
           <div class="col-md-6">
-            <fg-input type="text" label="Repetir Contraseña" placeholder="******" v-model="user.contraseña2">
+            <fg-input type="text" label="Repetir Contraseña" placeholder="******" >
             </fg-input>
           </div>
           <div class="col-md-6">
             <fg-input type="text" label="Telefono" 
-            id="telefono" placeholder="#####" v-model="user.telefono">
+            id="telefono" placeholder="#####" v-model="user.telefono" >
             </fg-input>
           </div>
           <div class="col-md-6">
             <fg-input type="text" label="Direccion" 
-            id="direccion" placeholder="Cl-#" v-model="user.direccion">
+            id="direccion" placeholder="Cl-#" v-model="user.direccion" >
             </fg-input>
           </div>
         </div>
 
         <div class="text-center">
-          <p-button type="info" round @click.native.prevent="CrearUser(g)">
-            Registrar Usuario
-          </p-button>
+          <button class="btn" @click="CrearUser()">
+                    Registrar 
+                </button>
         </div>
         <div class="clearfix"></div>
       </form>
@@ -56,35 +56,41 @@
   </card>
 </template>
 <script>
-import axios from 'axios'
+import axios from "axios";
 export default {
   name:"Inicio",
-  data() {
+  data(){
     return {
       user: {
-        rol_id:1,
+        rol: 1,
         nombre: "",
-        apelllido: "",
-        email: "",
+        apellido: "",
+        correo_electronico: "",
         contrasena: "",
         telefono: "",
         direccion: "",
+        estado:"pendejo",
       },
-    }
+    };
   },
   methods: {
-    updateProfile() {
-      alert("Your data: " + JSON.stringify(this.user));
-    },
-    CrearUser(){
-      alert("registro exitoso")
-      axios.post("https://localhost:3000/nuevoUser", this.user).then( respose=>{
-          console.log(respose)
-        }
-      )
-      this.$router.push("/");
+    // updateProfile() {
+    //   alert("Your data: " + JSON.stringify(this.user));
+    // },
+    CrearUser() {
+      //console.log(this.user);
+     alert("registro exitoso");
+      axios.post("http://localhost:3000/nuevoUser", this.user)
+         .then((res) => {
+           console.log(res);
+         })
+        .catch((err) => {
+          console.log(err);
+        });
+
+      // this.$router.push("/");
     },
   },
-}
+};
 </script>
 <style></style>

@@ -9,7 +9,7 @@
               type="text"
               label="Correo Electronico"
               placeholder="gmail.com"
-              v-model="user.gmail"
+              v-model="user.correo_electronico"
             >
             </fg-input>
           </div>
@@ -19,14 +19,14 @@
               type="text"
               label="Contraseña"
               placeholder="******"
-              v-model="user.contraseña"
+              v-model="user.contrasena"
             >
             </fg-input>
           </div>
         </div>
 
         <div class="text-center">
-          <p-button type="info" round @click.native.prevent="updateProfile">
+          <p-button type="info" round @click.native.prevent="login()" >
             INICIAR SECION
           </p-button>
         </div>
@@ -36,16 +36,15 @@
   </card>
 </template>
 <script>
+import axios from "axios";
+
 export default {
   data() {
     return {
       user: {
-        nombre: "",
-        apelllido: "",
-        email: "",
-        contraseña: "",
-        telefono: "",
-        direccion: "",
+        rol: 1,
+        correo_electronico: "",
+        contrasena: "",
       },
     };
   },
@@ -54,8 +53,15 @@ export default {
       alert("Your data: " + JSON.stringify(this.user));
     },
 
-    newUser(){
-
+    login() {
+      alert("Inicio exitoso");
+      axios.post("https://localhost:3000/login", this.user)
+        .then((res) => {
+          console.log(res);
+        })
+        .catch((err) => {
+          alert(err+"error del servidor");
+        });
     },
   },
 };
