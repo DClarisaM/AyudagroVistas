@@ -1,4 +1,4 @@
-<template>
+<!-- <template>
     <div>
 
     {{ user }}
@@ -29,7 +29,7 @@
               
   
             </div>
-          </div>
+          </div> -->
     
           <!-- <div class="row">
             <div class="col-md-6">
@@ -54,7 +54,7 @@
           </div> -->
           
   
-          <div class="text-center">
+          <!-- <div class="text-center">
             <button type="info" round @click="iniciarSesion()">
               Iniciar Sesion
             </button>
@@ -105,5 +105,5 @@ import { stringify } from 'querystring';
     },
   };
   </script>
-  <style></style>
+  <style></style> -->
   

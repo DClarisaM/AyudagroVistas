@@ -28,7 +28,7 @@ import RegistrarUsuario from "@/pages/Usuarios/RegistrarUsuario.vue"
 import ListarSugerencias from "@/pages/Sugerencias/ListarSugerencias.vue";
 import RegistrarSugerencias from "@/pages/Sugerencias/RegistrarSugerencias.vue"
 import ListarValoroR from "@/pages/ValoresR/ListarValoroR.vue";
- import RegistrarValorR from "@/pages/ValoresR/RegistrarValorR.vue"
+//  import RegistrarValorR from "@/pages/ValoresR/RegistrarValorR.vue"
 import GestionarRol from "@/pages/Roles/GestionarRol.vue";
 import RegistrarRol from "@/pages/Roles/RegistrarRol.vue";
 import ListarArchivo from "@/pages/Archivos/ListarArchivo.vue";

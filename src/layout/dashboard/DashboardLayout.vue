@@ -14,6 +14,7 @@
         <sidebar-link to="/rol" name="Gestionar Rol" icon="ti-view-list-alt" />
         <sidebar-link to="/ListaPreguntas" name="preguntas" icon="ti-view-list-alt" />
         <sidebar-link to="/Inicio" name="Login" icon="ti-view-list-alt" />
+        <sidebar-link to="/login" name="inicio" icon="ti-view-list-alt" />
         <sidebar-link to="/archivo" name="Gestionar Archivo" icon="ti-view-list-alt" />
         <sidebar-link to="/sugerenciaArchivo" name="Listar Sugerencias Archivo" icon="ti-view-list-alt" />
         <sidebar-link to="/preguntaArchivo" name="Listar Pregunta Archivo" icon="ti-view-list-alt" />
@@ -54,7 +55,7 @@
     <div class="main-panel">
       <top-navbar></top-navbar>
       <h1>
-        {{ usuariologueado }}
+
       </h1>
 
       <!--<dashboard-content @click.native="toggleSidebar"> </dashboard-content>-->
@@ -79,7 +80,7 @@ import MobileMenu from "./MobileMenu";
 export default {
   data() {
     return {
-      usuariologueado: ""
+
     };
   },
   components: {
@@ -88,9 +89,7 @@ export default {
     DashboardContent,
     MobileMenu,
   },
-  mounted() {
-    this.usuariologueado = localStorage.getItem('usuario')
-  },
+
   methods: {
     toggleSidebar() {
       if (this.$sidebar.showSidebar) {
@@ -98,8 +97,6 @@ export default {
       }
     },
   },
-  mounted() {
-    localStorage.setItem('usuario')
-  }
+
 };
 </script>

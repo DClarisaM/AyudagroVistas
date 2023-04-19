@@ -8,7 +8,7 @@
         Agregar
       </router-link>
     </div>
-    <div class="col-8 offset-2">
+    <!-- <div class="col-8 offset-2">
       <button class="btn" @click="setlocalstorage()">
         set
     </button>
@@ -18,7 +18,7 @@
       <button class="btn" @click="obtenerlocalstorage()">
         local
     </button>
-    </div>
+    </div> -->
     {{ userloger }}
     
     <!-- aqui termina el boton -->

@@ -1,22 +1,17 @@
 <template>
   <div>
     <div class="col-8 offset-2">
-      <button class="btn" @click="obtenerlocalstorage()">
-        local
-    </button>
     </div>
-        {{ userloger }}
-
  <div class="col-6 offset-3">
     <card class="card-user">
       <div class="image">
-        <img src="@/assets/img/background.jpg" alt="..." />
+        <img src="@/assets/img/background2.jpg" alt="..." />
       </div>
       <div>
         <div class="author">
           <img
             class="avatar border-white"
-            src="@/assets/img/faces/face-2.jpg"
+            src="@/assets/img/faces/face-4.jpg"
             alt="..."
           />
           <h4 class="title">
@@ -112,7 +107,6 @@ export default {
         
         
       },
-      userloger:"",
 
     };
   },
@@ -144,10 +138,6 @@ export default {
           alert("error del servidor")
         })
     },
-    obtenerlocalstorage(){
-      alert("jajajaj")
-      this.userloger = localStorage.getItem('usuario')
-    }
   }
 };
 </script>

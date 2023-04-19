@@ -18,23 +18,23 @@
 
         <div class="row">
           <div class="col-md-6">
-            <fg-input type="text" label="Correo Electronico"
-            id="email" placeholder="gmail.com" v-model="user.email">
+            <fg-input type="email" label="Correo Electronico"
+            id="email" placeholder="gmail.com" v-model="user.correo_electronico">
             </fg-input>
           </div>
 
           <div class="col-md-6">
-            <fg-input type="text" label="Contraseña"
+            <fg-input type="password" label="Contraseña"
             id="contrasena" placeholder="******" v-model="user.contrasena">
             </fg-input>
           </div>
           
           <div class="col-md-6">
-            <fg-input type="text" label="Repetir Contraseña" placeholder="******" v-model="user.contraseña2">
+            <fg-input type="password" label="Repetir Contraseña" placeholder="******">
             </fg-input>
           </div>
           <div class="col-md-6">
-            <fg-input type="text" label="Telefono" 
+            <fg-input type="num" label="Telefono" 
             id="telefono" placeholder="#####" v-model="user.telefono">
             </fg-input>
           </div>
@@ -46,11 +46,11 @@
         </div>
 
         <div class="text-center">
-          <p-button type="info" round @click.native.prevent="CrearUser(g)">
+          <p-button type="info" @click="CrearUser()">
             Registrar Usuario
           </p-button>
         </div>
-        <div class="clearfix"></div>
+        
       </form>
     </div>
   </card>
@@ -62,24 +62,28 @@ export default {
   data() {
     return {
       user: {
-        rol_id:1,
+        rol_id: 1,
         nombre: "",
-        apelllido: "",
-        email: "",
+        apellido: "",
+        correo_electronico: "",
         contrasena: "",
         telefono: "",
         direccion: "",
+        estado: "activo",
       },
     }
   },
   methods: {
-    updateProfile() {
-      alert("Your data: " + JSON.stringify(this.user));
-    },
+    // updateProfile() {
+    //   alert("Your data: " + JSON.stringify(this.user));
+    // },
     CrearUser(){
-      alert("registro exitoso")
-      axios.post("https://localhost:3000/nuevoUser", this.user).then( respose=>{
-          console.log(respose)
+      alert(aaaa)
+      axios.post("https://localhost:3000/nuevoUser", this.user)
+      .then( response=>{
+          console.log(response)
+
+          alert("registro exitoso")
         }
       )
       this.$router.push("/");
