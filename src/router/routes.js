@@ -46,7 +46,9 @@ import RespuestaP from "@/pages/VistasUsuario/RespuestaP.vue";
 import Vistas from "@/pages/VistasUsuario/vistas.vue"
 import login from "@/pages/Registro/login.vue"
 import Inicio from "@/pages/Registro/Inicio.vue"
-
+import CodigoRecuperacion from "@/pages/Registro/CodigoRecuperacion.vue"
+import Verificacion from "@/pages/Registro/Verificacion.vue"
+import NuevaContraseña from "@/pages/Registro/NuevaContraseña.vue"
 
 
  
@@ -276,6 +278,21 @@ const routes = [
         path: "Inicio",
         name: "Inicio",
         component: Inicio,
+      },
+      {
+        path: "CodigoRecuperacion",
+        name: ".",
+        component: CodigoRecuperacion,
+      },
+      {
+        path: "Verificacion",
+        name: "Verificacion",
+        component:Verificacion ,
+      },
+      {
+        path: "NuevaContraseña",
+        name: "",
+        component:  NuevaContraseña,
       },
      
 

@@ -4,8 +4,8 @@
       <template slot="links">
         <sidebar-link to="/dashboard" name="Ayudagro" icon="ti-panel" />
         <sidebar-link to="/stats" name="Editar Perfil" icon="ti-user" />
-        <sidebar-link to="/categorias" name="Gestionar Categorias" icon="ti-view-list-alt" />
-        <sidebar-link to="/subcategorias" name="Gestionar Subcategorias" icon="ti-view-list-alt" />
+        <sidebar-link to="/categorias" name="Gestionar Categorias" icon="ti-direction" />
+        <sidebar-link to="/subcategorias" name="Gestionar Subcategorias" icon="ti-direction-alt" />
         <sidebar-link to="/usuario" name="Listar Usuario" icon="ti-view-list-alt" />
         <sidebar-link to="/sugerencias" name="Listar Sugerencias" icon="ti-view-list-alt" />
         <sidebar-link to="/valorR" name="Listar Valor_R" icon="ti-view-list-alt" />
@@ -13,16 +13,19 @@
         <sidebar-link to="/respuesta" name="Listar Respuesta" icon="ti-view-list-alt" />
         <sidebar-link to="/rol" name="Gestionar Rol" icon="ti-view-list-alt" />
         <sidebar-link to="/ListaPreguntas" name="preguntas" icon="ti-view-list-alt" />
-        <sidebar-link to="/Inicio" name="Login" icon="ti-view-list-alt" />
+        <!-- <sidebar-link to="/Inicio" name="Login" icon="ti-view-list-alt" /> -->
         <sidebar-link to="/login" name="inicio" icon="ti-view-list-alt" />
         <sidebar-link to="/archivo" name="Gestionar Archivo" icon="ti-view-list-alt" />
         <sidebar-link to="/sugerenciaArchivo" name="Listar Sugerencias Archivo" icon="ti-view-list-alt" />
         <sidebar-link to="/preguntaArchivo" name="Listar Pregunta Archivo" icon="ti-view-list-alt" />
-        <sidebar-link v-if="usuariologueado != 1" to="/preguntar" name="preguntar" icon="ti-view-list-alt" />
+        <sidebar-link to="/preguntar" name="preguntar" icon="ti-view-list-alt" />
         <sidebar-link to="/MisPreguntas" name="MisPreguntas" icon="ti-view-list-alt" />
         <sidebar-link to="/SinRespuesta" name="SinRespuesta" icon="ti-view-list-alt" />
         <sidebar-link to="/vistas" name="vistas" icon="ti-view-list-alt" />
-        />
+        <!-- <sidebar-link to="/CodigoRecuperacion" name="Codigo" icon="ti-view-list-alt" />
+        <sidebar-link to="/Verificacion" name="Verificacion" icon="ti-view-list-alt" />
+        <sidebar-link to="/NuevaContraseña" name="Contraseña" icon="ti-view-list-alt" /> -->
+        
 
 
       </template>
