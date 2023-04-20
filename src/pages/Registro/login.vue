@@ -42,7 +42,6 @@ export default {
   data() {
     return {
       user: {
-        rol: 1,
         correo_electronico: "",
         contrasena: "",
       },
@@ -54,10 +53,14 @@ export default {
     // },
 
     login() {
+         let json={
+             "usuario":this.correo_electronico,
+             "password":this.contrasena,
+         };
       alert("Inicio exitoso");
-      axios.post("https://localhost:3000/login", this.user)
-        .then((res) => {
-          console.log(res);
+      axios.post("http://localhost:3000/login", json)
+        .then((data) => {
+          console.log(data);
         })
         .catch((err) => {
           alert(err+"error del servidor");
