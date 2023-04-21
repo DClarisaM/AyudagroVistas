@@ -26,7 +26,7 @@
         </div>
 
         <div class="text-center">
-          <p-button type="info" round @click.native.prevent="login()" >
+          <p-button type="info" round @click.native.prevent="login()">
             INICIAR SECION
           </p-button>
         </div>
@@ -53,18 +53,19 @@ export default {
     // },
 
     login() {
-         let json={
-             "usuario":this.correo_electronico,
-             "password":this.contrasena,
-         };
-      alert("Inicio exitoso");
-      axios.post("http://localhost:3000/login", json)
-        .then((data) => {
-          console.log(data);
-        })
-        .catch((err) => {
-          alert(err+"error del servidor");
-        });
+      axios.post("http://localhost:3000/login", this.user).then((res) => {
+        if (res.data.status == "error") {
+          console.log(res.data.msg);
+          alert("yes");
+          //alert(res.data.msg);
+        } else {
+          alert("Bienvenido a Ayudagro");
+          this.$router.push("/");
+
+          localStorage.setItem("usuarios", JSON.stringify(res.data.user));
+          //console.log(res.data);
+        }
+      });
     },
   },
 };
