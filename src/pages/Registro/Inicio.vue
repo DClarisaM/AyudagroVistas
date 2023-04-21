@@ -57,6 +57,8 @@
             <fg-input
               type="text"
               label="Repetir Contraseña"
+              id="password"
+              v-model="user.password"
               placeholder="******"
               required
             >
@@ -109,6 +111,7 @@ export default {
         telefono: "",
         direccion: "",
         estado: "activo",
+        password: "",
       },
     };
   },
@@ -117,19 +120,22 @@ export default {
     //   alert("Your data: " + JSON.stringify(this.user));
     // },
     CrearUser() {
-      //console.log(this.user);
-
-      // eslint-disable-next-line prettier/prettier
-      axios
-        .post("http://localhost:3000/nuevoUser", this.user)
-        .then((res) => {
+      // console.log(this.user.password);
+      if (this.user.password == this.user.contrasena) {
+        axios.post("http://localhost:3000/nuevoUser", this.user).then((res) => {
           console.log(res);
-        })
-        .catch((err) => {
-          console.log(err);
+          alert("registro exitoso");
+          this.$router.push("/");
         });
-      // this.$router.push("/");
-      alert("registro exitoso");
+      } else {
+        alert("contraseñas no coinciden");
+      }
+
+      //   .catch((err) => {
+      //     console.log(err);
+      //   });
+      // // this.$router.push("/");
+      // alert("registro exitoso");
     },
   },
 };
