@@ -115,6 +115,7 @@ export default {
       },
     };
   },
+  
   methods: {
     // updateProfile() {
     //   alert("Your data: " + JSON.stringify(this.user));
@@ -125,7 +126,7 @@ export default {
         axios.post("http://localhost:3000/nuevoUser", this.user).then((res) => {
           console.log(res);
           alert("registro exitoso");
-          this.$router.push("/");
+          this.$router.push("/login");
         });
       } else {
         alert("contraseñas no coinciden");

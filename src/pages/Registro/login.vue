@@ -1,6 +1,6 @@
 <!-- eslint-disable prettier/prettier -->
 <template>
-  <card class="card" title="Inicio de secion">
+  <card class="card" title="Inicio de sesión">
     <div>
       <form @submit.prevent>
         <div class="row">
@@ -27,7 +27,7 @@
 
         <div class="text-center">
           <p-button type="info" round @click.native.prevent="login()">
-            INICIAR SECION
+            Iniciar sesión
           </p-button>
         </div>
         <div class="clearfix"></div>
@@ -55,15 +55,18 @@ export default {
     login() {
       axios.post("http://localhost:3000/login", this.user).then((res) => {
         if (res.data.status == "error") {
-          console.log(res.data.msg);
-          alert("yes");
-          //alert(res.data.msg);
+          //  console.log(res.data.msg);
+          alert(res.data.msg);
         } else {
+
+
+
+          
           alert("Bienvenido a Ayudagro");
           this.$router.push("/");
 
           localStorage.setItem("usuarios", JSON.stringify(res.data.user));
-          //console.log(res.data);
+          console.log(res.data);
         }
       });
     },
