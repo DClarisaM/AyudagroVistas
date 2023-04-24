@@ -22,35 +22,30 @@ import ListaPreguntas from "@/pages/Profesional/ListaPreguntas.vue";
 import RegistrarPregunta from "@/pages/Preguntas/RegistrarPregunta.vue";
 import VerPregunta from "@/pages/Preguntas/VerPregunta.vue";
 import ListarRespuesta from "@/pages/Respuestas/ListarRespuesta.vue";
-import RegistrarRespuesta from "@/pages/Respuestas/RegistrarRespuesta.vue"
+import RegistrarRespuesta from "@/pages/Respuestas/RegistrarRespuesta.vue";
 import ListarUsuario from "@/pages/Usuarios/ListarUsuario.vue";
-import RegistrarUsuario from "@/pages/Usuarios/RegistrarUsuario.vue"
+import RegistrarUsuario from "@/pages/Usuarios/RegistrarUsuario.vue";
 import ListarSugerencias from "@/pages/Sugerencias/ListarSugerencias.vue";
-import RegistrarSugerencias from "@/pages/Sugerencias/RegistrarSugerencias.vue"
+import RegistrarSugerencias from "@/pages/Sugerencias/RegistrarSugerencias.vue";
 import ListarValoroR from "@/pages/ValoresR/ListarValoroR.vue";
- import RegistrarValorR from "@/pages/ValoresR/RegistrarValorR.vue"
+import RegistrarValorR from "@/pages/ValoresR/RegistrarValorR.vue";
 import GestionarRol from "@/pages/Roles/GestionarRol.vue";
 import RegistrarRol from "@/pages/Roles/RegistrarRol.vue";
 import ListarArchivo from "@/pages/Archivos/ListarArchivo.vue";
 import RegistrarArchivo from "@/pages/Archivos/RegistrarArchivo.vue";
-import VerArchivo from "@/pages/Archivos/VerArchivos.vue"
+import VerArchivo from "@/pages/Archivos/VerArchivos.vue";
 import SugerenciasArchivo from "@/pages/SugerenciasArchivo/SugerenciasArchivo.vue";
-import RegistrarSugerenciaArchivo from "@/pages/SugerenciasArchivo/RegistrarSugerenciaArchivo.vue"
-import PreguntaArchivo from "@/pages/PreguntasArchivos/PreguntaArchivo.vue"
+import RegistrarSugerenciaArchivo from "@/pages/SugerenciasArchivo/RegistrarSugerenciaArchivo.vue";
+import PreguntaArchivo from "@/pages/PreguntasArchivos/PreguntaArchivo.vue";
 import RegistrarPreguntaArchivo from "@/pages/PreguntasArchivos/RegistrarPreguntaArchivo.vue";
 import VerPreguntasArchivo from "@/pages/PreguntasArchivos/VerPreguntasArchivo.vue";
-import Preguntar from "@/pages/VistasUsuario/Preguntar.vue"
-import MisPreguntas from "@/pages/VistasUsuario/MisPreguntas.vue"
-import SinRespuesta from "@/pages/VistasUsuario/SinRespuesta.vue"
+import Preguntar from "@/pages/VistasUsuario/Preguntar.vue";
+import MisPreguntas from "@/pages/VistasUsuario/MisPreguntas.vue";
+import SinRespuesta from "@/pages/VistasUsuario/SinRespuesta.vue";
 import RespuestaP from "@/pages/VistasUsuario/RespuestaP.vue";
-import Vistas from "@/pages/VistasUsuario/vistas.vue"
-import login from "@/pages/Registro/login.vue"
-import Inicio from "@/pages/Registro/Inicio.vue"
-
-
-
- 
-
+import Vistas from "@/pages/VistasUsuario/vistas.vue";
+import login from "@/pages/Registro/login.vue";
+import Inicio from "@/pages/Registro/Inicio.vue";
 
 const routes = [
   {
@@ -58,11 +53,7 @@ const routes = [
     component: DashboardLayout,
     redirect: "/dashboard",
     children: [
-
-      {path:"login",
-       name:"login",
-       component:login,  
-      },
+      { path: "login", name: "login", component: login },
       {
         path: "dashboard",
         name: "INICIO",
@@ -73,8 +64,6 @@ const routes = [
         name: "Perfil",
         component: UserProfile,
       },
-
-
 
       // {
       //   path: "categorias",
@@ -103,7 +92,6 @@ const routes = [
         name: "Vercategoria",
         component: VerCategoria,
       },
-
 
       //inicio de rutas de subcategorias
       {
@@ -146,7 +134,6 @@ const routes = [
         name: "Verpregunta",
         component: VerPregunta,
       },
-      
 
       //inicio de rutas respuesta
       {
@@ -178,7 +165,6 @@ const routes = [
         name: "valorR",
         component: ListarValoroR,
       },
-      
 
       //aqui inicia las rutas de rol
 
@@ -209,7 +195,6 @@ const routes = [
         name: "Verarchivo",
         component: VerArchivo,
       },
-      
 
       //inicio de rutas sugerencia archivo
       {
@@ -223,7 +208,7 @@ const routes = [
         component: RegistrarSugerenciaArchivo,
       },
 
-       //inicio de rutas pregunta archivo
+      //inicio de rutas pregunta archivo
       {
         path: "preguntaArchivo",
         name: "preguntaArchivo",
@@ -237,9 +222,8 @@ const routes = [
       {
         path: "VerpreguntaArchivo/:idPreguntaArchivo",
         name: "VerpreguntaArchivo",
-        component: VerPreguntasArchivo ,
+        component: VerPreguntasArchivo,
       },
-
 
       {
         path: "preguntar",
@@ -259,8 +243,7 @@ const routes = [
       {
         path: "RespuestaP/:preguntaId",
         name: "RespuestaP",
-        component:RespuestaP,
-      
+        component: RespuestaP,
       },
       {
         path: "vistas",
@@ -277,8 +260,6 @@ const routes = [
         name: "Inicio",
         component: Inicio,
       },
-     
-
     ],
   },
   // {
@@ -291,7 +272,6 @@ const routes = [
   //       name: "dashlogin",
   //       component: dashlogin,
   //     },
-      
 
   //   ],
   // },

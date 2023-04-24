@@ -11,9 +11,17 @@
           alt="..."
         />
         <h4 class="title">
-          Danier
+          {{ us.nombre +" " +us.apellido }}
         </h4>
+        <label for="">De:</label>
+        <h4 class="title">{{ us.direccion }}</h4>
+        <label for="">Telefono::</label>
+        <h4 class="title">{{ us.telefono }}</h4>
+        <label for="">E-mail:</label>
+        <h4 class="title">{{ us.correo_electronico
+         }}</h4>
       </div>
+    
      
     </div>
     <hr />
@@ -27,7 +35,11 @@ export default {
       details: [
        
       ],
+      us:"",
     };
+  },
+  mounted(){
+    this.us = JSON.parse(localStorage.getItem("usuarios"));
   },
   methods: {
     

@@ -7,7 +7,7 @@
             <fg-input
               type="text"
               label="Nombre"
-              placeholder="Danier"
+             placeholder="erazo"
               v-model="user.nombre"
             >
             <button class="btn btn-sm bg-success text-white">
@@ -46,7 +46,7 @@
               type="text"
               label="Dirección"
               placeholder="Popayan"
-              v-model="user.direccón"
+              v-model="user.direccin"
             >
             </fg-input>
           </div>
@@ -75,7 +75,11 @@ export default {
         telefono: "",
         estado: "",
       },
+      us:"",
     };
+  },
+  mounted(){
+    this.us = JSON.parse(localStorage.getItem("usuarios"));
   },
   methods: {
     updateProfile() {

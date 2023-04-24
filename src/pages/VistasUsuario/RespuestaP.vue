@@ -13,6 +13,7 @@
              src="@/assets/img/faces/face-2.jpg"
              alt="..."
            />
+           <h4 class="title">{{ us.nombre }}</h4>
            <div>
            <h4 v-for="pregunta in listaPregunta">
               {{ pregunta.descripcion  }}
@@ -98,7 +99,8 @@ export default {
       respuesta: {
         descripcion: "",
       },
-      pregunta:[]
+      pregunta:[],
+      us:"",
 
     };
   },
@@ -106,6 +108,8 @@ export default {
     this.idPregunta = this.$route.params.preguntaId
     await this.listarRespuestas(),
     await this.verPregunta()
+
+    this.us = JSON.parse(localStorage.getItem("usuarios"));
   },
   methods: {
     listarRespuestas() {

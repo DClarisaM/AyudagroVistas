@@ -43,7 +43,7 @@
 
           <div class="col-md-6">
             <fg-input
-              type="text"
+              type="password"
               label="Contraseña"
               id="contrasena"
               placeholder="******"
@@ -55,7 +55,7 @@
 
           <div class="col-md-6">
             <fg-input
-              type="text"
+              type="password"
               label="Repetir Contraseña"
               id="password"
               v-model="user.password"
@@ -98,6 +98,7 @@
 </template>
 <script>
 import axios from "axios";
+import vuejsStorage from 'vuejs-storage';
 export default {
   name: "Inicio",
   data() {
