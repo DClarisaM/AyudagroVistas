@@ -32,7 +32,7 @@
                 </textarea>
                 <div class="text-center">
                 <button class="btn btn-primary" @click="nuevaRespuesta()" >
-                    Preguntar
+                    Responder
                 </button>
                 </div>
             </div>
@@ -144,8 +144,8 @@ export default {
 
       
       nuevaRespuesta(){
-         alert("jahkajs")
-        axios.post("http://localhost:3000/ListarRespuestasPorPreguntaId/1")
+         //alert("jahkajs")
+        axios.post("http://localhost:3000/ListarRespuestasPorPreguntaId/id")
         .then((res) => {
             console.log(res);
         })

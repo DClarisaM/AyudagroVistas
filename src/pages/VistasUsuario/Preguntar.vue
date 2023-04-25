@@ -106,12 +106,12 @@ export default {
       listaPreguntas: [],
       pregunta: {
         subcategoria_id:1,
-        usuario_id:this.a,
+        usuario_id:"",
         descripcion: "",
       },
       userloger: "",
       us: "",
-      a:56,
+      a:null,
     };
   },
   mounted() {
@@ -121,6 +121,8 @@ export default {
   },
   methods: {
     listarPreguntas() {
+      this.pregunta.usuario_id=this.us.id_usuario
+      console.log(this.pregunta.usuario_id)
       axios
         .get("http://localhost:3000/listarPregunta")
         .then((res) => {
