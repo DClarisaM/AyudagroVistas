@@ -3,24 +3,24 @@
     <side-bar>
       <template slot="links">
         <sidebar-link to="/dashboard" name="Ayudagro" icon="ti-panel" />
-        <sidebar-link to="/stats" name="Editar Perfil" icon="ti-user" />
-        <sidebar-link to="/categorias" name="Gestionar Categorias" icon="ti-view-list-alt" />
-        <sidebar-link to="/subcategorias" name="Gestionar Subcategorias" icon="ti-view-list-alt" />
-        <sidebar-link to="/usuario" name="Listar Usuario" icon="ti-view-list-alt" />
-        <sidebar-link to="/sugerencias" name="Listar Sugerencias" icon="ti-view-list-alt" />
-        <sidebar-link to="/valorR" name="Listar Valor_R" icon="ti-view-list-alt" />
-        <sidebar-link to="/pregunta" name="Listar Pregunta" icon="ti-view-list-alt" />
-        <sidebar-link to="/respuesta" name="Listar Respuesta" icon="ti-view-list-alt" />
+        <sidebar-link to="/stats" name="Perfil" icon="ti-face-smile" />
+        <sidebar-link to="/categorias" name="Administrar Categorias" icon="ti-layout-list-thumb-alt" />
+        <sidebar-link to="/subcategorias" name="Administrar Subcategorias" icon="ti-layout-list-post" />
+        <sidebar-link to="/usuario" name="Ver Usuario" icon="ti-user" />
+        <sidebar-link to="/sugerencias" name="Ver Sugerencias" icon="ti-light-bulb" />
+        <sidebar-link to="/valorR" name="Ver Valor_R" icon="ti-view-list-alt" />
+        <sidebar-link to="/pregunta" name="Ver Pregunta" icon="ti-help" />
+        <sidebar-link to="/respuesta" name="Ver Respuesta" icon="ti-pencil-alt" />
         <sidebar-link to="/rol" name="Gestionar Rol" icon="ti-view-list-alt" />
-        <sidebar-link to="/ListaPreguntas" name="preguntas" icon="ti-view-list-alt" />
-        <sidebar-link to="/Inicio" name="Login" icon="ti-view-list-alt" />
-        <sidebar-link to="/archivo" name="Gestionar Archivo" icon="ti-view-list-alt" />
-        <sidebar-link to="/sugerenciaArchivo" name="Listar Sugerencias Archivo" icon="ti-view-list-alt" />
+        <sidebar-link to="/ListaPreguntas" name="preguntas" icon="ti-help" />
+        <sidebar-link to="/Inicio" name="Login" icon="ti-check-box" />
+        <sidebar-link to="/archivo" name="Gestionar Archivo" icon="ti-save" />
+        <sidebar-link to="/sugerenciaArchivo" name="Mostrar Sugerencias Archivo" icon="ti-save-alt" />
         <sidebar-link to="/preguntaArchivo" name="Listar Pregunta Archivo" icon="ti-view-list-alt" />
-        <sidebar-link v-if="usuariologueado != 1" to="/preguntar" name="preguntar" icon="ti-view-list-alt" />
-        <sidebar-link to="/MisPreguntas" name="MisPreguntas" icon="ti-view-list-alt" />
-        <sidebar-link to="/SinRespuesta" name="SinRespuesta" icon="ti-view-list-alt" />
-        <sidebar-link to="/vistas" name="vistas" icon="ti-view-list-alt" />
+        <sidebar-link v-if="usuariologueado != 1" to="/preguntar" name="preguntar" icon="ti-help" />
+        <sidebar-link to="/MisPreguntas" name="Mis Preguntas" icon="ti-pencil-alt" />
+        <sidebar-link to="/SinRespuesta" name="Sin Respuesta" icon="ti-info" />
+        <sidebar-link to="/vistas" name="vistas" icon="ti-eye" />
         />
 
 
