@@ -38,9 +38,9 @@
                 <td>{{ usuario.direccion }}</td>
                 <td>{{ usuario.estado }}</td>
                 <td>
-                  <button class="btn btn-sm bg-primary text-white">
+                  <router-link class="btn bg-primary text-white" :to="{name: 'Verusuario', params: {idUsuario: usuario.id_usuario}  }">
                     <i class="fas fa-eye"></i>
-                  </button>
+                  </router-link>
                   <button class="btn btn-sm bg-success text-white">
                     <i class="fas fa-edit"></i>
                   </button>

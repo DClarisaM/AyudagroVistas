@@ -28,9 +28,10 @@
               <th scope="row">{{ rol.id_rol }}</th>
               <td>{{ rol.nombre }}</td>
               <td>
-                <button class="btn btn-sm bg-primary text-white">
-                  <i class="fas fa-eye"></i>
-                </button>
+                <router-link class="btn bg-primary text-white" :to="{name: 'Verrol', params: {idRol: rol.id_rol}
+                  }">
+                    <i class="fas fa-eye"></i>
+                  </router-link>
                 <button class="btn btn-sm bg-success text-white">
                   <i class="fas fa-edit"></i>
                 </button>

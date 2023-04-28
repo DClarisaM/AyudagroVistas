@@ -15,8 +15,8 @@
            />
            <h4 class="title">{{ us.nombre }}</h4>
            <div>
-           <h4 v-for="pregunta in listaPregunta">
-              {{ pregunta.descripcion  }}
+           <h4 >
+              {{ listaPregunta.descripcion}}
            </h4>
            </div>
          </div>
@@ -32,7 +32,7 @@
                 </textarea>
                 <div class="text-center">
                 <button class="btn btn-primary" @click="nuevaRespuesta()" >
-                    Preguntar
+                    Responder
                 </button>
                 </div>
             </div>
@@ -97,7 +97,10 @@ export default {
       listaPregunta: [],
 
       respuesta: {
+        usuario_id:"",
+        pregunta_id:1,
         descripcion: "",
+        hora_fecha:null,
       },
       pregunta:[],
       us:"",
@@ -106,8 +109,8 @@ export default {
   },
   async mounted() {
     this.idPregunta = this.$route.params.preguntaId
-    await this.listarRespuestas(),
-    await this.verPregunta()
+    this.listarRespuestas(),
+    this.verPregunta()
 
     this.us = JSON.parse(localStorage.getItem("usuarios"));
   },
@@ -144,13 +147,20 @@ export default {
 
       
       nuevaRespuesta(){
-         alert("jahkajs")
-        axios.post("http://localhost:3000/ListarRespuestasPorPreguntaId/1")
+         //alert("jahkajs")
+        this.respuesta.usuario_id=this.us.id_usuario
+        this.respuesta.pregunta_id=this.idPregunta
+        console.log(this.respuesta.pregunta_id)
+        console.log(this.respuesta.descripcion )
+        axios.post("http://localhost:3000/nuevaRespuesta",this.respuesta)
         .then((res) => {
             console.log(res);
+            alert("respuesta exitosa")
+            this.$router.push("/");
         })
         .catch((err) => {
-          alert("error del servidor")
+          console.log(res)
+          alert("error del servidor"+err)
         })
     }
 

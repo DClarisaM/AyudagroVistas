@@ -32,9 +32,9 @@
                 <td>{{ valor.respuesta_id }}</td>
                 <td>{{ valor.calificacion }}</td>
                 <td>
-                  <button class="btn btn-sm bg-primary text-white">
+                  <router-link class="btn bg-primary text-white" :to="{name: 'VervalorR',  params: {idValorR: valor.id_valorar}   }">
                     <i class="fas fa-eye"></i>
-                  </button>
+                  </router-link>
                   <button class="btn btn-sm bg-success text-white">
                     <i class="fas fa-edit"></i>
                   </button>

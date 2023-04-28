@@ -35,9 +35,9 @@
                 <th scope="row">{{ sugerencia.id_sugerencia }}</th>
                 <td>{{ sugerencia.descripcion }}</td>
                 <td>
-                  <button class="btn btn-sm bg-primary text-white">
+                  <router-link class="btn bg-primary text-white" :to="{name: 'Versugerencias',  params: {idSugerencia: sugerencia.id_sugerencia}  }">
                     <i class="fas fa-eye"></i>
-                  </button>
+                  </router-link>
                   <button class="btn btn-sm bg-success text-white">
                     <i class="fas fa-edit"></i>
                   </button>
