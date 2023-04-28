@@ -13,32 +13,57 @@ import UserProfile from "@/pages/UserProfile.vue";
 
 import GestionarSubCategorias from "@/pages/Subcategorias/GestionarSubcategorias.vue";
 import RegistrarSubCategorias from "@/pages/Subcategorias/RegistrarSubcategorias.vue";
+import VerSubcategorias from "@/pages/Subcategorias/VerSubcategorias.vue";
+
+
 import GestionarCategorias from "@/pages/Categorias/GestionarCategorias.vue";
 import RegistrarCategorias from "@/pages/Categorias/RegistrarCategorias.vue";
 import EditarCategoria from "@/pages/Categorias/EditarCategoria.vue";
 import VerCategoria from "@/pages/Categorias/VerCategoria.vue";
+
+
 import ListarPregunta from "@/pages/Preguntas/ListarPregunta.vue";
+
 import ListaPreguntas from "@/pages/Profesional/ListaPreguntas.vue";
+
 import RegistrarPregunta from "@/pages/Preguntas/RegistrarPregunta.vue";
 import VerPregunta from "@/pages/Preguntas/VerPregunta.vue";
+
 import ListarRespuesta from "@/pages/Respuestas/ListarRespuesta.vue";
 import RegistrarRespuesta from "@/pages/Respuestas/RegistrarRespuesta.vue";
+import VerRespuesta from "@/pages/Respuestas/VerRespuesta.vue";
+
 import ListarUsuario from "@/pages/Usuarios/ListarUsuario.vue";
 import RegistrarUsuario from "@/pages/Usuarios/RegistrarUsuario.vue";
+import VerUsuario from "@/pages/Usuarios/VerUsuario.vue";
+
+
 import ListarSugerencias from "@/pages/Sugerencias/ListarSugerencias.vue";
 import RegistrarSugerencias from "@/pages/Sugerencias/RegistrarSugerencias.vue";
+import VerSugerencias from "@/pages/Sugerencias/VerSugerencias.vue";
+
+
 import ListarValoroR from "@/pages/ValoresR/ListarValoroR.vue";
 import RegistrarValorR from "@/pages/ValoresR/RegistrarValorR.vue";
+import VerValorR from "@/pages/ValoresR/VerValorR.vue";
+
+
 import GestionarRol from "@/pages/Roles/GestionarRol.vue";
 import RegistrarRol from "@/pages/Roles/RegistrarRol.vue";
+import VerRol from "@/pages/Roles/VerRol.vue";
+
 import ListarArchivo from "@/pages/Archivos/ListarArchivo.vue";
 import RegistrarArchivo from "@/pages/Archivos/RegistrarArchivo.vue";
 import VerArchivo from "@/pages/Archivos/VerArchivos.vue";
+
 import SugerenciasArchivo from "@/pages/SugerenciasArchivo/SugerenciasArchivo.vue";
 import RegistrarSugerenciaArchivo from "@/pages/SugerenciasArchivo/RegistrarSugerenciaArchivo.vue";
+import VerSugerenciaArch from "@/pages/SugerenciasArchivo/VerSugerenciaArch.vue";
+
 import PreguntaArchivo from "@/pages/PreguntasArchivos/PreguntaArchivo.vue";
 import RegistrarPreguntaArchivo from "@/pages/PreguntasArchivos/RegistrarPreguntaArchivo.vue";
 import VerPreguntasArchivo from "@/pages/PreguntasArchivos/VerPreguntasArchivo.vue";
+
 import Preguntar from "@/pages/VistasUsuario/Preguntar.vue";
 import MisPreguntas from "@/pages/VistasUsuario/MisPreguntas.vue";
 import SinRespuesta from "@/pages/VistasUsuario/SinRespuesta.vue";
@@ -46,6 +71,7 @@ import RespuestaP from "@/pages/VistasUsuario/RespuestaP.vue";
 import Vistas from "@/pages/VistasUsuario/vistas.vue";
 import login from "@/pages/Registro/login.vue";
 import Inicio from "@/pages/Registro/Inicio.vue";
+
 
 const routes = [
   {
@@ -105,6 +131,11 @@ const routes = [
         name: "Registrarsubcategorias",
         component: RegistrarSubCategorias,
       },
+      {
+        path: "Versubcategorias",
+        name: "Versubcategorias",
+        component: VerSubcategorias,
+      },
 
       // inicio de rutas usuario
       {
@@ -116,6 +147,11 @@ const routes = [
         path: "Registrarusuario",
         name: "Registrarusuario",
         component: RegistrarUsuario,
+      },
+      {
+        path: "Verusuario",
+        name: "Verusuario",
+        component: VerUsuario,
       },
 
       //inicio de rutas de preguntas
@@ -146,6 +182,11 @@ const routes = [
         name: "Registrarrespuesta",
         component: RegistrarRespuesta,
       },
+      {
+        path: "Verrespuesta",
+        name: "Verrespuesta",
+        component: VerRespuesta,
+      },
 
       // inicio de rutas sugerencias
       {
@@ -158,6 +199,11 @@ const routes = [
         name: "Registrarsugerencias",
         component: RegistrarSugerencias,
       },
+      {
+        path: "Versugerencias",
+        name: "Versugerencias",
+        component: VerSugerencias,
+      },
 
       //inicio de rutas de Valor Respuesta
       {
@@ -165,6 +211,17 @@ const routes = [
         name: "valorR",
         component: ListarValoroR,
       },
+      {
+        path: "RegistrarvalorR",
+        name: "RegistrarvalorR",
+        component: RegistrarValorR,
+      },
+      {
+        path: "VervalorR",
+        name: "VervalorR",
+        component: VerValorR,
+      },
+      
 
       //aqui inicia las rutas de rol
 
@@ -177,6 +234,11 @@ const routes = [
         path: "Registrarrol",
         name: "Registrarrol",
         component: RegistrarRol,
+      },
+      {
+        path: "Verrol",
+        name: "Verrol",
+        component: VerRol,
       },
 
       // rutas de archivo
@@ -207,6 +269,11 @@ const routes = [
         name: "RegistrarsugerenciaArchivo",
         component: RegistrarSugerenciaArchivo,
       },
+      {
+        path: "VersugerenciaArch",
+        name: "VersugerenciaArch",
+        component: VerSugerenciaArch ,
+      },
 
       //inicio de rutas pregunta archivo
       {
@@ -224,6 +291,7 @@ const routes = [
         name: "VerpreguntaArchivo",
         component: VerPreguntasArchivo,
       },
+      
 
       {
         path: "preguntar",

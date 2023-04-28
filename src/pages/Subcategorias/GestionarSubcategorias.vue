@@ -33,9 +33,9 @@
                 <td>{{ subcategoria.titulo }}</td>
                 <td>{{ subcategoria.descripcion }}</td>
                 <td>
-                  <button class="btn btn-sm bg-primary text-white">
+                  <router-link class="btn bg-primary text-white" :to="{name: 'Versubcategorias', params: {idSubcategoria: subcategoria.id_subcategoria} }">
                     <i class="fas fa-eye"></i>
-                  </button>
+                  </router-link>
                   <button class="btn btn-sm bg-success text-white">
                     <i class="fas fa-edit"></i>
                   </button>

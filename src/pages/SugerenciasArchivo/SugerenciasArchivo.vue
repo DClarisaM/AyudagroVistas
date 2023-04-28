@@ -30,9 +30,11 @@
                 <td>{{ sugerencia_archivo.archivo_id }}</td>
                 <td>{{ sugerencia_archivo.sugerencia_id }}</td>
                 <td>
-                  <button class="btn btn-sm bg-primary text-white">
+                  <router-link class="btn bg-primary text-white" :to="{name: 'VersugerenciaArch', 
+                   params: {idSugerenciaArchivo: sugerencia_archivo.id_sugerencia_archivo}
+                }">
                     <i class="fas fa-eye"></i>
-                  </button>
+                  </router-link>
                   <button class="btn btn-sm bg-success text-white">
                     <i class="fas fa-edit"></i>
                   </button>

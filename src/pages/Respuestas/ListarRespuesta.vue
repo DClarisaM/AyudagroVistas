@@ -31,9 +31,9 @@
                 <td>{{ respuesta.descripcion }}</td>
                 <td>{{ respuesta.hora_fecha }}</td>
                 <td>
-                  <button class="btn btn-sm bg-primary text-white">
+                  <router-link class="btn bg-primary text-white" :to="{name: 'Verrespuesta', params: {idRespuesta: respuesta.id_respuesta} }">
                     <i class="fas fa-eye"></i>
-                  </button>
+                  </router-link>
                   <button class="btn btn-sm bg-success text-white">
                     <i class="fas fa-edit"></i>
                   </button>
