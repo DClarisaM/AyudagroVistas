@@ -111,10 +111,11 @@ export default {
       },
       userloger: "",
       us: "",
-      a:null,
+    
     };
   },
   mounted() {
+    this.id=this.us.id_usuario
    
     this.us = JSON.parse(localStorage.getItem("usuarios"));
     this.listarPreguntas();
@@ -124,7 +125,7 @@ export default {
       this.pregunta.usuario_id=this.us.id_usuario
       console.log(this.pregunta.usuario_id)
       axios
-        .get("http://localhost:3000/listarPregunta")
+        .get("http://localhost:3000/listarPregunta",this.pregunta)
         .then((res) => {
           //codigo
           this.listaPreguntas = res.data;
@@ -139,8 +140,7 @@ export default {
       //  alert("jahkajs")
       this.usuario_id=this.us.id_usuario;
       console.log(this.usuario_id);
-      axios
-        .post("http://localhost:3000/nuevaPregunta", this.pregunta)
+      axios.post("http://localhost:3000/nuevaPregunta",this.pregunta)
         .then((res) => {
           alert("Pregunta registrada con exito");
           console.log(res);
