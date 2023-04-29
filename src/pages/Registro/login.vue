@@ -31,10 +31,8 @@
           </p-button>
         </div>
         <br>
-        <div class="text-center">
-          <p-button type="success" round @click.native.prevent="loginadmin()">
-            Iniciar Como Administrador
-          </p-button>
+        <div>
+          <router-link class="text-center form-text" :to="{name:'archivo'}">Ingresar Como Administrador</router-link>
         </div>
 
     
