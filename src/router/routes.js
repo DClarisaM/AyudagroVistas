@@ -4,6 +4,7 @@ import NotFound from "@/pages/NotFoundPage.vue";
 
 // Admin pages
 import Dashboard from "@/pages/Dashboard.vue";
+import Login from "@/pages/Registro/login.vue"
 import UserProfile from "@/pages/UserProfile.vue";
 //import Notifications from "@/pages/Notifications.vue";
 //import Icons from "@/pages/Icons.vue";
@@ -89,12 +90,21 @@ const routes = [
     component: DashboardLayout,
     redirect: "/dashboard",
     children: [
-      { path: "login", name: "login", component: login },
+      { path: "login",
+       name: "login",
+      component: login 
+      },
+
+      
       {
         path: "dashboard",
         name: "INICIO",
         component: Dashboard,
       },
+
+
+
+      
       {
         path: "stats",
         name: "Perfil",
