@@ -116,13 +116,14 @@
                   <router-link class="btn bg-danger text-white" :to="{name: 'Verarchivo', params: {idArchivo: archivo.id_archivo} }">
                     <i class="fas fa-eye"></i>
                   </router-link>
-                  <router-link class="btn bg-danger text-white">
+                  <router-link class="btn bg-success text-white" :to="{ name: 'Editararchivo', 
+                  // params: { idArchivo: archivo.id_archivo } 
+                  }">
                     <i class="fas fa-edit"></i>
                   </router-link>
                   <button class="btn  bg-danger text-white" @click="eliminar()">
                     <i class="fas fa-trash-alt"></i>
                   </button>
-  
   
                 </td>
               </tr>

@@ -34,11 +34,13 @@
                   <router-link class="btn bg-primary text-white" :to="{name: 'Verrespuesta', params: {idRespuesta: respuesta.id_respuesta} }">
                     <i class="fas fa-eye"></i>
                   </router-link>
-                  <button class="btn btn-sm bg-success text-white">
+                  <router-link class="btn bg-success text-white" :to="{ name: 'Editarrespuesta', 
+                  // params: { idRespuesta: archivo.id_respuesta } 
+                  }">
                     <i class="fas fa-edit"></i>
-                  </button>
-                  <button class="btn btn-sm bg-danger text-white">
-                    <i class="fas fa-trash-alt" @click="eliminar()"></i>
+                  </router-link>
+                  <button class="btn  bg-danger text-white" @click="eliminar()">
+                    <i class="fas fa-trash-alt"></i>
                   </button>
 
 

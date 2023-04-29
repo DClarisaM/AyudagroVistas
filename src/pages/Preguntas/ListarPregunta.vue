@@ -42,7 +42,10 @@
                   >
                     <i class="fas fa-eye"></i>
                   </router-link>
-                  <router-link class="btn bg-success text-white">
+                  
+                  <router-link class="btn bg-success text-white" :to="{ name: 'Editarpreguntas', 
+                  // params: { idArchivo: archivo.id_archivo } 
+                  }">
                     <i class="fas fa-edit"></i>
                   </router-link>
                   <button class="btn bg-danger text-white" @click="eliminar()">
@@ -69,7 +72,8 @@ export default {
     };
   },
   mounted() {
-    this.listarPreguntas(), eliminar();
+    this.listarPreguntas(),
+    eliminar();
   },
   methods: {
     listarPreguntas() {
