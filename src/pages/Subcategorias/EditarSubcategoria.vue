@@ -4,18 +4,18 @@
         
         <form>
             <div class="form-group" >
-                <label for="exampleFormControlInput1">Nombre</label>
-                <input type="text" class="form-control" placeholder="Categoria"  v-model="categoria.titulo" required>
+                <label for="exampleFormControlInput1">Titulo</label>
+                <input type="text" class="form-control" placeholder=""  v-model="subcategoria.titulo" required>
             </div>
             <div class="form-group" >
-                <label for="exampleFormControlInput1">Descripción</label>
-                <input type="text" class="form-control" placeholder="Descripcion" v-model="categoria.descripcion" required>
+                <label for="exampleFormControlInput1">Descripcion</label>
+                <input type="text" class="form-control" placeholder=""  v-model="subcategoria.descripcion" required>
             </div>
-           
+            
             
 
             <div>
-                <button class="btn" @click="EditarCategoria()">
+                <button class="btn" @click="EditarSubcategoria()">
                    Guardar Cambios 
                 </button>
             </div>
@@ -31,25 +31,28 @@ export default {
   },
   data() {
     return {
-      idCateg: null,
-      categoria: {
-        titulo: "",
-        descripcion:""
+        idSubcategoria: null,
+        subcategoria: {
+            titulo: "",
+            descripcion: "",
+
+        
       }
 
     };
   },
   async mounted() {
-    this.id = this.$route.params.idCategoria
-    await this.listarRespuestas()
+    this.idSubcategoria = this.$route.params.idSubcategoria
+ 
   },
   mounted(){
-    this.verCategoria()
+    this.idSubcategoria = this.$route.params.idSubcategoria
+    this.VerSubcategoria()
   },
   methods: {
-    EditarCategoria() {
-      // alert("aaaa")
-      axios.put("http://localhost:3000/editarCategoria/1")
+    EditarSubcategoria() {
+    //   alert("aaaa")
+      axios.put("http://localhost:3000/editarSubcategoria/1")
         .then((res) => {
           //codigo
           console.log(res);
@@ -60,14 +63,15 @@ export default {
           alert("error del servidor")
         })
     },
-    verCategoria() {
+    VerSubcategoria() {
         // alert("aaaa")
-        axios.get("http://localhost:3000/verDetalleCategoria/1")
+        axios.get("http://localhost:3000/verDetalleSubcategoria/1" )
           .then((res) => {
             //codigo
             console.log(res.data);
-            this.categoria.titulo = res.data.titulo
-            this.categoria.descripcion = res.data.descripcion
+            this.subcategoria.titulo = res.data.titulo
+            this.subcategoria.descripcion = res.data.descripcion
+            
           })
           .catch((err) => {
             //TODO mostrar ventana emergente sweetalert2 con el error
@@ -76,7 +80,6 @@ export default {
       
   
     }
-
   }
 };
 </script>

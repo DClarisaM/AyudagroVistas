@@ -32,12 +32,15 @@
                   }">
                     <i class="fas fa-eye"></i>
                   </router-link>
-                <button class="btn btn-sm bg-success text-white">
-                  <i class="fas fa-edit"></i>
-                </button>
-                <button class="btn btn-sm bg-danger text-white" @click="eliminar()">
-                  <i class="fas fa-trash-alt"></i>
-                </button>
+                  <router-link class="btn bg-success text-white" :to="{ name: 'Editarrol', 
+                  // params: { idRol: archivo.id_rol } 
+                  }">
+                    <i class="fas fa-edit"></i>
+                  </router-link>
+                
+                  <button class="btn  bg-danger text-white" @click="eliminar()">
+                    <i class="fas fa-trash-alt"></i>
+                  </button>
 
 
               </td>

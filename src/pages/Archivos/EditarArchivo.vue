@@ -4,18 +4,18 @@
         
         <form>
             <div class="form-group" >
-                <label for="exampleFormControlInput1">Nombre</label>
-                <input type="text" class="form-control" placeholder="Categoria"  v-model="categoria.titulo" required>
+                <label for="exampleFormControlInput1">Nombre Archivo</label>
+                <input type="text" class="form-control" placeholder="Nombre Archivo"  v-model="archivo.nombre_archivo" required>
             </div>
             <div class="form-group" >
-                <label for="exampleFormControlInput1">Descripción</label>
-                <input type="text" class="form-control" placeholder="Descripcion" v-model="categoria.descripcion" required>
+                <label for="exampleFormControlInput1">URL</label>
+                <input type="text" class="form-control" placeholder="Descripcion" v-model="archivo.url" required>
             </div>
            
             
 
             <div>
-                <button class="btn" @click="EditarCategoria()">
+                <button class="btn" @click="EditarArchivos()">
                    Guardar Cambios 
                 </button>
             </div>
@@ -31,24 +31,25 @@ export default {
   },
   data() {
     return {
-      idCateg: null,
-      categoria: {
-        titulo: "",
-        descripcion:""
+        idArchivo: null,
+        archivo: {
+        nombre_archivo: "",
+        url:""
       }
 
     };
   },
   async mounted() {
-    this.id = this.$route.params.idCategoria
-    await this.listarRespuestas()
+    this.idArchivo = this.$route.params.idArchivo
+ 
   },
   mounted(){
-    this.verCategoria()
+    this.idArchivo = this.$route.params.idArchivo
+    this.verArchivos()
   },
   methods: {
-    EditarCategoria() {
-      // alert("aaaa")
+    EditarArchivos() {
+      alert("aaaa")
       axios.put("http://localhost:3000/editarCategoria/1")
         .then((res) => {
           //codigo
@@ -60,14 +61,14 @@ export default {
           alert("error del servidor")
         })
     },
-    verCategoria() {
+    verArchivos() {
         // alert("aaaa")
-        axios.get("http://localhost:3000/verDetalleCategoria/1")
+        axios.get("http://localhost:3000/verDetalleArchivo/1" )
           .then((res) => {
             //codigo
             console.log(res.data);
-            this.categoria.titulo = res.data.titulo
-            this.categoria.descripcion = res.data.descripcion
+            this.archivo.nombre_archivo = res.data.nombre_archivo
+            this.archivo.url = res.data.url
           })
           .catch((err) => {
             //TODO mostrar ventana emergente sweetalert2 con el error
@@ -76,7 +77,6 @@ export default {
       
   
     }
-
   }
 };
 </script>

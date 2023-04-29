@@ -1,6 +1,6 @@
 <template>
   <div class="wrapper">
-    <side-bar>
+    <side-bar >
       <template slot="links">
         <sidebar-link to="/dashboard" name="Inicio" icon="ti-home" />
         <sidebar-link to="/stats" name="Perfil" icon="ti-face-smile" />
@@ -21,8 +21,8 @@
         <!--<sidebar-link to="/MisPreguntas" name="Mis Preguntas" icon="ti-pencil-alt" /> -->
         <!-- <sidebar-link to="/SinRespuesta" name="Sin Respuesta" icon="ti-info" /> -->
         <!-- <sidebar-link to="/vistas" name="Inicio Sesion" icon="ti-eye" /> -->
-        
 
+      
 
       </template>
 
@@ -55,6 +55,7 @@
       <top-navbar></top-navbar>
       <h1>
         {{ usuariologueado }}
+        
       </h1>
 
       <!--<dashboard-content @click.native="toggleSidebar"> </dashboard-content>-->
@@ -70,11 +71,7 @@
     </div>
   </div>
 </template>
-<style lang="scss">
-
-
-
-</style>
+<style lang="scss"></style>
 
 
 
@@ -96,6 +93,9 @@ export default {
     ContentFooter,
     DashboardContent,
     MobileMenu,
+
+
+
   },
   mounted() {
     this.usuariologueado = localStorage.getItem('usuario')

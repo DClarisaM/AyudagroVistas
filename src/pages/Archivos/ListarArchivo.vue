@@ -1,5 +1,88 @@
 <template>
+  
+  
     <div class="row">
+      <div class="text-center">
+          <p-button type="danger" round @click.native.prevent="loginadmin()">
+            Administrar Categorias
+          </p-button>
+        </div>
+        <br> 
+        <div class="text-center">
+          <p-button type="danger" round @click.native.prevent="loginadmin()">
+            Administrar Subcategorias
+          </p-button>
+        </div>
+        <br> 
+        <div class="text-center">
+          <p-button type="danger" round @click.native.prevent="loginadmin()">
+            Ver Usuario
+          </p-button>
+        </div>
+        <br> 
+        <div class="text-center">
+          <p-button type="danger" round @click.native.prevent="loginadmin()">
+            Ver Sugerencias
+          </p-button>
+        </div>
+        <br> 
+        <br>
+        <br>
+        <br>
+        <div class="text-center">
+          <p-button type="danger" round @click.native.prevent="loginadmin()">
+            Ver Valor_R
+          </p-button>
+        </div>
+        <div class="text-center">
+          <p-button type="danger" round @click.native.prevent="loginadmin()">
+            Ver Pregunta
+          </p-button>
+        </div>
+        <br>  <div class="text-center">
+          <p-button type="dark" round @click.native.prevent="loginadmin()">
+            Ver Respuesta
+          </p-button>
+        </div>
+        <br>
+        <div class="text-center">
+          <p-button type="dark" round @click.native.prevent="loginadmin()">
+            Gestionar Rol
+          </p-button>
+        </div>
+        <br>
+        <div class="text-center">
+          <p-button type="dark" round @click.native.prevent="loginadmin()">
+            preguntas
+          </p-button>
+        </div>   <br>
+        <div class="text-center">
+          <p-button type="dark" round @click.native.prevent="loginadmin()">
+            Gestionar Archivo
+          </p-button>
+        </div>   <br>
+        <div class="text-center">
+          <p-button type="dark" round @click.native.prevent="loginadmin()">
+            Mostrar Sugerencias
+          </p-button>
+        </div>   <br>
+        <div class="text-center">
+          <p-button type="dark" round @click.native.prevent="loginadmin()">
+            Listar Pregunta Archivo
+          </p-button>
+        </div> 
+        <br><br><br><br>
+        <div class="text-center">
+          <p-button type="danger" round @click.native.prevent="loginadmin()">
+            Mis Preguntas
+          </p-button>
+        </div>   
+        <br><br><br><br>
+        <div class="text-center">
+          <p-button type="danger" round @click.native.prevent="loginadmin()">
+            Sin Respuesta
+          </p-button>
+        </div>  
              <!-- boton agregar -->
     <div class="col-8 offset-2">
       <router-link
@@ -30,16 +113,17 @@
                 <td>{{ archivo.nombre_archivo }}</td>
                 <td>{{ archivo.url }}</td>
                 <td>
-                  <router-link class="btn bg-primary text-white" :to="{name: 'Verarchivo', params: {idArchivo: archivo.id_archivo} }">
+                  <router-link class="btn bg-danger text-white" :to="{name: 'Verarchivo', params: {idArchivo: archivo.id_archivo} }">
                     <i class="fas fa-eye"></i>
                   </router-link>
-                  <router-link class="btn bg-success text-white">
+                  <router-link class="btn bg-success text-white" :to="{ name: 'Editararchivo', 
+                  // params: { idArchivo: archivo.id_archivo } 
+                  }">
                     <i class="fas fa-edit"></i>
                   </router-link>
                   <button class="btn  bg-danger text-white" @click="eliminar()">
                     <i class="fas fa-trash-alt"></i>
                   </button>
-  
   
                 </td>
               </tr>
@@ -60,12 +144,18 @@
   
   
   export default {
+
+ 
     components: {
    
+
+      
     },
     data() {
       return {
         listaArchivos:[],
+       
+       
        
       };
     },
@@ -74,6 +164,11 @@
       eliminar()
     },
     methods: {
+      
+   
+
+
+
       listarArchivos() {
          //alert("jahahsa")
         axios.get("http://localhost:3000/listarArchivo")
@@ -90,7 +185,7 @@
       // alert("hahaha")
       const swalWithBootstrapButtons = Swal.mixin({
   customClass: {
-    confirmButton: 'btn btn-success',
+    confirmButton: 'btn btn-danger',
     cancelButton: 'btn btn-danger'
   },
   buttonsStyling: false
@@ -110,7 +205,7 @@ swalWithBootstrapButtons.fire({
     swalWithBootstrapButtons.fire(
       'Eliminado!',
       'Se elimino con exito.',
-      'success'
+      'danger'
     )
   } else if (
     /* Read more about handling dismissals below */
