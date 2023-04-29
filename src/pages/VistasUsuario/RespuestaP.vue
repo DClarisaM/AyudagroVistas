@@ -42,7 +42,7 @@
     </div>
   </div>
 
-    <div class="col-10 offset-1" v-for="respuesta in listaRespuestas">
+    <div class="col-10 offset-1" v-for="respuesta in listaRespuestas" :key="respuesta.id_respuesta ">
       <card class="card-Mpregunta">
         <div class="Mimagen">
           <img src="@/assets/img/background.jpg" alt="..." />
@@ -155,7 +155,6 @@ export default {
         axios.post("http://localhost:3000/nuevaRespuesta",this.respuesta)
         .then((res) => {
             console.log(res);
-            alert("respuesta exitosa")
             this.$router.push("/");
         })
         .catch((err) => {
