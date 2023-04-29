@@ -33,12 +33,15 @@
                   <router-link class="btn bg-primary text-white" :to="{name: 'VerpreguntaArchivo', params: {idPreguntaArchivo: pregunta_archivo.id_pregunta_archivo} }">
                     <i class="fas fa-eye"></i>
                   </router-link>
-                  <!-- <router-link class="btn bg-success text-white" :to="{ name: 'Editarcategoria' }">
+                  <router-link class="btn bg-success text-white" :to="{ name: 'EditarpreguntaArch', 
+                  // params: { idPreguntaArchivo: archivo.id_pregunta_archivo } 
+                  }">
                     <i class="fas fa-edit"></i>
-                  </router-link> -->
-                  <!-- <button class="btn  bg-danger text-white" @click="eliminar()">
+                  </router-link>
+                
+                  <button class="btn  bg-danger text-white" @click="eliminar()">
                     <i class="fas fa-trash-alt"></i>
-                  </button> -->
+                  </button>
 
   
   

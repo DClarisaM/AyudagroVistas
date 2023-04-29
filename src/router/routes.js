@@ -14,6 +14,7 @@ import UserProfile from "@/pages/UserProfile.vue";
 import GestionarSubCategorias from "@/pages/Subcategorias/GestionarSubcategorias.vue";
 import RegistrarSubCategorias from "@/pages/Subcategorias/RegistrarSubcategorias.vue";
 import VerSubcategorias from "@/pages/Subcategorias/VerSubcategorias.vue";
+import EditarSubcategoria from "@/pages/Subcategorias/EditarSubcategoria.vue";
 
 
 import GestionarCategorias from "@/pages/Categorias/GestionarCategorias.vue";
@@ -28,41 +29,50 @@ import ListaPreguntas from "@/pages/Profesional/ListaPreguntas.vue";
 
 import RegistrarPregunta from "@/pages/Preguntas/RegistrarPregunta.vue";
 import VerPregunta from "@/pages/Preguntas/VerPregunta.vue";
+import EditarPreguntas from "@/pages/Preguntas/EditarPreguntas.vue";
 
 import ListarRespuesta from "@/pages/Respuestas/ListarRespuesta.vue";
 import RegistrarRespuesta from "@/pages/Respuestas/RegistrarRespuesta.vue";
 import VerRespuesta from "@/pages/Respuestas/VerRespuesta.vue";
+import EditarRespuesta from "@/pages/Respuestas/EditarRespuesta.vue";
 
 import ListarUsuario from "@/pages/Usuarios/ListarUsuario.vue";
 import RegistrarUsuario from "@/pages/Usuarios/RegistrarUsuario.vue";
 import VerUsuario from "@/pages/Usuarios/VerUsuario.vue";
+import EditarUsuario from "@/pages/Usuarios/EditarUsuario.vue";
 
 
 import ListarSugerencias from "@/pages/Sugerencias/ListarSugerencias.vue";
 import RegistrarSugerencias from "@/pages/Sugerencias/RegistrarSugerencias.vue";
 import VerSugerencias from "@/pages/Sugerencias/VerSugerencias.vue";
+import EditarSugerencia from "@/pages/Sugerencias/EditarSugerencia.vue";
 
 
 import ListarValoroR from "@/pages/ValoresR/ListarValoroR.vue";
 import RegistrarValorR from "@/pages/ValoresR/RegistrarValorR.vue";
 import VerValorR from "@/pages/ValoresR/VerValorR.vue";
+import EditarValorR from "@/pages/ValoresR/EditarValorR.vue";
 
 
 import GestionarRol from "@/pages/Roles/GestionarRol.vue";
 import RegistrarRol from "@/pages/Roles/RegistrarRol.vue";
 import VerRol from "@/pages/Roles/VerRol.vue";
+import EditarRol from "@/pages/Roles/EditarRol.vue";
 
 import ListarArchivo from "@/pages/Archivos/ListarArchivo.vue";
 import RegistrarArchivo from "@/pages/Archivos/RegistrarArchivo.vue";
 import VerArchivo from "@/pages/Archivos/VerArchivos.vue";
+import EditarArchivo from "@/pages/Archivos/EditarArchivo.vue";
 
 import SugerenciasArchivo from "@/pages/SugerenciasArchivo/SugerenciasArchivo.vue";
 import RegistrarSugerenciaArchivo from "@/pages/SugerenciasArchivo/RegistrarSugerenciaArchivo.vue";
 import VerSugerenciaArch from "@/pages/SugerenciasArchivo/VerSugerenciaArch.vue";
+import EditarSugerenciasArch from "@/pages/SugerenciasArchivo/EditarSugerenciasArch.vue";
 
 import PreguntaArchivo from "@/pages/PreguntasArchivos/PreguntaArchivo.vue";
 import RegistrarPreguntaArchivo from "@/pages/PreguntasArchivos/RegistrarPreguntaArchivo.vue";
 import VerPreguntasArchivo from "@/pages/PreguntasArchivos/VerPreguntasArchivo.vue";
+import EditarPreguntaArch from "@/pages/PreguntasArchivos/EditarPreguntaArch.vue";
 
 import Preguntar from "@/pages/VistasUsuario/Preguntar.vue";
 import MisPreguntas from "@/pages/VistasUsuario/MisPreguntas.vue";
@@ -136,6 +146,11 @@ const routes = [
         name: "Versubcategorias",
         component: VerSubcategorias,
       },
+      {
+        path: "Editarsubcategoria",
+        name: "Editarsubcategoria",
+        component: EditarSubcategoria,
+      },
 
       // inicio de rutas usuario
       {
@@ -152,6 +167,11 @@ const routes = [
         path: "Verusuario",
         name: "Verusuario",
         component: VerUsuario,
+      },
+      {
+        path: "Editarusuario",
+        name: "Editarusuario",
+        component: EditarUsuario,
       },
 
       //inicio de rutas de preguntas
@@ -170,6 +190,11 @@ const routes = [
         name: "Verpregunta",
         component: VerPregunta,
       },
+      {
+        path: "Editarpreguntas",
+        name: "Editarpreguntas",
+        component: EditarPreguntas,
+      },
 
       //inicio de rutas respuesta
       {
@@ -186,6 +211,11 @@ const routes = [
         path: "Verrespuesta",
         name: "Verrespuesta",
         component: VerRespuesta,
+      },
+      {
+        path: "Editarrespuesta",
+        name: "Editarrespuesta",
+        component: EditarRespuesta,
       },
 
       // inicio de rutas sugerencias
@@ -204,6 +234,11 @@ const routes = [
         name: "Versugerencias",
         component: VerSugerencias,
       },
+      {
+        path: "Editarsugerencia",
+        name: "Editarsugerencia",
+        component: EditarSugerencia,
+      },
 
       //inicio de rutas de Valor Respuesta
       {
@@ -221,6 +256,13 @@ const routes = [
         name: "VervalorR",
         component: VerValorR,
       },
+      {
+        path: "EditarvalorR",
+        name: "EditarvalorR",
+        component: EditarValorR,
+      },
+      
+      
       
 
       //aqui inicia las rutas de rol
@@ -240,6 +282,11 @@ const routes = [
         name: "Verrol",
         component: VerRol,
       },
+      {
+        path: "Editarrol",
+        name: "Editarrol",
+        component: EditarRol,
+      },
 
       // rutas de archivo
       {
@@ -256,6 +303,11 @@ const routes = [
         path: "Verarchivo",
         name: "Verarchivo",
         component: VerArchivo,
+      },
+      {
+        path: "Editararchivo",
+        name: "Editararchivo",
+        component: EditarArchivo,
       },
 
       //inicio de rutas sugerencia archivo
@@ -274,6 +326,11 @@ const routes = [
         name: "VersugerenciaArch",
         component: VerSugerenciaArch ,
       },
+      {
+        path: "EditarsugerenciasArch",
+        name: "EditarsugerenciasArch",
+        component: EditarSugerenciasArch ,
+      },
 
       //inicio de rutas pregunta archivo
       {
@@ -290,6 +347,11 @@ const routes = [
         path: "VerpreguntaArchivo/:idPreguntaArchivo",
         name: "VerpreguntaArchivo",
         component: VerPreguntasArchivo,
+      },
+      {
+        path: "EditarpreguntaArch",
+        name: "EditarpreguntaArch",
+        component: EditarPreguntaArch,
       },
       
 
