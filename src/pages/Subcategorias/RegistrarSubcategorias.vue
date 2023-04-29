@@ -16,6 +16,9 @@
                     <option value="1">Frutas</option>
                     <option value="2">verduras</option>
                     <option value="3">animales</option>
+                
+
+
                 </select>
             </div>
 
