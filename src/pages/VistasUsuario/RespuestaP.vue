@@ -103,7 +103,7 @@ export default {
         hora_fecha:null,
       },
       pregunta:[],
-      us:"",
+      us:{},
 
     };
   },

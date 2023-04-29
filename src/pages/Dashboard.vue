@@ -33,7 +33,7 @@
       </card>
     </div>
 
-    <div class="col-10 offset-1" v-for="pregunta in listaPreguntas">
+    <div class="col-10 offset-1" v-for="pregunta in listaPreguntas  " :key="pregunta.id_pregunta">
       <card class="card-Pregunta">
         <div class="imagen">
           <img src="@/assets/img/background.jpg" alt="..." />
@@ -87,17 +87,18 @@ export default {
   mounted() {
     this.us = JSON.parse(localStorage.getItem("usuarios"));
     this.listarPreguntas();
+    this.listarPregunta();
     console.log(this.us)
   },
   methods: {
     listarPreguntas() {
       // alert("aaaa")
       axios
-        .get("http://localhost:3000/listarPregunta")
+        .get("http://localhost:3000/listarPreguntaNombreUsuario")
         .then((res) => {
           //codigo
           this.listaPreguntas = res.data;
-         // console.log(res.data);
+          console.log(res.data);
         })
         .catch((err) => {
           //TODO mostrar ventana emergente sweetalert2 con el error
@@ -105,5 +106,19 @@ export default {
         });
     },
   },
+  listarPregunta() {
+      // alert("aaaa")
+      axios
+        .get("http://localhost:3000/listarPreguntaNombreUsuario")
+        .then((res) => {
+          //codigo
+          this.listaPreguntas = res.data.usuario.nombre;
+          console.log(listaPreguntas);
+        })
+        .catch((err) => {
+          //TODO mostrar ventana emergente sweetalert2 con el error
+          alert("error del servidor", +err);
+        });
+    },
 };
 </script>
