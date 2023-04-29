@@ -35,6 +35,15 @@
           <router-link class="text-center form-text" :to="{name:'archivo'}">Ingresar Como Administrador</router-link>
         </div>
 
+        <div id="passwordHelpBlock" class="text-center form-text">
+          ¿No tienes cuenta?
+        </div>
+        <div class="text-center">
+          <p-button type="info" round @click.native.prevent="Registrate()">
+            Registrate
+          </p-button>
+        </div>
+
     
         <div class="clearfix"></div>
       </form>
@@ -54,6 +63,9 @@ export default {
     };
   },
   methods: {
+    Registrate(){
+      this.$router.push("/inicio");
+    },
     // updateProfile() {
     //   alert("Your data: " + JSON.stringify(this.user));
     // },
