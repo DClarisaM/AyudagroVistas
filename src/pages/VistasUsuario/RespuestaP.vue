@@ -4,13 +4,13 @@
     <div class="col-6 offset-3" >
     <card class="card-user">
        <div class="image">
-         <img src="@/assets/img/background.jpg" alt="..." />
+         <img src="@/assets/img/background2.jpg" alt="..." />
        </div>
        <div>
          <div class="author">
            <img
              class="avatar border-white"
-             src="@/assets/img/faces/face-2.jpg"
+             src="@/assets/img/faces/face-4.jpg"
              alt="..."
            />
            <h4 class="title">{{ us.nombre }}</h4>
@@ -45,11 +45,11 @@
     <div class="col-10 offset-1" v-for="respuesta in listaRespuestas" :key="respuesta.id_respuesta ">
       <card class="card-Mpregunta">
         <div class="Mimagen">
-          <img src="@/assets/img/background.jpg" alt="..." />
+          <img src="@/assets/img/background2.jpg" alt="..." />
         </div>
         <div>
           <div class="Mfoto">
-            <img class="Musuario border-white" src="@/assets/img/faces/face-2.jpg" alt="..." />
+            <img class="Musuario border-white" src="@/assets/img/faces/face-4.jpg" alt="..." />
             <!-- <h4>
              hola
             </h4> -->
