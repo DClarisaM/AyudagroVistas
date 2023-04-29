@@ -30,6 +30,14 @@
             Iniciar sesión
           </p-button>
         </div>
+        <br>
+        <div class="text-center">
+          <p-button type="success" round @click.native.prevent="loginadmin()">
+            Iniciar Como Administrador
+          </p-button>
+        </div>
+
+    
         <div class="clearfix"></div>
       </form>
     </div>
@@ -62,7 +70,7 @@ export default {
 
 
           
-          alert("Bienvenido a Ayudagro");
+          alert("Bienvenido Ayudagro");
           this.$router.push("/");
 
           localStorage.setItem("usuarios", JSON.stringify(res.data.user));
@@ -70,6 +78,28 @@ export default {
         }
       });
     },
+//iniciar como administrador
+    loginadmin() {
+      axios.post("http://localhost:3000/login", this.user).then((res) => {
+        if (res.data.status == "error") {
+          //  console.log(res.data.msg);
+          alert(res.data.msg);
+        } else {
+
+
+
+          
+          alert("Bienvenido  Ayudagro");
+          this.$router.push("/archivo");
+
+          localStorage.setItem("usuarios", JSON.stringify(res.data.user));
+          console.log(res.data);
+        }
+      });
+    },
+
+
+
   },
 };
 </script>
