@@ -75,12 +75,14 @@
 </template>
 <script>
 import axios from "axios";
-
+import Swal from "sweetalert2";
 export default {
   components: {},
   data() {
     return {
+      id_pregunta:null,
       listaPreguntas: [],
+      listarPregunta:[],
       us: "",
     };
   },
@@ -88,7 +90,7 @@ export default {
     this.us = JSON.parse(localStorage.getItem("usuarios"));
     this.listarPreguntas();
     this.listarPregunta();
-    console.log(this.us)
+    console.log(this.listaPreguntas)
   },
   methods: {
     listarPreguntas() {
@@ -109,10 +111,10 @@ export default {
   listarPregunta() {
       // alert("aaaa")
       axios
-        .get("http://localhost:3000/listarPreguntaNombreUsuario")
+        .get("http://localhost:3000/ListarPreguntaxId")
         .then((res) => {
           //codigo
-          this.listaPreguntas = res.data.usuario.nombre;
+          this.listaPreguntas = res.data.usuario;
           console.log(listaPreguntas);
         })
         .catch((err) => {
