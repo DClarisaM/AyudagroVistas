@@ -111,7 +111,7 @@ export default {
   listarPregunta() {
       // alert("aaaa")
       axios
-        .get("http://localhost:3000/ListarPreguntaxId")
+        .get("http://localhost:3000/ListarPreguntaxId"+ this.id_pregunta)
         .then((res) => {
           //codigo
           this.listaPreguntas = res.data.usuario;

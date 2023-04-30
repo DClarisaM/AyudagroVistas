@@ -43,7 +43,7 @@
                 <option value="3">Vaca</option>
               </select>
             </div>
-            <div class="form-floating" v-for="pregunta in listaPreguntas">
+            <div class="form-floating" v-for="pregunta in listaPreguntas" :key="pregunta.id_pregunta">
               <!-- <textarea class="form-control" placeholder="Detalle de la Subcategoria" id="floatingTextarea2" style="height: 50px"
                 
                 ></textarea> -->

@@ -32,7 +32,7 @@
                 </textarea>
                 <div class="text-center">
                 <button class="btn btn-primary" @click="nuevaRespuesta()" >
-                    Responder
+                    Guardar Respuesta
                 </button>
                 </div>
             </div>
