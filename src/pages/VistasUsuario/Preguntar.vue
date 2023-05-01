@@ -89,7 +89,7 @@
         </div>
         <div class="text-center">
           <button class="btn btn-primary" @click="registrarPregunta()">
-            Preguntar
+            Guardar Pregunta
           </button>
         </div>
       </card>

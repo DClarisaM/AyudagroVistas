@@ -45,14 +45,13 @@
               src="@/assets/img/faces/face-4.jpg"
               alt="..."
             />
-            <h4 class="Nombre">Pregunta #{{ pregunta.id_pregunta }}</h4>
+            <h4 class="Nombre">{{ pregunta.Usuario.nombre }} </h4>
           </div>
+          <h4>Preguntó:</h4>
           <h5>{{ pregunta.descripcion }}</h5>
           <div class="text-muted">
-            <small>autor de la pregunta:{{ pregunta.usuario_id }}</small>
-            <small
-              >subcategoria de la pregunta{{ pregunta.subcategoria_id }}</small
-            >
+            <small>autor de la pregunta:{{ pregunta.Usuario.nombre+" "+pregunta.Usuario.apellido }}</small>
+           <!-- <small>subcategoria de la pregunta{{ pregunta.subcategoria_id }}</small> -->
             <div class="text-right">
               <!-- <p-button type="info" round @click.native.prevent="">
                 Responder
@@ -84,6 +83,7 @@ export default {
       listaPreguntas: [],
       listarPregunta:[],
       us: "",
+      id:null,
     };
   },
   mounted() {
