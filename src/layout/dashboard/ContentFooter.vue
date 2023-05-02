@@ -4,7 +4,7 @@
       <nav>
         <ul>
           <li>
-            <router-link :to="{ path: '/admin' }">Ayudagro</router-link>
+            <router-link :to="{ path: '/admin' }">Equipo <br> Ayudagro</router-link>
           </li>
         </ul>
       </nav>
