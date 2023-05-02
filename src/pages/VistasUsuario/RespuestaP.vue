@@ -104,6 +104,8 @@ export default {
       },
       pregunta:[],
       us:{},
+      preUs:"",
+      preid:{}
 
     };
   },
@@ -111,7 +113,8 @@ export default {
     this.idPregunta = this.$route.params.preguntaId
     this.listarRespuestas(),
     this.verPregunta()
-
+    this.respuestasPorUser()
+    this.respuestasPorUserid()
     this.us = JSON.parse(localStorage.getItem("usuarios"));
   },
   methods: {
@@ -155,13 +158,36 @@ export default {
         axios.post("http://localhost:3000/nuevaRespuesta",this.respuesta)
         .then((res) => {
             console.log(res);
-            this.$router.push("/");
+           // this.$router.push("/");
         })
         .catch((err) => {
           console.log(res)
           alert("error del servidor"+err)
         })
-    }
+    },
+//pruebas paratraer el usuario que realiza la pregunta
+    respuestasPorUser(){
+     axios.get("http://localhost:3000/resxUser",)
+     .then((res)=>{
+      this.preUs=res.data
+      console.log(this.preUs);
+
+     })
+     .catch((err)=>{
+      console.log(err)
+     })
+    },
+    respuestasPorUserid(){
+     axios.get("http://localhost:3000/ListarRespuestasPorUsuario/1")
+     .then((res)=>{
+      this.preid=res.data
+      console.log(this.prei.Usuario);
+
+     })
+     .catch((err)=>{
+      console.log(err)
+     })
+    },
 
   }
 };

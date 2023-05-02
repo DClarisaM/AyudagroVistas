@@ -144,7 +144,7 @@ export default {
         .then((res) => {
           alert("Pregunta registrada con exito");
           console.log(res);
-          this.$router.push("/");
+          this.$router.push("/Dashboard");
         })
         .catch((err) => {
           alert("error del servidor" + err);

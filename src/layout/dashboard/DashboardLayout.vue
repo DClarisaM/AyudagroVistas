@@ -107,9 +107,9 @@ export default {
       }
     },
   },
-  mounted() {
-    localStorage.setItem('usuario')
-  }
+  // mounted() {
+  //   localStorage.setItem('usuario')
+  // }
 };
 </script>
 
