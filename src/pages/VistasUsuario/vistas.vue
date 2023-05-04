@@ -1,109 +1,117 @@
+<!-- eslint-disable prettier/prettier -->
 <template>
+  <card class="card" title="Inicio de sesión para el Administrador">
     <div>
-
-    {{ user }}
-    <card class="card" title="Editar Perfil">
-      <div>
-        <form @submit.prevent>
-          <div class="row">
-            <div class="col-md-6">
-              <fg-input
-                type="text"
-                label="Correo electronico"
-                placeholder="Daniertrochez12@"
-                v-model="user.user"
-              >
-              
-              
-              </fg-input>
-            </div>
-            <div class="col-md-6">
-               <fg-input
-                type="password"
-                label="Contraseña"
-                placeholder=""
-                v-model="user.password"
-              >
-              
-              </fg-input> 
-              
-  
-            </div>
+      <form @submit.prevent>
+        <div class="row">
+          <div class="col-md-6">
+            <fg-input
+              type="text"
+              label="Correo Electronico"
+              placeholder="gmail.com"
+              v-model="user.correo_electronico"
+            >
+            </fg-input>
           </div>
+
+          <div class="col-md-6">
+            <fg-input
+              type="text"
+              label="Contraseña"
+              placeholder="******"
+              v-model="user.contrasena"
+              v-on:keyup.enter="login()"
+            >
+            </fg-input>
+          </div>
+        </div>
+
+        <div class="text-center">
+          <p-button type="info" round @click.native.prevent="login()">
+            Iniciar sesión
+          </p-button>
+        </div>
+        <br>
+        <div>
+          <router-link class="text-center form-text" :to="{name:'archivo'}">Ingresar Como Administrador</router-link>
+        </div>
+
+        <div id="passwordHelpBlock" class="text-center form-text">
+          ¿No tienes cuenta?
+        </div>
+        <div class="text-center">
+          <p-button type="info" round @click.native.prevent="Registrate()">
+            Registrate
+          </p-button>
+        </div>
+
     
-          <!-- <div class="row">
-            <div class="col-md-6">
-              <fg-input
-                type="text"
-                label="Telefono"
-                placeholder="Telefono"
-                v-model="user.telefono"
-              >
-              </fg-input>
-            </div> -->
-            
-            <!-- <div class="col-md-6">
-              <fg-input
-                type="text"
-                label="Dirección"
-                placeholder="Popayan"
-                v-model="user.direccón"
-              >
-              </fg-input>
-            </div>
-          </div> -->
-          
-  
-          <div class="text-center">
-            <button type="info" round @click="iniciarSesion()">
-              Iniciar Sesion
-            </button>
-          </div>
-          <div class="clearfix"></div>
-        </form>
-      </div>
-    </card>
-</div>
-  </template>
-  <script>
-import { stringify } from 'querystring';
+        <div class="clearfix"></div>
+      </form>
+    </div>
+  </card>
+</template>
+<script>
+import axios from "axios";
 
-  export default {
-    data() {
-      return {
-        user: {
-          user: null,
-          password: null,
-          
-        },
-        usuariobd: "a@a.com",
-        passwordbd: "123",
-        respuesta: {
-          nombre: "Yennifer",
-          idUsuario: 1,
-          idPerfil: 3
-          
-        },
-      };
-    },
-    methods: {
-      updateProfile() {
-        alert("Your data: " + JSON.stringify(this.user));
+export default {
+  data() {
+    return {
+      user: {
+        correo_electronico: "",
+        contrasena: "",
       },
-      iniciarSesion(){
-        
-        if( this.user.user == this.usuariobd && this.user.password == this.passwordbd ){
-            alert("correcto") 
-            localStorage.setItem('usuario',"1")
-            // localStorage.setItem('usuario', JSON.stringify(respuesta))
-            this.$router.push("/dashboard")
-            
-        }else{
-            alert("el usuario no existe")
-        }
-      }
+    };
+  },
+  methods: {
+    Registrate(){
+      this.$router.push("/inicio");
     },
-  };
-  </script>
-  <style></style>
-  
+    // updateProfile() {
+    //   alert("Your data: " + JSON.stringify(this.user));
+    // },
+
+    login() {
+      axios.post("http://localhost:3000/login", this.user).then((res) => {
+        if (res.data.status == "error") {
+          //  console.log(res.data.msg);
+          alert(res.data.msg);
+        } else {
+
+
+
+          
+          alert("Bienvenido Ayudagro");
+          this.$router.push("/dashboard");
+
+          localStorage.setItem("usuarios", JSON.stringify(res.data.user));
+          console.log(res.data);
+        }
+      });
+    },
+//iniciar como administrador
+    loginadmin() {
+      axios.post("http://localhost:3000/login", this.user).then((res) => {
+        if (res.data.status == "error") {
+          //  console.log(res.data.msg);
+          alert(res.data.msg);
+        } else {
+
+
+
+          
+          alert("Bienvenido  Ayudagro");
+          this.$router.push("/archivo");
+
+          localStorage.setItem("usuarios", JSON.stringify(res.data.user));
+          console.log(res.data);
+        }
+      });
+    },
+
+
+
+  },
+};
+</script>
+<style></style>

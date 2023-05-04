@@ -88,7 +88,7 @@ const routes = [
   {
     path: "/",
     component: DashboardLayout,
-    redirect: "/dashboard",
+    redirect: "/Login",
     
     children: [
       { path: "login",
