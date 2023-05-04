@@ -20,6 +20,7 @@
               label="Contraseña"
               placeholder="******"
               v-model="user.contrasena"
+              v-on:keyup.enter="login()"
             >
             </fg-input>
           </div>
@@ -71,6 +72,7 @@ export default {
     // },
 
     login() {
+      console.log(this.user)
       axios.post("http://localhost:3000/login", this.user).then((res) => {
         if (res.data.status == "error") {
           //  console.log(res.data.msg);
@@ -81,10 +83,10 @@ export default {
 
           
           alert("Bienvenido Ayudagro");
-          this.$router.push("/");
+          this.$router.push("/dashboard");
 
           localStorage.setItem("usuarios", JSON.stringify(res.data.user));
-          console.log(res.data);
+          console.log(res.data.user);
         }
       });
     },

@@ -46,17 +46,19 @@
       <card class="card-Mpregunta">
         <div class="Mimagen">
           <img src="@/assets/img/background2.jpg" alt="..." />
+          {{ preUs.nombre }}
         </div>
         <div>
           <div class="Mfoto">
+           
             <img class="Musuario border-white" src="@/assets/img/faces/face-4.jpg" alt="..." />
-            <!-- <h4>
-             hola
-            </h4> -->
+          <h3>{{preUs.nombre}}</h3>
+          <h6>te respondio:</h6><br>
           </div>
           <h5>
-          {{ respuesta.pregunta_id }}
-          {{ respuesta.descripcion }}
+        
+          {{ respuesta.descripcion }} 
+          
         </h5>
           <small class="text-right">
             {{ respuesta.createdAt }}
@@ -98,24 +100,29 @@ export default {
 
       respuesta: {
         usuario_id:"",
-        pregunta_id:1,
+        pregunta_id:"",
         descripcion: "",
         hora_fecha:null,
       },
       pregunta:[],
       us:{},
-      preUs:"",
-      preid:{}
+      preUs:{},
+      preid:{},
+      reId:""
 
     };
   },
   async mounted() {
+    this.us = JSON.parse(localStorage.getItem("usuarios"));
     this.idPregunta = this.$route.params.preguntaId
+    this. respuestasPorUser()
     this.listarRespuestas(),
     this.verPregunta()
-    this.respuestasPorUser()
-    this.respuestasPorUserid()
-    this.us = JSON.parse(localStorage.getItem("usuarios"));
+   // this.respuestasPorUser()
+    //this.respuestasPorUserid()
+   
+  
+  
   },
   methods: {
     listarRespuestas() {
@@ -153,23 +160,33 @@ export default {
          //alert("jahkajs")
         this.respuesta.usuario_id=this.us.id_usuario
         this.respuesta.pregunta_id=this.idPregunta
+        
         console.log(this.respuesta.pregunta_id)
         console.log(this.respuesta.descripcion )
         axios.post("http://localhost:3000/nuevaRespuesta",this.respuesta)
         .then((res) => {
-            console.log(res);
+            console.log(res.data);
+            this.reId=res.data.id_respuesta
+            console.log(this.reId)
+
+           this. respuestasPorUser()            // localStorage.setItem("respuesta",Json.strinfiy(re.data.respuesta))
+            // console.log(res.data)
            // this.$router.push("/");
         })
         .catch((err) => {
-          console.log(res)
+          console.log(err)
           alert("error del servidor"+err)
         })
     },
-//pruebas paratraer el usuario que realiza la pregunta
+//pruebas paratraer el usuario que realiza la respuesta 
     respuestasPorUser(){
-     axios.get("http://localhost:3000/resxUser",)
+      alert("si")
+      console.log(this.us)
+      console.log(this.reId)
+     axios.get("http://localhost:3000/resxUser/1")
      .then((res)=>{
-      this.preUs=res.data
+      alert("si lista")
+      this.preUs=res.data.Usuario
       console.log(this.preUs);
 
      })
@@ -177,17 +194,18 @@ export default {
       console.log(err)
      })
     },
-    respuestasPorUserid(){
-     axios.get("http://localhost:3000/ListarRespuestasPorUsuario/1")
-     .then((res)=>{
-      this.preid=res.data
-      console.log(this.prei.Usuario);
+    // respuestasPorUserid(){
+    //  axios.get("http://localhost:3000/ListarRespuestasPorUsuario/"+this.reId)
+    //  .then((res)=>{
+    //   console.log(this.preid);
+    //   this.preid=res.data
+     
 
-     })
-     .catch((err)=>{
-      console.log(err)
-     })
-    },
+    //  })
+    //  .catch((err)=>{
+    //   console.log(err)
+    //  })
+    // },
 
   }
 };
