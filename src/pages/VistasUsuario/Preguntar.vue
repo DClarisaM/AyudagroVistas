@@ -88,7 +88,7 @@
           </card>
         </div>
         <div class="text-center">
-          <button class="btn btn-primary" @click="registrarPregunta()">
+          <button class="btn btn-success" @click="registrarPregunta()">
             Guardar Pregunta
           </button>
         </div>
