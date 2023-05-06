@@ -1,88 +1,26 @@
 <template>
-  
-  
-    <div class="row">
-      <div class="text-center">
-          <p-button type="danger" round @click.native.prevent="loginadmin()">
-            Administrar Categorias
-          </p-button>
-        </div>
-        <br> 
-        <div class="text-center">
-          <p-button type="danger" round @click.native.prevent="loginadmin()">
-            Administrar Subcategorias
-          </p-button>
-        </div>
-        <br> 
-        <div class="text-center">
-          <p-button type="danger" round @click.native.prevent="loginadmin()">
-            Ver Usuario
-          </p-button>
-        </div>
-        <br> 
-        <div class="text-center">
-          <p-button type="danger" round @click.native.prevent="loginadmin()">
-            Ver Sugerencias
-          </p-button>
-        </div>
-        <br> 
-        <br>
-        <br>
-        <br>
-        <div class="text-center">
-          <p-button type="danger" round @click.native.prevent="loginadmin()">
-            Ver Valor_R
-          </p-button>
-        </div>
-        <div class="text-center">
-          <p-button type="danger" round @click.native.prevent="loginadmin()">
-            Ver Pregunta
-          </p-button>
-        </div>
-        <br>  <div class="text-center">
-          <p-button type="dark" round @click.native.prevent="loginadmin()">
-            Ver Respuesta
-          </p-button>
-        </div>
-        <br>
-        <div class="text-center">
-          <p-button type="dark" round @click.native.prevent="loginadmin()">
-            Gestionar Rol
-          </p-button>
-        </div>
-        <br>
-        <div class="text-center">
-          <p-button type="dark" round @click.native.prevent="loginadmin()">
-            preguntas
-          </p-button>
-        </div>   <br>
-        <div class="text-center">
-          <p-button type="dark" round @click.native.prevent="loginadmin()">
-            Gestionar Archivo
-          </p-button>
-        </div>   <br>
-        <div class="text-center">
-          <p-button type="dark" round @click.native.prevent="loginadmin()">
-            Mostrar Sugerencias
-          </p-button>
-        </div>   <br>
-        <div class="text-center">
-          <p-button type="dark" round @click.native.prevent="loginadmin()">
-            Listar Pregunta Archivo
-          </p-button>
-        </div> 
-        <br><br><br><br>
-        <div class="text-center">
-          <p-button type="danger" round @click.native.prevent="loginadmin()">
-            Mis Preguntas
-          </p-button>
-        </div>   
-        <br><br><br><br>
-        <div class="text-center">
-          <p-button type="danger" round @click.native.prevent="loginadmin()">
-            Sin Respuesta
-          </p-button>
-        </div>  
+    <div>
+      
+<drop-down class="nav-item" title="Admin"  icon="ti-linux">
+  <a class="dropdown-item"><router-link class="text-center form-text" :to="{name:'categorias'}">Administrar Categorias</router-link></a>
+  <a class="dropdown-item"><router-link class="text-center form-text" :to="{name:'subcategorias'}">Administrar SubCategorias</router-link></a>
+  <a class="dropdown-item"><router-link class="text-center form-text" :to="{name:'usuario'}">Ver Usuario</router-link></a>
+  <a class="dropdown-item"><router-link class="text-center form-text" :to="{name:'sugerencias'}">Ver Sugerencias</router-link></a>
+  <a class="dropdown-item"><router-link class="text-center form-text" :to="{name:'valorR'}">Ver ValorR</router-link></a>
+  <a class="dropdown-item"><router-link class="text-center form-text" :to="{name:'pregunta'}">Ver Pregunta</router-link></a>
+  <a class="dropdown-item"><router-link class="text-center form-text" :to="{name:'respuesta'}">Ver Respuesta</router-link></a>
+  <a class="dropdown-item"><router-link class="text-center form-text" :to="{name:'rol'}">Gestionar Rol</router-link></a>
+  <a class="dropdown-item"><router-link class="text-center form-text" :to="{name:'ListaPreguntas'}">Preguntas</router-link></a>
+
+  <a class="dropdown-item"><router-link class="text-center form-text" :to="{name:'sugerenciaArchivo'}">mostrar Sugerencias</router-link></a>
+  <a class="dropdown-item"><router-link class="text-center form-text" :to="{name:'preguntaArchivo'}">Listar Pregunta Archivo</router-link></a>
+  <a class="dropdown-item"><router-link class="text-center form-text" :to="{name:'MisPreguntas'}">Mis Preguntas</router-link></a>
+  <a class="dropdown-item"><router-link class="text-center form-text" :to="{name:'SinRespuesta'}">Sin Respuesta</router-link></a>
+ 
+
+</drop-down>
+        
+      
              <!-- boton agregar -->
     <div class="col-8 offset-2">
       <router-link
@@ -134,7 +72,7 @@
         </div>
       </card>
     </div>
-    </div>
+  </div>
   </template>
   <script>
   

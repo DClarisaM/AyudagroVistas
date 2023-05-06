@@ -21,7 +21,7 @@
           </p-button> -->
           <div class="col-8 offset-2">
             <router-link
-              class="btn"
+            class="btn btn-success"
               :to="{
                 name: 'preguntar',
               }"
@@ -58,7 +58,7 @@
                 Responder
               </p-button> -->
               <router-link
-                class="btn"
+              class="btn btn-success"
                 :to="{
                   name: 'RespuestaP',
                   params: { preguntaId: pregunta.id_pregunta },
