@@ -48,13 +48,13 @@
           <img src="@/assets/img/background2.jpg" alt="..." />
           {{ preUs.nombre }}
         </div>
-        <div>
+        
           <div class="Mfoto">
            
             <img class="Musuario border-white" src="@/assets/img/faces/face-4.jpg" alt="..." />
-          <h3>{{preUs.nombre}}</h3>
-          <h6>te respondio:</h6><br>
-          </div>
+          
+          <h6 class="nombre">te respondio:</h6>
+         
           <h5>
         
           {{ respuesta.descripcion }} 
@@ -64,6 +64,7 @@
             {{ respuesta.createdAt }}
           </small>
         </div>
+        
        
         <!-- <div v-for="preguntas in listaRespuestas">
           <label for="floatingTextarea2">
