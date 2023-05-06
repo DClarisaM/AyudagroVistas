@@ -18,8 +18,7 @@
         <label for="">Telefono::</label>
         <h4 class="title">{{ us.telefono }}</h4>
         <label for="">E-mail:</label>
-        <h4 class="title">{{ us.correo_electronico
-         }}</h4>
+        <h4 class="title">{{ us.correo_electronico }}</h4>
       </div>
     
      

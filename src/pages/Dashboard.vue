@@ -50,7 +50,8 @@
           <h4>Preguntó:</h4>
           <h5>{{ pregunta.descripcion }}</h5>
           <div class="text-muted">
-            <small>autor de la pregunta:{{ pregunta.Usuario.nombre+" "+pregunta.Usuario.apellido }}</small>
+            <small>autor de la pregunta:{{ pregunta.Usuario.nombre+" "+pregunta.Usuario.apellido }}</small><br>
+            <small>fecha y hora :{{ pregunta.Usuario.createdAt }}</small>
            <!-- <small>subcategoria de la pregunta{{ pregunta.subcategoria_id }}</small> -->
             <div class="text-right">
               <!-- <p-button type="info" round @click.native.prevent="">

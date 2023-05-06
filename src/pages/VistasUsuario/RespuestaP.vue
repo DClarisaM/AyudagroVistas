@@ -1,48 +1,55 @@
 <template>
   <div>
-    <div >
-    <div class="col-6 offset-3" >
-    <card class="card-user">
-       <div class="image">
-         <img src="@/assets/img/background2.jpg" alt="..." />
-       </div>
-       <div>
-         <div class="author">
-           <img
-             class="avatar border-white"
-             src="@/assets/img/faces/face-4.jpg"
-             alt="..."
-           />
-           <h4 class="title">{{ us.nombre }}</h4>
-           <div>
-           <h4 >
-              {{ listaPregunta.descripcion}}
-           </h4>
-           </div>
-         </div>
-         <!-- <div class="text-right">
+    <div>
+      <div class="col-6 offset-3">
+        <card class="card-user">
+          <div class="image">
+            <img src="@/assets/img/background2.jpg" alt="..." />
+          </div>
+          <div>
+            <div class="author">
+              <img
+                class="avatar border-white"
+                src="@/assets/img/faces/face-4.jpg"
+                alt="..."
+              />
+              <h4 class="title">{{ us.nombre }}</h4>
+              <div>
+                <h4>
+                  {{ listaPregunta.descripcion }}
+                </h4>
+              </div>
+            </div>
+            <!-- <div class="text-right">
            <p-button type="info" round @click.native.prevent="">
              Responder
            </p-button>
          </div> -->
-         <div class="form-group">
-                
-                <textarea class="form-control" placeholder="Escriba aquí su respuesta" id="floatingTextarea2" style="height: 50px"
-                 v-model="respuesta.descripcion">
-                </textarea>
-                <div class="text-center">
-                <button class="btn btn-primary" @click="nuevaRespuesta()" >
-                    Guardar Respuesta
+            <div class="form-group">
+              <textarea
+                class="form-control"
+                placeholder="Escriba aquí su respuesta"
+                id="floatingTextarea2"
+                style="height: 50px"
+                v-model="respuesta.descripcion"
+              >
+              </textarea>
+              <div class="text-center">
+                <button class="btn btn-primary" @click="nuevaRespuesta()">
+                  Guardar Respuesta
                 </button>
-                </div>
+              </div>
             </div>
-         
-       </div>
-     </card>
+          </div>
+        </card>
+      </div>
     </div>
-  </div>
 
-    <div class="col-10 offset-1" v-for="respuesta in listaRespuestas" :key="respuesta.id_respuesta ">
+    <div
+      class="col-10 offset-1"
+      v-for="respuesta in listaRespuestas"
+      :key="respuesta.id_respuesta"
+    >
       <card class="card-Mpregunta">
         <div class="Mimagen">
           <img src="@/assets/img/background2.jpg" alt="..." />
@@ -50,21 +57,23 @@
         </div>
         <div>
           <div class="Mfoto">
-           
-            <img class="Musuario border-white" src="@/assets/img/faces/face-4.jpg" alt="..." />
-          <h3>{{preUs.nombre}}</h3>
-          <h6>te respondio:</h6><br>
+            <img
+              class="Musuario border-white"
+              src="@/assets/img/faces/face-4.jpg"
+              alt="..."
+            />
+            <h3 class="Mnombre">{{ respuesta.hora_fecha }}</h3>
+            <h6>te respondio:</h6>
+            <br />
           </div>
           <h5>
-        
-          {{ respuesta.descripcion }} 
-          
-        </h5>
+            {{ respuesta.descripcion }}
+          </h5>
           <small class="text-right">
             {{ respuesta.createdAt }}
           </small>
         </div>
-       
+
         <!-- <div v-for="preguntas in listaRespuestas">
           <label for="floatingTextarea2">
             {{ preguntas.descripcion }}
@@ -80,18 +89,13 @@
         </div> -->
       </card>
     </div>
-
-
-
   </div>
 </template>
 <script>
 import axios from "axios";
 
 export default {
-  components: {
-
-  },
+  components: {},
   data() {
     return {
       idPregunta: null,
@@ -99,115 +103,115 @@ export default {
       listaPregunta: [],
 
       respuesta: {
-        usuario_id:"",
-        pregunta_id:"",
+        usuario_id: "",
+        pregunta_id: "",
         descripcion: "",
-        hora_fecha:null,
+        hora_fecha: "",
       },
-      pregunta:[],
-      us:{},
-      preUs:{},
-      preid:{},
-      reId:""
-
+      pregunta: [],
+      us: {},
+      preUs: {},
+      preid: {},
+      reId: "",
     };
   },
   async mounted() {
     this.us = JSON.parse(localStorage.getItem("usuarios"));
-    this.idPregunta = this.$route.params.preguntaId
-    this. respuestasPorUser()
+    this.idPregunta = this.$route.params.preguntaId;
+    //this.respuestasPorUser(),
     this.listarRespuestas(),
-    this.verPregunta()
-   // this.respuestasPorUser()
+     this.verPregunta();
+    // this.respuestasPorUser()
     //this.respuestasPorUserid()
-   
-  
-  
   },
   methods: {
     listarRespuestas() {
       // alert("aaaa")
-      axios.get("http://localhost:3000/ListarRespuestasPorPreguntaId/"+ this.idPregunta)
+      axios
+        .get(
+          "http://localhost:3000/ListarRespuestasPorPreguntaId/" +
+            this.idPregunta
+        )
         .then((res) => {
           //codigo
-          this.listaRespuestas = res.data
+          this.listaRespuestas = res.data;
           console.log(res.data);
         })
         .catch((err) => {
           //TODO mostrar ventana emergente sweetalert2 con el error
-          alert("error del servidor")
-        })
+          alert("error del servidor");
+        });
     },
-
 
     verPregunta() {
-        // alert("aaaa")
-        axios.get("http://localhost:3000/verDetallePregunta/"+this.idPregunta)
-          .then((res) => {
-            //codigo
-            // alert("bbbb")
-            console.log(res.data);
-            this.listaPregunta = res.data
-          })
-          .catch((err) => {
-            //TODO mostrar ventana emergente sweetalert2 con el error
-            alert("error del servidor")
-          })
-      },
-
-      
-      nuevaRespuesta(){
-         //alert("jahkajs")
-        this.respuesta.usuario_id=this.us.id_usuario
-        this.respuesta.pregunta_id=this.idPregunta
-        
-        console.log(this.respuesta.pregunta_id)
-        console.log(this.respuesta.descripcion )
-        axios.post("http://localhost:3000/nuevaRespuesta",this.respuesta)
+      // alert("aaaa")
+      axios
+        .get("http://localhost:3000/verDetallePregunta/" + this.idPregunta)
         .then((res) => {
-            console.log(res.data);
-            this.reId=res.data.id_respuesta
-            console.log(this.reId)
-
-           this. respuestasPorUser()            // localStorage.setItem("respuesta",Json.strinfiy(re.data.respuesta))
-            // console.log(res.data)
-           // this.$router.push("/");
+          //codigo
+          // alert("bbbb")
+          console.log(res.data);
+          this.listaPregunta = res.data;
         })
         .catch((err) => {
-          console.log(err)
-          alert("error del servidor"+err)
-        })
+          //TODO mostrar ventana emergente sweetalert2 con el error
+          alert("error del servidor");
+        });
     },
-//pruebas paratraer el usuario que realiza la respuesta 
-    respuestasPorUser(){
-      alert("si")
-      console.log(this.us)
-      console.log(this.reId)
-     axios.get("http://localhost:3000/resxUser/1")
-     .then((res)=>{
-      alert("si lista")
-      this.preUs=res.data.Usuario
-      console.log(this.preUs);
 
-     })
-     .catch((err)=>{
-      console.log(err)
-     })
+    nuevaRespuesta() {
+      //alert("jahkajs")
+      this.respuesta.usuario_id = this.us.id_usuario;
+      console.log(this.respuesta.usuario_id);
+      this.respuesta.pregunta_id = this.idPregunta;
+      console.log(this.respuesta.pregunta_id);
+      console.log(this.respuesta.descripcion);
+      this.respuesta.hora_fecha=this.us.nombre
+      axios
+        .post("http://localhost:3000/nuevaRespuesta", this.respuesta)
+        .then((res) => {
+          console.log(res.data);
+          alert("respuesta exitosa")
+          // this.reId = res.data.id_respuesta;
+          // console.log(this.reId);
+
+         // this.respuestasPorUser(); // localStorage.setItem("respuesta",Json.strinfiy(re.data.respuesta))
+          // console.log(res.data)
+          // this.$router.push("/");
+        })
+        .catch((err) => {
+          console.log(err);
+          alert("error del servidor" + err);
+        });
     },
+    //pruebas paratraer el usuario que realiza la respuesta
+    // respuestasPorUser() {
+    //   alert("si");
+    //   console.log(this.us);
+    //   console.log(this.reId);
+    //   axios
+    //     .get("http://localhost:3000/resxUser/" + this.reId)
+    //     .then((res) => {
+    //       alert("si lista");
+    //       this.preUs = res.data.Usuario;
+    //       console.log(this.preUs);
+    //     })
+    //     .catch((err) => {
+    //       console.log(err);
+    //     });
+    // },
     // respuestasPorUserid(){
     //  axios.get("http://localhost:3000/ListarRespuestasPorUsuario/"+this.reId)
     //  .then((res)=>{
     //   console.log(this.preid);
     //   this.preid=res.data
-     
 
     //  })
     //  .catch((err)=>{
     //   console.log(err)
     //  })
     // },
-
-  }
+  },
 };
 </script>
   

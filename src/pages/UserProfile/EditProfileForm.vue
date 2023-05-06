@@ -46,7 +46,7 @@
               type="text"
               label="Dirección"
               placeholder="Popayan"
-              v-model="user.direccin"
+              v-model="user.direccion"
             >
             </fg-input>
           </div>
@@ -54,36 +54,48 @@
         
 
         <div class="text-center">
-          <p-button type="info" round @click.native.prevent="updateProfile">
-            guardar Cambios
-          </p-button>
-        </div>
+                <button class="btn btn-primary" @click="updateProfile()">
+                  Guardar Respuesta
+                </button>
+              </div>
         <div class="clearfix"></div>
       </form>
     </div>
   </card>
 </template>
 <script>
+import axios from 'axios';
 export default {
   data() {
     return {
       user: {
-        email: "",
+        correo_electronico: "",
         nombre: "",
         apelllido: "",
         direccion: "",
         telefono: "",
-        estado: "",
+        contrasena: "",
       },
       us:"",
     };
   },
   mounted(){
-    this.us = JSON.parse(localStorage.getItem("usuarios"));
+    this.us = JSON.parse(localStorage.getItem("usuarios"))
   },
   methods: {
     updateProfile() {
-      alert("Your data: " + JSON.stringify(this.user));
+      this.correo_electronico=this.us.correo_electronico,
+      this.contrasena=this.us.contrasena
+      axios.put("http://localhost:3000/editarUsuario/"+this.us.id_usuario,this.user)
+      .then((res) => {
+          console.log(res.data);
+          alert("Actualizacion exitosa")
+          this.$router.push("/login");
+        })
+        .catch((err) => {
+          console.log(err);
+          alert("error del servidor" + err);
+        });
     },
   },
 };
