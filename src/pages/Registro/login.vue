@@ -33,7 +33,7 @@
         </div>
         <br>
         <div>
-          <router-link class="text-center form-text" :to="{name:'archivo'}">Ingresar Como Administrador</router-link>
+          <router-link class="text-center form-text" :to="{name:'vistas'}">Ingresar Como Administrador</router-link>
         </div>
 
         <div id="passwordHelpBlock" class="text-center form-text">
@@ -60,6 +60,7 @@ export default {
       user: {
         correo_electronico: "",
         contrasena: "",
+        rol_id:1,
       },
     };
   },

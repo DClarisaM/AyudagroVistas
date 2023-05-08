@@ -82,6 +82,7 @@ import RespuestaP from "@/pages/VistasUsuario/RespuestaP.vue";
 import Vistas from "@/pages/VistasUsuario/vistas.vue";
 import login from "@/pages/Registro/login.vue";
 import Inicio from "@/pages/Registro/Inicio.vue";
+import loginProfesional from "@/pages/loginProfesional"
 
 
 const routes = [
@@ -94,6 +95,11 @@ const routes = [
       { path: "login",
        name: "login",
       component: login 
+      },
+      {
+        path: "loginProfesional",
+        name: "loginProfesional",
+        component: loginProfesional,
       },
       
       {

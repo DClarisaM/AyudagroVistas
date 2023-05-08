@@ -1,6 +1,6 @@
-<!-- eslint-disable prettier/prettier -->
+
 <template>
-  <card class="card" title="Inicio de sesión para el Administrador">
+  <card class="card" title="Inicio de sesión para el Profesional">
     <div>
       <form @submit.prevent>
         <div class="row">
@@ -27,14 +27,11 @@
         </div>
 
         <div class="text-center">
-          <p-button type="info" round @click.native.prevent="login2()">
+          <p-button type="info" round @click.native.prevent="login3()">
             Iniciar sesión 
           </p-button>
         </div>
         <br>
-        <div>
-          <router-link class="text-center form-text" :to="{name:'loginProfesional'}">Ingresar Como Profesional</router-link>
-        </div>
       </form>
     </div>
   </card>
@@ -48,7 +45,7 @@ export default {
       user: {
         correo_electronico: "",
         contrasena: "",
-        rol_id:2,
+        rol_id:3,
       },
     };
   },
@@ -60,8 +57,8 @@ export default {
     //   alert("Your data: " + JSON.stringify(this.user));
     // },
 
-    login2() {
-      axios.post("http://localhost:3000/login2", this.user).then((res) => {
+    login3() {
+      axios.post("http://localhost:3000/login3", this.user).then((res) => {
         if (res.data.status == "error") {
           //  console.log(res.data.msg);
           alert(res.data.msg);
@@ -70,8 +67,8 @@ export default {
 
 
           
-          alert("Bienvenido ADMIN");
-          this.$router.push("/dashboard");
+          alert("Bienvenido Ayudagro Profesional");
+          this.$router.push("/archivo");
 
           localStorage.setItem("usuarios", JSON.stringify(res.data.user));
           console.log(res.data);

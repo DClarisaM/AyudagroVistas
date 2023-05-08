@@ -90,7 +90,7 @@ export default {
   mounted() {
     this.us = JSON.parse(localStorage.getItem("usuarios"));
     this.listarPreguntas();
-    this.listarPregunta();
+     this.listarPregunta();
     console.log(this.listaPreguntas)
   },
   methods: {

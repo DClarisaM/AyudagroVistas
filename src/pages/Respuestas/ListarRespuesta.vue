@@ -46,7 +46,7 @@
               </tr>
             </thead>
             <tbody>
-              <tr v-for="respuesta in listaRespuestas">
+              <tr v-for="respuesta in listaRespuestas" :key="respuesta.id_respuesta">
                 <th scope="row">{{ respuesta.id_respuesta }}</th>
                 <td>{{ respuesta.descripcion }}</td>
                 <td>{{ respuesta.hora_fecha }}</td>

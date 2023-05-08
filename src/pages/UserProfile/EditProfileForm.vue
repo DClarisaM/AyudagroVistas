@@ -21,7 +21,7 @@
               type="text"
               label="Apellido"
               placeholder="Trochez"
-              v-model="user.apelllido"
+              v-model="user.apellido"
             >
             
             </fg-input> 
@@ -69,12 +69,12 @@ export default {
   data() {
     return {
       user: {
-        correo_electronico: "",
+       // correo_electronico: "",
         nombre: "",
-        apelllido: "",
+        apellido: "",
         direccion: "",
         telefono: "",
-        contrasena: "",
+       // contrasena: "",
       },
       us:"",
     };
@@ -86,10 +86,12 @@ export default {
     updateProfile() {
       this.correo_electronico=this.us.correo_electronico,
       this.contrasena=this.us.contrasena
+      
+      
       axios.put("http://localhost:3000/editarUsuario/"+this.us.id_usuario,this.user)
       .then((res) => {
-          console.log(res.data);
-          alert("Actualizacion exitosa")
+          console.log(res);
+          alert("Actualizacion exitosa"+this.us.id_usuario)
           this.$router.push("/login");
         })
         .catch((err) => {
