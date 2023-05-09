@@ -16,7 +16,7 @@
 
           <div class="col-md-6">
             <fg-input
-              type="text"
+              type="password"
               label="Contraseña"
               placeholder="******"
               v-model="user.contrasena"
