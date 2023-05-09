@@ -82,7 +82,10 @@ import RespuestaP from "@/pages/VistasUsuario/RespuestaP.vue";
 import Vistas from "@/pages/VistasUsuario/vistas.vue";
 import login from "@/pages/Registro/login.vue";
 import Inicio from "@/pages/Registro/Inicio.vue";
-import loginProfesional from "@/pages/loginProfesional"
+import loginProfesional from "@/pages/loginProfesional";
+import RespuestasProfesional from "@/pages/pagesProfesional/RespuestasProfesional";
+import Perfil from "@/pages/pagesProfesional/Perfil";
+import inicioProfesional from "@/pages/pagesProfesional/inicioProfesional";
 
 
 const routes = [
@@ -97,9 +100,24 @@ const routes = [
       component: login 
       },
       {
+        path: "Perfil",
+        name: "Perfil",
+        component: Perfil,
+      },
+      {
+        path: "inicioProfesional",
+        name: "inicioProfesional",
+        component: inicioProfesional,
+      },
+      {
         path: "loginProfesional",
         name: "loginProfesional",
         component: loginProfesional,
+      },
+      {
+        path: "RespuestasProfesional",
+        name: "RespuestasProfesional",
+        component: RespuestasProfesional,
       },
       
       {

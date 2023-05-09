@@ -71,7 +71,7 @@ export default {
 
           
           alert("Bienvenido ADMIN");
-          this.$router.push("/dashboard");
+          this.$router.push("/archivo");
 
           localStorage.setItem("usuarios", JSON.stringify(res.data.user));
           console.log(res.data);

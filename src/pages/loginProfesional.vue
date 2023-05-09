@@ -68,7 +68,7 @@ export default {
 
           
           alert("Bienvenido Ayudagro Profesional");
-          this.$router.push("/archivo");
+          this.$router.push("/inicioProfesional");
 
           localStorage.setItem("usuarios", JSON.stringify(res.data.user));
           console.log(res.data);
