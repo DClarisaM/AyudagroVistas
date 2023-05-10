@@ -11,9 +11,10 @@
               id="nombre"
               placeholder="Danier"
               v-model="user.nombre"
-              required
-            >
-            </fg-input>
+            />
+            <div v-if="enviado && !$v.user.nomrbre.required" class="mensajeError">
+              Debe escribir un nombre
+            </div>
           </div>
           <div class="col-md-6">
             <fg-input
@@ -81,15 +82,19 @@
               label="Direccion"
               id="direccion"
               placeholder="Cl-#"
-              v-model="user.direccion"
-              required
+              v-model="user.direccion"  
             >
+
+          
             </fg-input>
+            <div v-if="enviado && !$.direccion.required" class="mensajeError">
+             Debe escibir una direccionsi 
+            </div>
           </div>
         </div>
 
         <div class="text-center">
-          <button class="btn" @click="CrearUser()">Registrar</button>
+          <button class="btn" @click="validar()">Registrar</button>
         </div>
         <div class="clearfix"></div>
       </form>
@@ -97,8 +102,9 @@
   </card>
 </template>
 <script>
-import axios from "axios";
-import vuejsStorage from 'vuejs-storage';
+import axios from "axios"
+import {required, email, minLength, sameAs} from 'vuelidate/lib/validators'
+
 export default {
   name: "Inicio",
   data() {
@@ -114,10 +120,29 @@ export default {
         estado: "activo",
         password: "",
       },
+      enviado:false,
     };
   },
+  validation:{
+    user:{
+    nombre:{required},
+    apellido:{required},
+    correo_electronico:{required, email},
+    contrasena:{required, minLength:minLength(5)},
+    password:{required, sameAsContrasena:sameAs("contrasena")},
+    telefono:{required},
+    direccion:{required},
+    }
+},
   
   methods: {
+    validar(){
+      this.enviado=true;
+      if(this.$v.$invalid){
+        return;
+      }
+      console.log("formulario valido")
+    },
     // updateProfile() {
     //   alert("Your data: " + JSON.stringify(this.user));
     // },

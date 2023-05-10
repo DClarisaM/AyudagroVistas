@@ -77,7 +77,7 @@ export default {
     },
 //iniciar como administrador
     loginadmin() {
-      axios.post("http://localhost:3000/login", this.user).then((res) => {
+      axios.post("http://localhost:3000/login3", this.user).then((res) => {
         if (res.data.status == "error") {
           //  console.log(res.data.msg);
           alert(res.data.msg);

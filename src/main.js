@@ -18,10 +18,11 @@ import App from "./App";
 import router from "./router/index";
 import axios from 'axios'
 import VueAxios from 'vue-axios'
-
+import Vuelidate from 'vuelidate';
 import PaperDashboard from "./plugins/paperDashboard";
 import "vue-notifyjs/themes/default.css";
 
+Vue.use(Vuelidate);
 Vue.use(PaperDashboard);
 Vue.use(VueAxios, axios)
 

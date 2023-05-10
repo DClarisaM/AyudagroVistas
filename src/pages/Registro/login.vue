@@ -53,7 +53,7 @@
 </template>
 <script>
 import axios from "axios";
-
+import {required} from 'vuelidate/lib/validators'
 export default {
   data() {
     return {
@@ -63,6 +63,10 @@ export default {
         rol_id:1,
       },
     };
+  },
+  validations:{
+    correo_electronico:{required},
+    contrasena:{required,}
   },
   methods: {
     Registrate(){
