@@ -1,10 +1,14 @@
 <template>
   <div>
+    
+    
     <div class="col-6 offset-3">
+      
       <card class="card-user">
         <div class="image">
           <img src="@/assets/img/background2.jpg" alt="..." />
         </div>
+        
         <div>
           <div class="author">
             <img
@@ -31,6 +35,7 @@
           </div>
         </div>
       </card>
+      
     </div>
 
     <div class="col-10 offset-1" v-for="pregunta in listaPreguntas  " :key="pregunta.id_pregunta">

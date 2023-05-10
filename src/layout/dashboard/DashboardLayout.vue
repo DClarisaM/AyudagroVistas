@@ -21,6 +21,7 @@
         <!--<sidebar-link to="/MisPreguntas" name="Mis Preguntas" icon="ti-pencil-alt" /> -->
         <!-- <sidebar-link to="/SinRespuesta" name="Sin Respuesta" icon="ti-info" /> -->
         <!-- <sidebar-link to="/vistas" name="Inicio Sesion" icon="ti-eye" /> -->
+        
 
       
 
@@ -34,6 +35,7 @@
             <p>Stats</p>
           </a>
         </li>
+        
         <!-- <drop-down class="nav-item" title="5 Notifications" title-classes="nav-link" icon="ti-bell">
           <a class="dropdown-item">Notification 1</a>
           <a class="dropdown-item">Notification 2</a>
@@ -48,9 +50,11 @@
           </a>
         </li>
         <li class="divider"></li>
+        
       </mobile-menu>
-
+    
     </side-bar>
+    
     <div class="main-panel">
       <top-navbar></top-navbar>
       <h1>
@@ -69,7 +73,9 @@
       </div>
       <content-footer></content-footer>
     </div>
+    
   </div>
+  
 </template>
 <style lang="scss"></style>
 
@@ -101,6 +107,7 @@ export default {
     this.usuariologueado = localStorage.getItem('usuario')
   },
   methods: {
+
     toggleSidebar() {
       if (this.$sidebar.showSidebar) {
         this.$sidebar.displaySidebar(false);
