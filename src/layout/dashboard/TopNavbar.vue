@@ -2,6 +2,11 @@
   <nav class="navbar navbar-expand-lg navbar-light">
     <div class="container-fluid">
       <a class="navbar-brand" href="#">{{ routeName }}</a>
+      <div class="user-controls">
+            <button v-on:click="cerrarSesion">
+              <i class="fas fa-sign-out-alt"></i>Cerrar Sesion</button>
+          </div>
+          
       <button
         class="navbar-toggler navbar-burger"
         type="button"
@@ -31,6 +36,11 @@ export default {
     };
   },
   methods: {
+    cerrarSesion(){
+
+localStorage.removeItem('token');
+this.$router.push('/login');
+},
     capitalizeFirstLetter(string) {
       return string.charAt(0).toUpperCase() + string.slice(1);
     },
@@ -49,4 +59,12 @@ export default {
   },
 };
 </script>
-<style></style>
+<style>
+.user-controls{
+  position: absolute;
+  top: 32%;
+  right: 1%;
+  
+}
+
+</style>

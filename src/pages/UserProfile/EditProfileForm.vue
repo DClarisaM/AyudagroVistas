@@ -1,5 +1,8 @@
 <template>
   <card class="card" title="Editar Perfil">
+    
+  
+          
     <div>
       <form @submit.prevent>
         <div class="row">
@@ -11,7 +14,9 @@
               v-model="user.nombre"
             >            
             </fg-input>
+
           </div>
+      
           <div class="col-md-6">
              <fg-input
               type="text"
@@ -24,6 +29,7 @@
             
 
           </div>
+        
         </div>
   
         <div class="row">
@@ -57,7 +63,9 @@
         <div class="clearfix"></div>
       </form>
     </div>
+   
   </card>
+  
 </template>
 <script>
 import axios from 'axios';
@@ -79,6 +87,7 @@ export default {
     this.us = JSON.parse(localStorage.getItem("usuarios"))
   },
   methods: {
+  
     updateProfile() {
       this.correo_electronico=this.us.correo_electronico,
       this.contrasena=this.us.contrasena
@@ -98,4 +107,7 @@ export default {
   },
 };
 </script>
-<style></style>
+<style>
+
+
+</style>
