@@ -9,11 +9,7 @@
               label="Nombre"
              placeholder="erazo"
               v-model="user.nombre"
-            >
-            <button class="btn btn-sm bg-success text-white">
-                    <i class="fas fa-edit"></i>
-                  </button>
-            
+            >            
             </fg-input>
           </div>
           <div class="col-md-6">
@@ -55,7 +51,7 @@
 
         <div class="text-center">
                 <button class="btn btn-primary" @click="updateProfile()">
-                  Guardar Respuesta
+                  Guardar Cambios
                 </button>
               </div>
         <div class="clearfix"></div>

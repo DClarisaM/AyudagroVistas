@@ -83,7 +83,7 @@ export default {
 
 
           
-          alert("Bienvenido Ayudagro");
+         // alert("Bienvenido Ayudagro");
           this.$router.push("/dashboard");
 
           localStorage.setItem("usuarios", JSON.stringify(res.data.user));
