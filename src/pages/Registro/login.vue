@@ -60,7 +60,7 @@ export default {
       user: {
         correo_electronico: "",
         contrasena: "",
-        rol_id:1,
+       
       },
     };
   },
@@ -95,26 +95,6 @@ export default {
         }
       });
     },
-//iniciar como administrador
-    loginadmin() {
-      axios.post("http://localhost:3000/login", this.user).then((res) => {
-        if (res.data.status == "error") {
-          //  console.log(res.data.msg);
-          alert(res.data.msg);
-        } else {
-
-
-
-          
-          alert("Bienvenido  Ayudagro");
-          this.$router.push("/archivo");
-
-          localStorage.setItem("usuarios", JSON.stringify(res.data.user));
-          console.log(res.data);
-        }
-      });
-    },
-
 
 
   },
