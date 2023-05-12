@@ -61,7 +61,7 @@
                       <i class="fas fa-edit"></i>
                     </router-link>
 
-                    <button class="btn  bg-danger text-white" @click="eliminar()">
+                    <button class="btn  bg-danger text-white" @click="eliminar(rol.id_rol)">
                       <i class="fas fa-trash-alt"></i>
                     </button>
                  
@@ -113,7 +113,7 @@ export default {
           alert("error del servidor")
         })
     },
-    eliminar() {
+    eliminar(id) {
       // alert("hahaha")
       const swalWithBootstrapButtons = Swal.mixin({
         customClass: {
@@ -133,15 +133,17 @@ export default {
         reverseButtons: true
       }).then((result) => {
         if (result.isConfirmed) {
+
+        //  alert(id)
           // id = getIdToDelete();
-          axios.delete(`http://localhost:3000/eliminarRol/10`)
+          axios.delete(`http://localhost:3000/eliminarRol/`+id)
           swalWithBootstrapButtons.fire(
             'Eliminado!',
             'Se elimino con exito.',
             'success'
           )
         } else if (
-          /* Read more about handling dismissals below */
+          
           result.dismiss === Swal.DismissReason.cancel
         ) {
           swalWithBootstrapButtons.fire(
