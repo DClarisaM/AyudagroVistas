@@ -141,7 +141,9 @@ export default {
             'Eliminado!',
             'Se elimino con exito.',
             'success'
-          )
+          ).then(()=>{
+              location.reload();
+            });
         } else if (
           
           result.dismiss === Swal.DismissReason.cancel

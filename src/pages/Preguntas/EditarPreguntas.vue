@@ -63,7 +63,7 @@ export default {
   methods: {
     EditarPregunta() {
       alert("aaaa")
-      axios.put("http://localhost:3000/editarPregunta/1")
+      axios.put("http://localhost:3000/editarPregunta/7")
         .then((res) => {
           //codigo
           console.log(res);
