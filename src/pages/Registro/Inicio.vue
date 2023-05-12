@@ -12,10 +12,9 @@
               placeholder="Danier"
               v-model="user.nombre"
             />
-            <div v-if="enviado && !$v.user.nomrbre.required" class="mensajeError">
-              Debe escribir un nombre
-            </div>
+          
           </div>
+         
           <div class="col-md-6">
             <fg-input
               type="text"
@@ -94,7 +93,7 @@
         </div>
 
         <div class="text-center">
-          <button class="btn" @click="validar()">Registrar</button>
+          <button class="btn" @click="procesar()">Registrar</button>
         </div>
         <div class="clearfix"></div>
       </form>
@@ -103,10 +102,14 @@
 </template>
 <script>
 import axios from "axios"
-import {required, email, minLength, sameAs} from 'vuelidate/lib/validators'
+import { useVuelidate } from '@vuelidate/core'
+//import { required, email , minLength} from '@vuelidate/validators'
+import {required, email, minLength} from 'vuelidate/lib/validators'
 
 export default {
-  name: "Inicio",
+  setup(){
+       return {v$: useVuelidate() }
+  },
   data() {
     return {
       user: {
@@ -123,22 +126,24 @@ export default {
       enviado:false,
     };
   },
-  validation:{
-    user:{
-    nombre:{required},
-    apellido:{required},
-    correo_electronico:{required, email},
-    contrasena:{required, minLength:minLength(5)},
-    password:{required, sameAsContrasena:sameAs("contrasena")},
-    telefono:{required},
-    direccion:{required},
-    }
-},
   
-  methods: {
+ 
+  
+  methods: { 
+
+    procesar(){
+      alert("si entra")
+      if(this.$v.$invalid)
+      {
+        return false;
+      }
+      alert(this.user.nombre);
+
+    },
     validar(){
       this.enviado=true;
       if(this.$v.$invalid){
+        console.log("si")
         return;
       }
       console.log("formulario valido")
@@ -158,11 +163,21 @@ export default {
         alert("contraseñas no coinciden");
       }
 
-      //   .catch((err) => {
-      //     console.log(err);
-      //   });
-      // // this.$router.push("/");
-      // alert("registro exitoso");
+     
+    },
+    validations:{
+      user:{
+         nombre:{required},
+         apellido:{required},
+         correo_electronico:{required,email},
+         contrasena:{required, minLength : minLength(5) },
+         telefono:{required},
+        direccion:{required},
+        estado: {required},
+        password: {required},
+
+      }
+
     },
   },
 };
