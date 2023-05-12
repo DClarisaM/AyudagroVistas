@@ -62,7 +62,7 @@
                   }">
                     <i class="fas fa-edit"></i>
                   </router-link>
-                  <button class="btn  bg-danger text-white" @click="eliminar()">
+                  <button class="btn  bg-danger text-white" @click="eliminar(archivo.id_archivo)">
                     <i class="fas fa-trash-alt"></i>
                   </button>
   
@@ -124,7 +124,7 @@
           alert("error del servidor")
         })
       },
-      eliminar(){
+      eliminar(id){
       // alert("hahaha")
       const swalWithBootstrapButtons = Swal.mixin({
   customClass: {
@@ -144,12 +144,14 @@ swalWithBootstrapButtons.fire({
   reverseButtons: true
 }).then((result) => {
   if (result.isConfirmed) {
-    axios.delete("http://localhost:3000/eliminarArchivo/2")
+    axios.delete("http://localhost:3000/eliminarArchivo/"+id)
     swalWithBootstrapButtons.fire(
       'Eliminado!',
       'Se elimino con exito.',
       'danger'
-    )
+    ).then(()=>{
+              location.reload();
+            });
   } else if (
     /* Read more about handling dismissals below */
     result.dismiss === Swal.DismissReason.cancel
