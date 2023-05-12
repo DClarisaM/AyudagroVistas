@@ -66,11 +66,6 @@ export default {
           //  console.log(res.data.msg);
           alert(res.data.msg);
         } else {
-
-
-
-          
-          alert("Bienvenido ADMIN");
           this.$router.push("/archivo");
 
           localStorage.setItem("usuarios", JSON.stringify(res.data.user));
