@@ -59,7 +59,7 @@
                 <router-link
                 class="btn btn-success"
                   :to="{
-                    name: 'RespuestasProfesional',
+                    name: 'RespuestaP',
                     params: { preguntaId: pregunta.id_pregunta },
                   }"
                 >

@@ -15,6 +15,8 @@
               />
               <h4 class="title">{{ us.nombre }}</h4>
               <div>
+               <h5 class="title">Vas a responder a la siguiente pregunta:</h5>
+
                 <h4>
                   {{ listaPregunta.descripcion }}
                 </h4>
