@@ -116,6 +116,9 @@
   </card>
 </template>
 <script>
+import Swal from 'sweetalert2/dist/sweetalert2.js'
+
+import 'sweetalert2/src/sweetalert2.scss'
 import axios from "axios"
 import { useVuelidate } from '@vuelidate/core'
 //import { required, email , minLength} from '@vuelidate/validators'
@@ -168,24 +171,31 @@ export default {
           this.$router.push("/login");
         });
       } else {
-        alert("contraseñas no coinciden");
+      
       }
 
      
     },
     validatorUser(){
       if(!this.user.nombre || !this.user.apellido ||!this.user.correo_electronico || !this.user.telefono || !this.user.direccion){
-            alert("Porfavoe revise que todos los campos del registro esten llenos")
+          //  alert("Porfavoe revise que todos los campos del registro esten llenos"); 
+             Swal.fire({
+  icon: 'error',
+  title: 'Oops...',
+  text: 'algo salio mal !',
+  footer: '<a href="">Porfavor reivise que todos los campos esten llenos para continuar</a>'
+})
 
       }else{
         if (this.user.password == this.user.contrasena) {
         axios.post("http://localhost:3000/nuevoUser", this.user).then((res) => {
           console.log(res);
-          alert("registro exitoso");
+          Swal.fire('Registro de usuario exitoso')
           this.$router.push("/login");
         });
       } else {
-        alert("contraseñas no coinciden");
+        Swal.fire('Las contraseñas no coinsiden')
+        // alert("contraseñas no coinciden");
       }
         
       }
