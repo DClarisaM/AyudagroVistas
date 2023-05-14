@@ -45,7 +45,7 @@
     
               
               <div class="text-center">
-                <button class="btn btn-primary" @click="nuevaRespuesta()">
+                <button class="btn btn-primary" @click="RespuestaValided()">
                   Guardar Respuesta
                 </button>
               </div>
@@ -156,7 +156,7 @@ export default {
         })
         .catch((err) => {
           //TODO mostrar ventana emergente sweetalert2 con el error
-          alert("error del servidor");
+          Swal.fire('Error del servidor')
         });
     },
 
@@ -172,23 +172,48 @@ export default {
         })
         .catch((err) => {
           //TODO mostrar ventana emergente sweetalert2 con el error
-          alert("error del servidor");
+          Swal.fire('Error del servidor')
         });
     },
 
-    nuevaRespuesta() {
-      //alert("jahkajs")
-      this.respuesta.usuario_id = this.us.id_usuario;
+    // nuevaRespuesta() {
+    //   //alert("jahkajs")
+    //   this.respuesta.usuario_id = this.us.id_usuario;
+    //   console.log(this.respuesta.usuario_id);
+    //   this.respuesta.pregunta_id = this.idPregunta;
+    //   console.log(this.respuesta.pregunta_id);
+    //   console.log(this.respuesta.descripcion);
+    //   this.respuesta.hora_fecha=this.us.nombre
+    //   axios .post("http://localhost:3000/nuevaRespuesta", this.respuesta)
+    //     .then((res) => {
+    //       console.log(res.data);
+    //       alert("respuesta exitosa")
+    //       // this.reId = res.data.id_respuesta;
+    //       // console.log(this.reId);
+
+    //      // this.respuestasPorUser(); // localStorage.setItem("respuesta",Json.strinfiy(re.data.respuesta))
+    //       // console.log(res.data)
+    //       // this.$router.push("/");
+    //     })
+    //     .catch((err) => {
+    //       console.log(err);
+    //       alert("error del servidor" + err);
+    //     });
+    // },
+  RespuestaValided(){
+    this.respuesta.usuario_id = this.us.id_usuario;
       console.log(this.respuesta.usuario_id);
       this.respuesta.pregunta_id = this.idPregunta;
       console.log(this.respuesta.pregunta_id);
       console.log(this.respuesta.descripcion);
       this.respuesta.hora_fecha=this.us.nombre
-      axios
-        .post("http://localhost:3000/nuevaRespuesta", this.respuesta)
+    if(!this.respuesta.descripcion){
+      Swal.fire('Error la respuesta esta vacia')
+    }
+    else{ axios .post("http://localhost:3000/nuevaRespuesta", this.respuesta)
         .then((res) => {
           console.log(res.data);
-          alert("respuesta exitosa")
+          Swal.fire('Respuesta guardada exitosamente')
           // this.reId = res.data.id_respuesta;
           // console.log(this.reId);
 
@@ -198,9 +223,9 @@ export default {
         })
         .catch((err) => {
           console.log(err);
-          alert("error del servidor" + err);
-        });
-    },
+          Swal.fire('Error del servidor')
+        });}
+  },
     //pruebas paratraer el usuario que realiza la respuesta
     // respuestasPorUser() {
     //   alert("si");
