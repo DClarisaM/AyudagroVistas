@@ -6,13 +6,15 @@
         <div class="row">
           <div class="col-md-6">
             <fg-input
+              minlength="3"
               type="text"
               label="Nombre"
               id="nombre"
               placeholder="Danier"
               v-model="user.nombre"
+              required="true"
             />
-          
+            <h7 style="color:#FF0000" v-if="!user.nombre">Debe escribir un nombre</h7> 
           </div>
          
           <div class="col-md-6">
@@ -24,6 +26,8 @@
               v-model="user.apellido"
               required
             >
+            <h7 style="color:#FF0000" v-if="!user.apellido">Debe escribir un apellido</h7> 
+
             </fg-input>
           </div>
         </div>
@@ -38,6 +42,8 @@
               v-model="user.correo_electronico"
               required
             >
+            <h7 style="color:#FF0000" v-if="!user.correo_electronico">Debe escribir un correo </h7> 
+
             </fg-input>
           </div>
 
@@ -50,6 +56,8 @@
               v-model="user.contrasena"
               required
             >
+            <h7 style="color:#FF0000" v-if="!user.contrasena">Debe escribir una contraseña</h7> 
+
             </fg-input>
           </div>
 
@@ -62,17 +70,22 @@
               placeholder="******"
               required
             >
+            <h7 style="color:#FF0000" v-if="!user.password">Debe repetir su contraseña</h7> <br>
+            <h7 style="color:#FF0000" v-if="user.contrasena != user.password">Las contraseñas deben ser iguales</h7> 
+
             </fg-input>
           </div>
           <div class="col-md-6">
             <fg-input
               type="text"
-              label="Telefono"
+              label="Telefono o Celular"
               id="telefono"
               placeholder="#####"
               v-model="user.telefono"
               required
             >
+            <h7 style="color:#FF0000" v-if="!user.telefono" class="mensajeError"> Debe escribir un telefono o celular</h7> 
+
             </fg-input>
           </div>
           <div class="col-md-6">
@@ -83,17 +96,19 @@
               placeholder="Cl-#"
               v-model="user.direccion"  
             >
+            <h7 style="color:#FF0000" v-if="!user.direccion">Debe escribir una  direccion</h7> 
+
 
           
             </fg-input>
-            <div v-if="enviado && !$.direccion.required" class="mensajeError">
+            <!-- <div v-if="enviado && !$.direccion.required" class="mensajeError">
              Debe escibir una direccionsi 
-            </div>
+            </div> -->
           </div>
         </div>
 
         <div class="text-center">
-          <button class="btn" @click="procesar()">Registrar</button>
+          <button class="btn" @click="validatorUser()">Registrar</button>
         </div>
         <div class="clearfix"></div>
       </form>
@@ -131,28 +146,21 @@ export default {
   
   methods: { 
 
-    procesar(){
-      alert("si entra")
-      if(this.$v.$invalid)
-      {
-        return false;
-      }
-      alert(this.user.nombre);
+    
+    // validar(){
+    //   this.enviado=true;
+    //   if(this.$v.$invalid){
+    //     console.log("si")
+    //     return;
+    //   }
 
-    },
-    validar(){
-      this.enviado=true;
-      if(this.$v.$invalid){
-        console.log("si")
-        return;
-      }
-      console.log("formulario valido")
-    },
+    //   console.log("formulario valido")
+    // },
     // updateProfile() {
     //   alert("Your data: " + JSON.stringify(this.user));
     // },
     CrearUser() {
-      // console.log(this.user.password);
+       console.log(this.user.password);
       if (this.user.password == this.user.contrasena) {
         axios.post("http://localhost:3000/nuevoUser", this.user).then((res) => {
           console.log(res);
@@ -165,20 +173,37 @@ export default {
 
      
     },
-    validations:{
-      user:{
-         nombre:{required},
-         apellido:{required},
-         correo_electronico:{required,email},
-         contrasena:{required, minLength : minLength(5) },
-         telefono:{required},
-        direccion:{required},
-        estado: {required},
-        password: {required},
+    validatorUser(){
+      if(!this.user.nombre || !this.user.apellido ||!this.user.correo_electronico || !this.user.telefono || !this.user.direccion){
+            alert("Porfavoe revise que todos los campos del registro esten llenos")
 
+      }else{
+        if (this.user.password == this.user.contrasena) {
+        axios.post("http://localhost:3000/nuevoUser", this.user).then((res) => {
+          console.log(res);
+          alert("registro exitoso");
+          this.$router.push("/login");
+        });
+      } else {
+        alert("contraseñas no coinciden");
       }
-
+        
+      }
     },
+    // validations:{
+    //   user:{
+    //      nombre:{required},
+    //      apellido:{required},
+    //      correo_electronico:{required,email},
+    //      contrasena:{required, minLength : minLength(5) },
+    //      telefono:{required},
+    //     direccion:{required},
+    //     estado: {required},
+    //     password: {required},
+
+    //   }
+
+    // },
   },
 };
 </script>
