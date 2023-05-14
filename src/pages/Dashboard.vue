@@ -1,7 +1,6 @@
 <template>
   <div>
-    
-    
+<h2  style="color:#18541f" class="text-center">BIENVENIDO AYUDAGRO</h2>    
     <div class="col-6 offset-3">
       
       <card class="card-user">

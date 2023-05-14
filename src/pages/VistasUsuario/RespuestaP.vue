@@ -27,6 +27,7 @@
              Responder
            </p-button>
          </div> -->
+         
             <div class="form-group">
               <textarea
                 class="form-control"
@@ -34,8 +35,15 @@
                 id="floatingTextarea2"
                 style="height: 50px"
                 v-model="respuesta.descripcion"
+                required
               >
+              <h5 style="clor:red" v-if="!respuesta.descrripcion">res puesta </h5>
+
               </textarea>
+              <h5 style="color:#FF0000" v-if="!respuesta.descripcion">El campo no puede estar vacio</h5> 
+
+    
+              
               <div class="text-center">
                 <button class="btn btn-primary" @click="nuevaRespuesta()">
                   Guardar Respuesta
@@ -94,7 +102,14 @@
   </div>
 </template>
 <script>
-import axios from "axios";
+import Swal from 'sweetalert2/dist/sweetalert2.js'
+
+import 'sweetalert2/src/sweetalert2.scss'
+import axios from "axios"
+import { useVuelidate } from '@vuelidate/core'
+//import { required, email , minLength} from '@vuelidate/validators'
+import {required, email, minLength} from 'vuelidate/lib/validators'
+
 
 export default {
   components: {},
