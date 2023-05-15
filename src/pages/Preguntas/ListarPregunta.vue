@@ -64,7 +64,7 @@
                   </router-link>
                   
                   <router-link class="btn bg-success text-white" :to="{ name: 'Editarpreguntas', 
-                  // params: { idArchivo: archivo.id_archivo } 
+                   params: { idPregunta: pregunta.id_pregunta} 
                   }">
                     <i class="fas fa-edit"></i>
                   </router-link>

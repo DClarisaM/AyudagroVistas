@@ -62,7 +62,7 @@
                   </router-link>
 
                   <router-link class="btn bg-success text-white" :to="{ name: 'Editarusuario', 
-                  // params: { idUsuario: archivo.id_usuario } 
+                   params: { idUsuario: usuario.id_usuario } 
                   }">
                     <i class="fas fa-edit"></i>
                   </router-link>

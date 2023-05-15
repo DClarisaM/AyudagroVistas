@@ -51,21 +51,36 @@ export default {
 
     };
   },
-  async mounted() {
-    this.idRespuesta = this.$route.params.idRespuesta
  
-  },
   mounted(){
     this.idRespuesta = this.$route.params.idRespuesta
     this.VerRespuesta()
   },
   methods: {
+    
+    VerRespuesta() {
+        //  alert("aaaa")
+        axios.get("http://localhost:3000/verDetalleRespuesta/"+this.idRespuesta )
+          .then((res) => {
+            //codigo
+      
+            this.respuesta = res.data
+            console.log(respuesta);
+          })
+          .catch((err) => {
+            //TODO mostrar ventana emergente sweetalert2 con el error
+            // alert("error del servidor")
+          })
+      
+  
+    },
     EditarRespuesta() {
     //   alert("aaaa")
-      axios.put("http://localhost:3000/editarRespuesta/1")
+      axios.put("http://localhost:3000/editarRespuesta/"+this.idRespuesta,this.respuesta)
         .then((res) => {
           //codigo
           console.log(res);
+          this.$router.push("/respuesta");
           //ya se editó
         })
         .catch((err) => {
@@ -73,22 +88,6 @@ export default {
           alert("error del servidor")
         })
     },
-    VerRespuesta() {
-        // alert("aaaa")
-        axios.get("http://localhost:3000/verDetalleRespuesta/1" )
-          .then((res) => {
-            //codigo
-            console.log(res.data);
-            this.respuesta.descripcion = res.data.descripcion
-            
-          })
-          .catch((err) => {
-            //TODO mostrar ventana emergente sweetalert2 con el error
-            alert("error del servidor")
-          })
-      
-  
-    }
   }
 };
 </script>

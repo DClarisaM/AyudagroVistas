@@ -55,7 +55,7 @@
                     <i class="fas fa-eye"></i>
                   </router-link>
                   <router-link class="btn bg-success text-white" :to="{ name: 'Editarrespuesta', 
-                  // params: { idRespuesta: archivo.id_respuesta } 
+                   params: { idRespuesta: respuesta.id_respuesta } 
                   }">
                     <i class="fas fa-edit"></i>
                   </router-link>

@@ -61,6 +61,7 @@ export default {
         axios.post("http://localhost:3000/nuevoRol",this.rol)
         .then((res) => {
             console.log(res);
+            this.$router.push("/rol");
         })
         .catch((err) => {
           alert("error del servidor")
