@@ -64,6 +64,9 @@ export default {
       },
     };
   },
+  mounted(){
+    
+  },
   validations:{
     correo_electronico:{required},
     contrasena:{required,}

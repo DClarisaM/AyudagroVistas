@@ -3,7 +3,7 @@
     <div class="container-fluid">
       <a class="navbar-brand" href="#">{{ routeName }}</a>
       <div class="user-controls">
-            <button v-on:click="cerrarSesion">
+            <button v-on:click="cerrarSesion()">
               <i class="fas fa-sign-out-alt"></i>Cerrar Sesion</button>
           </div>
           
@@ -38,7 +38,7 @@ export default {
   methods: {
     cerrarSesion(){
 
-localStorage.removeItem('token');
+localStorage.clear();
 this.$router.push('/login');
 },
     capitalizeFirstLetter(string) {

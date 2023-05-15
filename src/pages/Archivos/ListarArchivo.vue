@@ -1,4 +1,4 @@
-<template>
+<template >
     <div>
       
 <drop-down class="nav-item" title="Admin"  icon="ti-linux">
@@ -96,6 +96,7 @@
     },
     data() {
       return {
+       
         listaArchivos:[],
        
        
@@ -103,8 +104,10 @@
       };
     },
     mounted(){
+  
       this.listarArchivos(),
       eliminar()
+      
     },
     methods: {
       

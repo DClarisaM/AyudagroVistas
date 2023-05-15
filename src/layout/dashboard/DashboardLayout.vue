@@ -1,6 +1,6 @@
 <template>
   <div class="wrapper">
-    <side-bar >
+    <side-bar v-if="us!=null" >
       <template slot="links">
         <sidebar-link to="/dashboard" name="Inicio" icon="ti-home" />
         <sidebar-link to="/stats" name="Perfil" icon="ti-face-smile" />
@@ -91,8 +91,10 @@ import MobileMenu from "./MobileMenu";
 export default {
   data() {
     return {
-      usuariologueado: ""
+      // usuariologueado: ""
+      us:null
     };
+
   },
   components: {
     TopNavbar,
@@ -104,7 +106,8 @@ export default {
 
   },
   mounted() {
-    this.usuariologueado = localStorage.getItem('usuario')
+    // this.usuariologueado = localStorage.getItem('usuario')
+    this.us = JSON.parse(localStorage.getItem("usuarios"));
   },
   methods: {
 
