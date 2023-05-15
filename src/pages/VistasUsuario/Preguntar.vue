@@ -146,6 +146,16 @@ export default {
       if(!this.pregunta.descripcion){
         Swal.fire('Error la respuesta esta vacia')
 
+      }else{  axios.post("http://localhost:3000/nuevaPregunta",this.pregunta)
+        .then((res) => {
+          Swal.fire("Pregunta registrada con exito");
+          console.log(res);
+          this.$router.push("/Dashboard");
+        })
+        .catch((err) => {
+          Swal.fire("error del servidor" );
+        });
+
       }
 
     },
