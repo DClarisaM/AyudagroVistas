@@ -212,7 +212,7 @@ export default {
         Swal.fire('Las contraseñas no coinsiden')
         // alert("contraseñas no coinciden");
       }}else{
-                  Swal.fire('correo invalido');
+                  Swal.fire('Porfavor ingrese un correo valido');
                  }
         
       }
