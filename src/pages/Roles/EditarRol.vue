@@ -52,43 +52,46 @@ export default {
 
     };
   },
-  async mounted() {
-    this.idRol = this.$route.params.idRol
- 
-  },
-  mounted(){
+   mounted() {
+   
+
     this.idRol = this.$route.params.idRol
     this.VerRol()
+ 
   },
+
   methods: {
+   
+    VerRol() {
+         
+        axios.get("http://localhost:3000/verDetalleRol/"+this.idRol )
+          .then((res) => {
+            //codigo
+          
+            this.rol = res.data
+            console.log(rol);
+            
+          })
+          .catch((err) => {
+            //TODO mostrar ventana emergente sweetalert2 con el error
+            // alert("error del servidor")
+          })
+      
+  
+    },
     EditarRol() {
     //   alert("aaaa")
-      axios.put("http://localhost:3000/editarRol/1")
+      axios.put("http://localhost:3000/editarRol/"+this.idRol,this.rol)
         .then((res) => {
           //codigo
           console.log(res);
+          this.$router.push("/rol");
           //ya se editó
         })
         .catch((err) => {
           //TODO mostrar ventana emergente sweetalert2 con el error
           alert("error del servidor")
         })
-    },
-    VerRol() {
-        // alert("aaaa")
-        axios.get("http://localhost:3000/verDetalleRol/1" )
-          .then((res) => {
-            //codigo
-            console.log(res.data);
-            this.rol.nombre = res.data.nombre
-            
-          })
-          .catch((err) => {
-            //TODO mostrar ventana emergente sweetalert2 con el error
-            alert("error del servidor")
-          })
-      
-  
     }
   }
 };

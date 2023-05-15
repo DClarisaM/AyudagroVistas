@@ -56,7 +56,7 @@
                     </router-link>
                     <router-link class="btn bg-success text-white" :to="{
                       name: 'Editarrol',
-                      // params: { idRol: archivo.id_rol } 
+                      params: {idRol: rol.id_rol } 
                     }">
                       <i class="fas fa-edit"></i>
                     </router-link>
