@@ -35,12 +35,13 @@
         <div class="row">
           <div class="col-md-6">
             <fg-input
-              type="text"
+              type="email" multiple
+              size="32" minlength="10" maxlength="64"
               label="Correo Electronico"
-              id="email"
+              id="correo_electronico"
               placeholder="gmail.com"
               v-model="user.correo_electronico"
-              required
+              required="required"
             >
             <h7 style="color:#FF0000" v-if="!user.correo_electronico">Debe escribir un correo </h7> 
 
@@ -149,6 +150,16 @@ export default {
   
   methods: { 
 
+  validateEmail(){
+                var emailField = document.getElementById('correo_electronico');
+                var validEmail =  /^\w+([.-_+]?\w+)*@\w+([.-]?\w+)*(\.\w{2,10})+$/;
+                if( validEmail.test(emailField.value) ){
+                  alert('correo valido');
+                
+                }else{
+                  alert('correo invalido');
+                 }
+              } ,
     
     // validar(){
     //   this.enviado=true;
@@ -187,6 +198,10 @@ export default {
 })
 
       }else{
+                var emailField = document.getElementById('correo_electronico');
+                var validEmail =  /^\w+([.-_+]?\w+)*@\w+([.-]?\w+)*(\.\w{2,10})+$/;
+        if( validEmail.test(emailField.value)){
+          // Swal.fire('correo valido')
         if (this.user.password == this.user.contrasena) {
         axios.post("http://localhost:3000/nuevoUser", this.user).then((res) => {
           console.log(res);
@@ -196,7 +211,9 @@ export default {
       } else {
         Swal.fire('Las contraseñas no coinsiden')
         // alert("contraseñas no coinciden");
-      }
+      }}else{
+                  Swal.fire('correo invalido');
+                 }
         
       }
     },
