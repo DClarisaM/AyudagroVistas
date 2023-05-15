@@ -1,9 +1,9 @@
 <template>
   <div>
-    <div class="col-8 offset-2">
+    <!-- <div class="col-8 offset-2">
       <button class="btn" @click="obtenerlocalstorage()">local</button>
-    </div>
-    {{ userloger }}
+    </div> -->
+    <!-- {{ userloger }} -->
 
     <div class="col-6 offset-3">
       <card class="card-user">
@@ -17,10 +17,10 @@
               src="@/assets/img/faces/face-4.jpg"
               alt="..."
             />
-            <h4 class="title">{{ us.nombre }}</h4>
+            <h4 class="title">{{ us.nombre+" "+us.apellido }}</h4>
           </div>
         </div>
-        <div class="row">
+        <!-- <div class="row">
           <div class="col-6">
             <div class="form-group">
               <label for="exampleFormControlSelect1">Categoria</label>
@@ -30,9 +30,7 @@
                 <option value="3">animales</option>
               </select>
             </div>
-            <!-- <div class="form-floating">
-                <textarea class="form-control" placeholder="Detalle de la categoria" id="floatingTextarea2" style="height: 50px"></textarea>
-            </div> -->
+          
           </div>
           <div class="col-6">
             <div class="form-group">
@@ -44,22 +42,13 @@
               </select>
             </div>
             <div class="form-floating" v-for="pregunta in listaPreguntas" :key="pregunta.id_pregunta">
-              <!-- <textarea class="form-control" placeholder="Detalle de la Subcategoria" id="floatingTextarea2" style="height: 50px"
-                
-                ></textarea> -->
-              <!-- <h6 class="descrip" >
-                 {{ pregunta.subcategoria_id }}
-                </h6> -->
+             
             </div>
           </div>
-        </div>
+        </div>aa -->
         <div class="col-10 offset-1">
           <card class="card-Pregunta">
-            <!-- <div class="form-floating">
-                <textarea class="form-control" placeholder="Escriba aquí su pregunta" id="floatingTextarea2" style="height: 100px"
-                 v-model="pregunta.descripcion">
-                </textarea>
-              </div> -->
+          
             <form>
               <div class="form-group">
                 <label for="exampleFormControlInput1">Pregunta</label>
@@ -68,18 +57,14 @@
                   class="form-control"
                   placeholder="Escriba aquí su pregunta"
                   id="floatingTextarea2"
-                  style="height: 100px"
+                  style="height: 80px"
                   v-model="pregunta.descripcion"
                   v-on:keyup.enter="registrarPregunta()"
                 >
                 </textarea>
-              </div>
+                <h5 style="color:#FF0000" v-if="!pregunta.descripcion">El campo no puede estar vacio</h5> 
 
-              <!-- <div>
-                <button class="btn" @click="registrarPregunta()">
-                    Preguntar
-                </button>
-            </div> -->
+              </div>
             </form>
             <div class="h2 mb-0">
               <b-icon-arrow-up></b-icon-arrow-up>
@@ -88,7 +73,7 @@
           </card>
         </div>
         <div class="text-center">
-          <button class="btn btn-success" @click="registrarPregunta()">
+          <button class="btn btn-success" @click="registrarPreguntaV()">
             Guardar Pregunta
           </button>
         </div>
@@ -97,7 +82,13 @@
   </div>
 </template>
 <script>
-import axios from "axios";
+import Swal from 'sweetalert2/dist/sweetalert2.js'
+
+import 'sweetalert2/src/sweetalert2.scss'
+import axios from "axios"
+import { useVuelidate } from '@vuelidate/core'
+//import { required, email , minLength} from '@vuelidate/validators'
+import {required, email, minLength} from 'vuelidate/lib/validators'
 export default {
   components: {},
   data() {
@@ -150,10 +141,18 @@ export default {
           alert("error del servidor" + err);
         });
     },
-    obtenerlocalstorage() {
-      alert("jajajaj");
-      this.userloger = localStorage.getItem("usuario");
+    registrarPreguntaV(){
+      this.usuario_id=this.us.id_usuario;
+      if(!this.pregunta.descripcion){
+        Swal.fire('Error la respuesta esta vacia')
+
+      }
+
     },
+    // obtenerlocalstorage() {
+    //   alert("jajajaj");
+    //   this.userloger = localStorage.getItem("usuario");
+    // },
   },
 };
 </script>
