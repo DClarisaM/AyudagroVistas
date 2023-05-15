@@ -78,14 +78,16 @@
           </div>
           <div class="col-md-6">
             <fg-input
-              type="text"
+              type="number"
               label="Telefono o Celular"
               id="telefono"
               placeholder="#####"
               v-model="user.telefono"
               required
             >
-            <h7 style="color:#FF0000" v-if="!user.telefono" class="mensajeError"> Debe escribir un telefono o celular</h7> 
+            <h7 style="color:#FF0000" v-if="!user.telefono" class="mensajeError"> Debe escribir un telefono o celular</h7> <br>
+            <h7 style="color:#FF0000" v-if="!user.telefono" class="mensajeError"> Este capo solo deve contener numero</h7> 
+
 
             </fg-input>
           </div>
