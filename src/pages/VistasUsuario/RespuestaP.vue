@@ -8,70 +8,58 @@
           </div>
           <div>
             <div class="author">
-              <img
-                class="avatar border-white"
-                src="@/assets/img/faces/face-4.jpg"
-                alt="..."
-              />
-              <h4 class="title">{{ us.nombre+" "+us.apellido }}</h4>
+              <img class="avatar border-white" src="@/assets/img/faces/face-4.jpg" alt="..." />
+              <h4 class="title">{{ us.nombre + " " + us.apellido }}</h4>
               <div>
-               <h5 class="title">Vas a responder a la siguiente pregunta:</h5>
+                <h5 class="title">Vas a responder a la siguiente pregunta:</h5>
 
                 <h4>
                   {{ listaPregunta.descripcion }}
                 </h4>
               </div>
+            
             </div>
             <!-- <div class="text-right">
            <p-button type="info" round @click.native.prevent="">
              Responder
            </p-button>
          </div> -->
-         
+
             <div class="form-group">
-              <textarea
-                class="form-control"
-                placeholder="Escriba aquí su respuesta"
-                id="floatingTextarea2"
-                style="height: 50px"
-                v-model="respuesta.descripcion"
-                required
-              >
+              <textarea class="form-control" placeholder="Escriba aquí su respuesta" id="floatingTextarea2"
+                style="height: 50px" v-model="respuesta.descripcion" required>
               <h5 style="clor:red" v-if="!respuesta.descrripcion">res puesta </h5>
 
               </textarea>
-              <h5 style="color:#FF0000" v-if="!respuesta.descripcion">El campo no puede estar vacio</h5> 
-
+              <h5 style="color:#FF0000" v-if="!respuesta.descripcion">El campo no puede estar vacio</h5>
+             
     
-              
+
+
+
               <div class="text-center">
                 <button class="btn btn-primary" @click="RespuestaValided()">
                   Guardar Respuesta
                 </button>
+                
               </div>
+              
             </div>
           </div>
+          
         </card>
       </div>
     </div>
 
-    <div
-      class="col-10 offset-1"
-      v-for="respuesta in listaRespuestas"
-      :key="respuesta.id_respuesta"
-    >
+    <div class="col-10 offset-1" v-for="respuesta in listaRespuestas" :key="respuesta.id_respuesta">
       <card class="card-Mpregunta">
         <div class="Mimagen">
           <img src="@/assets/img/background2.jpg" alt="..." />
-          {{ preUs.nombre +" "+ preUs.apellidao }}
+          {{ preUs.nombre + " " + preUs.apellidao }}
         </div>
         <div>
           <div class="Mfoto">
-            <img
-              class="Musuario border-white"
-              src="@/assets/img/faces/face-4.jpg"
-              alt="..."
-            />
+            <img class="Musuario border-white" src="@/assets/img/faces/face-4.jpg" alt="..." />
             <h3 class="Mnombre">{{ respuesta.hora_fecha }}</h3>
             <h6>te respondio:</h6>
             <br />
@@ -83,6 +71,7 @@
             {{ respuesta.createdAt }}
           </small>
         </div>
+
 
         <!-- <div v-for="preguntas in listaRespuestas">
           <label for="floatingTextarea2">
@@ -108,7 +97,7 @@ import 'sweetalert2/src/sweetalert2.scss'
 import axios from "axios"
 import { useVuelidate } from '@vuelidate/core'
 //import { required, email , minLength} from '@vuelidate/validators'
-import {required, email, minLength} from 'vuelidate/lib/validators'
+import { required, email, minLength } from 'vuelidate/lib/validators'
 
 
 export default {
@@ -130,6 +119,7 @@ export default {
       preUs: {},
       preid: {},
       reId: "",
+
     };
   },
   async mounted() {
@@ -137,7 +127,7 @@ export default {
     this.idPregunta = this.$route.params.preguntaId;
     //this.respuestasPorUser(),
     this.listarRespuestas(),
-     this.verPregunta();
+      this.verPregunta();
     // this.respuestasPorUser()
     //this.respuestasPorUserid()
   },
@@ -147,7 +137,7 @@ export default {
       axios
         .get(
           "http://localhost:3000/ListarRespuestasPorPreguntaId/" +
-            this.idPregunta
+          this.idPregunta
         )
         .then((res) => {
           //codigo
@@ -200,32 +190,35 @@ export default {
     //       alert("error del servidor" + err);
     //     });
     // },
-  RespuestaValided(){
-    this.respuesta.usuario_id = this.us.id_usuario;
+    RespuestaValided() {
+      this.respuesta.usuario_id = this.us.id_usuario;
       console.log(this.respuesta.usuario_id);
       this.respuesta.pregunta_id = this.idPregunta;
       console.log(this.respuesta.pregunta_id);
       console.log(this.respuesta.descripcion);
-      this.respuesta.hora_fecha=this.us.nombre
-    if(!this.respuesta.descripcion){
-      Swal.fire('Error la respuesta esta vacia')
-    }
-    else{ axios .post("http://localhost:3000/nuevaRespuesta", this.respuesta)
-        .then((res) => {
-          console.log(res.data);
-          Swal.fire('Respuesta guardada exitosamente')
-          // this.reId = res.data.id_respuesta;
-          // console.log(this.reId);
+      this.respuesta.hora_fecha = this.us.nombre
+      if (!this.respuesta.descripcion) {
+        Swal.fire('Error la respuesta esta vacia')
+      }
+      else {
+        axios.post("http://localhost:3000/nuevaRespuesta", this.respuesta)
+          .then((res) => {
+            console.log(res.data);
+            Swal.fire('Respuesta guardada exitosamente')
+            // this.reId = res.data.id_respuesta;
+            // console.log(this.reId);
 
-         // this.respuestasPorUser(); // localStorage.setItem("respuesta",Json.strinfiy(re.data.respuesta))
-          // console.log(res.data)
-          // this.$router.push("/");
-        })
-        .catch((err) => {
-          console.log(err);
-          Swal.fire('Error del servidor')
-        });}
-  },
+            // this.respuestasPorUser(); // localStorage.setItem("respuesta",Json.strinfiy(re.data.respuesta))
+            // console.log(res.data)
+            // this.$router.push("/");
+          })
+          .catch((err) => {
+            console.log(err);
+            Swal.fire('Error del servidor')
+          });
+      }
+    },
+
     //pruebas paratraer el usuario que realiza la respuesta
     // respuestasPorUser() {
     //   alert("si");
