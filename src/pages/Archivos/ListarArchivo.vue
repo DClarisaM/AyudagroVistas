@@ -11,7 +11,7 @@
    <a class="dropdown-item"><router-link class="text-center form-text" :to="{name:'respuesta'}">Ver Respuesta</router-link></a> 
   <a class="dropdown-item"><router-link class="text-center form-text" :to="{name:'rol'}">Gestionar Rol</router-link></a>
   <!-- <a class="dropdown-item"><router-link class="text-center form-text" :to="{name:'ListaPreguntas'}">Preguntas</router-link></a> -->
-
+  <a class="dropdown-item"><router-link class="text-center form-text" :to="{name:'archivo'}">Volver a Mis Archivos</router-link></a>
   <!-- <a class="dropdown-item"><router-link class="text-center form-text" :to="{name:'sugerenciaArchivo'}">mostrar Sugerencias</router-link></a> -->
   <!-- <a class="dropdown-item"><router-link class="text-center form-text" :to="{name:'preguntaArchivo'}">Listar Pregunta Archivo</router-link></a> -->
   <!-- <a class="dropdown-item"><router-link class="text-center form-text" :to="{name:'MisPreguntas'}">Mis Preguntas</router-link></a> -->
@@ -43,7 +43,7 @@
             <thead>
               <tr>
                 <th scope="col">Id</th>
-                <th scope="col">Nombre Archivo</th>
+                <th scope="col">Nombre de la Ruta</th>
                 <th scope="col">Url</th>
                 <th scope="col">Acciones</th>
               </tr>
@@ -54,12 +54,10 @@
                 <td>{{ archivo.nombre_archivo }}</td>
                 <td>{{ archivo.url }}</td>
                 <td>
-                  <router-link class="btn bg-danger text-white" :to="{name: 'Verarchivo', params: {idArchivo: archivo.id_archivo} }">
+                  <router-link class="btn bg-primary text-white" :to="{name: 'Verarchivo', params: {idArchivo: archivo.id_archivo} }">
                     <i class="fas fa-eye"></i>
                   </router-link>
-                  <router-link class="btn bg-success text-white" :to="{ name: 'Editararchivo', 
-                  // params: { idArchivo: archivo.id_archivo } 
-                  }">
+                  <router-link class="btn bg-success text-white" :to="{ name: 'Editararchivo', params: { idArchivo: archivo.id_archivo }}">
                     <i class="fas fa-edit"></i>
                   </router-link>
                   <button class="btn  bg-danger text-white" @click="eliminar(archivo.id_archivo)">

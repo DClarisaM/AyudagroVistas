@@ -10,7 +10,7 @@
    <a class="dropdown-item"><router-link class="text-center form-text" :to="{name:'respuesta'}">Ver Respuesta</router-link></a> 
   <a class="dropdown-item"><router-link class="text-center form-text" :to="{name:'rol'}">Gestionar Rol</router-link></a>
   <!-- <a class="dropdown-item"><router-link class="text-center form-text" :to="{name:'ListaPreguntas'}">Preguntas</router-link></a> -->
-
+  <a class="dropdown-item"><router-link class="text-center form-text" :to="{name:'archivo'}">Volver a Mis Archivos</router-link></a>
   <!-- <a class="dropdown-item"><router-link class="text-center form-text" :to="{name:'sugerenciaArchivo'}">mostrar Sugerencias</router-link></a> -->
   <!-- <a class="dropdown-item"><router-link class="text-center form-text" :to="{name:'preguntaArchivo'}">Listar Pregunta Archivo</router-link></a> -->
   <!-- <a class="dropdown-item"><router-link class="text-center form-text" :to="{name:'MisPreguntas'}">Mis Preguntas</router-link></a> -->
@@ -65,27 +65,16 @@ export default {
     this.verArchivos()
   },
   methods: {
-    EditarArchivos() {
-      alert("aaaa")
-      axios.put("http://localhost:3000/editarCategoria/1")
-        .then((res) => {
-          //codigo
-          console.log(res);
-          //ya se editó
-        })
-        .catch((err) => {
-          //TODO mostrar ventana emergente sweetalert2 con el error
-          alert("error del servidor")
-        })
-    },
+
     verArchivos() {
-        // alert("aaaa")
-        axios.get("http://localhost:3000/verDetalleArchivo/1" )
+      //  alert("aaaa")
+        axios.get("http://localhost:3000/verDetalleArchivo/"+this.idArchivo )
           .then((res) => {
             //codigo
-            console.log(res.data);
-            this.archivo.nombre_archivo = res.data.nombre_archivo
-            this.archivo.url = res.data.url
+           
+            this.archivo= res.data
+            console.log(this.archivo);
+            // this.archivo.url = res.data.url
           })
           .catch((err) => {
             //TODO mostrar ventana emergente sweetalert2 con el error
@@ -93,7 +82,21 @@ export default {
           })
       
   
-    }
+    },
+    EditarArchivos() {
+      // alert("aaaa")
+      axios.put("http://localhost:3000/editarArchivo/"+this.idArchivo,this.archivo)
+        .then((res) => {
+          //codigo
+          console.log(res);
+          this.$router.push("/archivo");
+          //ya se editó
+        })
+        .catch((err) => {
+          //TODO mostrar ventana emergente sweetalert2 con el error
+          alert("error del servidor")
+        })
+    },
   }
 };
 </script>
