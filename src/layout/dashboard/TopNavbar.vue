@@ -2,7 +2,7 @@
   <nav class="navbar navbar-expand-lg navbar-light">
     <div class="container-fluid">
       <a class="navbar-brand" href="#">{{ routeName }}</a>
-      <div class="user-controls">
+      <div class="user-controls"  v-if="us!=null" >
             <button v-on:click="cerrarSesion()">
               <i class="fas fa-sign-out-alt"></i>Cerrar Sesion</button>
           </div>
@@ -32,8 +32,13 @@ export default {
   },
   data() {
     return {
+      us:null,
       activeNotifications: false,
     };
+  },
+  mounted() {
+ 
+    this.us = JSON.parse(localStorage.getItem("usuarios"));
   },
   methods: {
     cerrarSesion(){

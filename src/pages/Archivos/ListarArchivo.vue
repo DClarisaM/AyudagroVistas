@@ -20,7 +20,23 @@
 
 </drop-down>
 
-        
+        <!-- Card with image -->
+    <!-- <div class="col-12">
+      <card class="card-plain">
+        <div class="card-body">
+          <div class="row">
+            <div class="col-md-6">
+              <img src="@/assets/img/foto-negra.png" alt="Image" />
+            </div>
+            <br>
+            <div class="col-md-6">
+              <h4 class="card-title">Bienvenido a Ayudagro Administrador</h4>
+              <p class="card-text">Card description or additional information.</p>
+            </div>
+          </div>
+        </div>
+      </card>
+    </div> -->
       
              <!-- boton agregar -->
     <div class="col-8 offset-2">
