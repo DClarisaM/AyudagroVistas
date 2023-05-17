@@ -104,7 +104,7 @@
           })
           .catch((err) => {
             //TODO mostrar ventana emergente sweetalert2 con el error
-            alert("error del servidor", +err);
+            Swal.fire("error del servidor");
           });
       },
     },
@@ -119,7 +119,7 @@
           })
           .catch((err) => {
             //TODO mostrar ventana emergente sweetalert2 con el error
-            alert("error del servidor", +err);
+            Swal.fire("error del servidor");
           });
       },
   };

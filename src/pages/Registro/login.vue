@@ -84,7 +84,7 @@ export default {
       axios.post("http://localhost:3000/login", this.user).then((res) => {
         if (res.data.status == "error") {
           //  console.log(res.data.msg);
-          alert(res.data.msg);
+          Swal.fire(res.data.msg);
         } else {
 
 

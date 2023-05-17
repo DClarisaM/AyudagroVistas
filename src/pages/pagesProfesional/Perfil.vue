@@ -91,12 +91,12 @@
         axios.put("http://localhost:3000/editarUsuario/"+this.us.id_usuario,this.user)
         .then((res) => {
             console.log(res);
-            alert("Actualizacion exitosa"+this.us.id_usuario)
+            Swal.fire("Actualizacion exitosa"+this.us.id_usuario)
             this.$router.push("/login");
           })
           .catch((err) => {
             console.log(err);
-            alert("error del servidor" + err);
+            Swal.fire("error del servidor" );
           });
       },
     },

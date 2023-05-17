@@ -145,7 +145,7 @@
           })
           .catch((err) => {
             //TODO mostrar ventana emergente sweetalert2 con el error
-            alert("error del servidor");
+            Swal.fire("error del servidor");
           });
       },
   
@@ -161,7 +161,7 @@
           })
           .catch((err) => {
             //TODO mostrar ventana emergente sweetalert2 con el error
-            alert("error del servidor");
+            Swal.fire("error del servidor");
           });
       },
   
@@ -177,7 +177,7 @@
           .post("http://localhost:3000/nuevaRespuesta", this.respuesta)
           .then((res) => {
             console.log(res.data);
-            alert("respuesta exitosa")
+            Swal.fire("respuesta exitosa")
             // this.reId = res.data.id_respuesta;
             // console.log(this.reId);
   
@@ -187,7 +187,7 @@
           })
           .catch((err) => {
             console.log(err);
-            alert("error del servidor" + err);
+            Swal.fire("error del servidor" );
           });
       },
       //pruebas paratraer el usuario que realiza la respuesta

@@ -64,9 +64,9 @@ export default {
       axios.post("http://localhost:3000/login2", this.user).then((res) => {
         if (res.data.status == "error") {
           //  console.log(res.data.msg);
-          alert(res.data.msg);
+          Swal.fire(res.data.msg);
         } else {
-          this.$router.push("/archivo");
+          this.$router.push("/usuario");
 
           localStorage.setItem("usuarios", JSON.stringify(res.data.user));
           console.log(res.data);
@@ -78,13 +78,13 @@ export default {
       axios.post("http://localhost:3000/login", this.user).then((res) => {
         if (res.data.status == "error") {
           //  console.log(res.data.msg);
-          alert(res.data.msg);
+          Swal.fire(res.data.msg);
         } else {
 
 
 
           
-          alert("Bienvenido  Ayudagro");
+          Swal.fire("Bienvenido  Ayudagro");
           this.$router.push("/archivo");
 
           localStorage.setItem("usuarios", JSON.stringify(res.data.user));
