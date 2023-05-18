@@ -19,7 +19,7 @@
           Danier
         </h4>
       </div>
-       <h5>como hacer el amarre a la dairita  </h5>
+       <h5>jjjc</h5>
     </div>
     <div class="h2 mb-0">
      <b-icon-arrow-up></b-icon-arrow-up>
@@ -27,7 +27,7 @@
    </div>
     
    <div class="text-right">
-           <p-button type="info" @click.native="">
+           <p-button type="info" >
              Responder
            </p-button>
          </div>

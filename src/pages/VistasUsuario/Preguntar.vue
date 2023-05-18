@@ -112,21 +112,21 @@ export default {
     this.listarPreguntas();
   },
   methods: {
-    listarPreguntas() {
-      this.pregunta.usuario_id=this.us.id_usuario
-      console.log(this.pregunta.usuario_id)
-      axios
-        .get("http://localhost:3000/listarPregunta",this.pregunta)
-        .then((res) => {
-          //codigo
-          this.listaPreguntas = res.data;
-          //console.log(res.data);
-        })
-        .catch((err) => {
-          //TODO mostrar ventana emergente sweetalert2 con el error
-          alert("error del servidor" + err);
-        });
-    },
+    // listarPreguntas() {
+    //   this.pregunta.usuario_id=this.us.id_usuario
+    //   console.log(this.pregunta.usuario_id)
+    //   axios
+    //     .get("http://localhost:3000/listarPregunta",this.pregunta)
+    //     .then((res) => {
+    //       //codigo
+    //       this.listaPreguntas = res.data;
+    //       //console.log(res.data);
+    //     })
+    //     .catch((err) => {
+    //       //TODO mostrar ventana emergente sweetalert2 con el error
+    //       alert("error del servidor" + err);
+    //     });
+    // },
     registrarPregunta() {
       //  alert("jahkajs")
       this.usuario_id=this.us.id_usuario;

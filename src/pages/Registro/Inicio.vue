@@ -120,7 +120,6 @@
 </template>
 <script>
 import Swal from 'sweetalert2/dist/sweetalert2.js'
-
 import 'sweetalert2/src/sweetalert2.scss'
 import axios from "axios"
 import { useVuelidate } from '@vuelidate/core'
@@ -190,7 +189,7 @@ export default {
      
     },
     validatorUser(){
-      if(!this.user.nombre || !this.user.apellido ||!this.user.correo_electronico || !this.user.telefono || !this.user.direccion){
+      if(!this.user.nombre || !this.user.apellido ||!this.user.correo_electronico || !this.user.telefono || !this.user.direccion ||!this.user.contrasena ||!this.user.password){
           //  alert("Porfavoe revise que todos los campos del registro esten llenos"); 
              Swal.fire({
   icon: 'error',

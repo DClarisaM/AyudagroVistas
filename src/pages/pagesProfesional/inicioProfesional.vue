@@ -74,8 +74,9 @@
   </template>
   <script>
   import axios from "axios";
-  import Swal from "sweetalert2";
-  export default {
+  import Swal from 'sweetalert2/dist/sweetalert2.js'
+import 'sweetalert2/src/sweetalert2.scss'
+export default {
     components: {},
     data() {
       return {

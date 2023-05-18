@@ -57,7 +57,8 @@
   
   <script>
   import axios from "axios";
-  
+  import Swal from 'sweetalert2/dist/sweetalert2.js'
+import 'sweetalert2/src/sweetalert2.scss'
   export default {
     components: {
   
@@ -86,7 +87,7 @@
           })
           .catch((err) => {
             //TODO mostrar ventana emergente sweetalert2 con el error
-            alert("error del servidor")
+            Swal.fire("error del servidor")
           })
       }
   
