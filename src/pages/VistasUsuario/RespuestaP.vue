@@ -202,7 +202,7 @@ export default {
             Swal.fire('Respuesta guardada exitosamente')
            setInterval(()=>{
             window.location.reload();
-           },1000);
+           },1000)
             // this.reId = res.data.id_respuesta;
             // console.log(this.reId);
 

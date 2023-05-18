@@ -82,11 +82,9 @@
   </div>
 </template>
 <script>
-import axios from 'axios'
 import Swal from 'sweetalert2/dist/sweetalert2.js'
-
 import 'sweetalert2/src/sweetalert2.scss'
-
+import axios from "axios"
 export default {
   components: {},
   data() {
@@ -110,48 +108,48 @@ export default {
     this.listarPreguntas();
   },
   methods: {
-    // listarPreguntas() {
-    //   this.pregunta.usuario_id=this.us.id_usuario
-    //   console.log(this.pregunta.usuario_id)
-    //   axios
-    //     .get("http://localhost:3000/listarPregunta",this.pregunta)
-    //     .then((res) => {
-    //       //codigo
-    //       this.listaPreguntas = res.data;
-    //       //console.log(res.data);
-    //     })
-    //     .catch((err) => {
-    //       //TODO mostrar ventana emergente sweetalert2 con el error
-    //       alert("error del servidor" + err);
-    //     });
-    // },
-    // registrarPregunta() {
-    //   //  alert("jahkajs")
-    //   this.usuario_id=this.us.id_usuario;
-    //   console.log(this.usuario_id);
-    //   axios.post("http://localhost:3000/nuevaPregunta",this.pregunta)
-    //     .then((res) => {
-    //       alert("Pregunta registrada con exito");
-    //       console.log(res);
-    //       this.$router.push("/Dashboard");
-    //     })
-    //     .catch((err) => {
-    //       alert("error del servidor" + err);
-    //     });
-    // },
+    listarPreguntas() {
+      this.pregunta.usuario_id=this.us.id_usuario
+      console.log(this.pregunta.usuario_id)
+      axios
+        .get("http://localhost:3000/listarPregunta",this.pregunta)
+        .then((res) => {
+          //codigo
+          this.listaPreguntas = res.data;
+          //console.log(res.data);
+        })
+        .catch((err) => {
+          //TODO mostrar ventana emergente sweetalert2 con el error
+          alert("error del servidor" + err);
+        });
+    },
+    registrarPregunta() {
+      //  alert("jahkajs")
+      this.usuario_id=this.us.id_usuario;
+      console.log(this.usuario_id);
+      axios.post("http://localhost:3000/nuevaPregunta",this.pregunta)
+        .then((res) => {
+          alert("Pregunta registrada con exito");
+          console.log(res);
+          this.$router.push("/Dashboard");
+        })
+        .catch((err) => {
+          alert("error del servidor" + err);
+        });
+    },
     registrarPreguntaV(){
       this.usuario_id=this.us.id_usuario;
       if(!this.pregunta.descripcion){
         Swal.fire('Error la respuesta esta vacia')
 
-      }else{  axios.post("http://localhost:3000/nuevaPregunta", this.pregunta )
+      }else{  axios.post("http://localhost:3000/nuevaPregunta",this.pregunta)
         .then((res) => {
           Swal.fire("Pregunta registrada con exito");
           console.log(res);
           this.$router.push("/Dashboard");
         })
         .catch((err) => {
-          Swal.fire("error del servidor" + err );
+          Swal.fire("error del servidor" );
         });
 
       }
