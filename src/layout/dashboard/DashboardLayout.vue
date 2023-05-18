@@ -17,7 +17,7 @@
         <!-- <sidebar-link to="/Inicio" name="Login" icon="ti-check-box" /> -->
         <!-- <sidebar-link to="/sugerenciaArchivo" name="Mostrar Sugerencias Archivo" icon="ti-save-alt" /> -->
         <!-- <sidebar-link to="/preguntaArchivo" name="Listar Pregunta Archivo" icon="ti-view-list-alt" /> -->
-        <div v-if="us.rol_id==1 || us.rol_id==3"><sidebar-link to="/preguntar" name="preguntar" icon="ti-write" /></div>
+        <div v-if="us.rol_id==1 "><sidebar-link to="/preguntar" name="preguntar" icon="ti-write" /></div>
         <!--<sidebar-link to="/MisPreguntas" name="Mis Preguntas" icon="ti-pencil-alt" /> -->
         <!-- <sidebar-link to="/SinRespuesta" name="Sin Respuesta" icon="ti-info" /> -->
         <!-- <sidebar-link to="/vistas" name="Inicio Sesion" icon="ti-eye" /> -->

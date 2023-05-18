@@ -18,7 +18,7 @@
           <!-- <p-button type="info" round @click.native.prevent="">
             Preguntar
           </p-button> -->
-          <div class="col-8 offset-2">
+          <div class="col-8 offset-2" v-if="us.rol_id==1">
             <router-link class="btn btn-success" :to="{
               name: 'preguntar',
             }">

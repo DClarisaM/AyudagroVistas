@@ -63,7 +63,7 @@ export default {
           //  console.log(res.data.msg);
           alert(res.data.msg);
         } else {
-          this.$router.push("/inicioProfesional");
+          this.$router.push("/dashboard");
 
           localStorage.setItem("usuarios", JSON.stringify(res.data.user));
           console.log(res.data);
