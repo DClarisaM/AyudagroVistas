@@ -31,7 +31,7 @@
               <h5 style="clor:red" v-if="!respuesta.descrripcion">res puesta </h5>
 
               </textarea>
-              <h5 style="color:#FF0000" v-if="!respuesta.descripcion">El campo no puede estar vacio</h5>
+              <h5 style="color:#FF0000" v-if="!respuesta.descripcion && estado==true">*El campo no puede estar vacio</h5>
              
     
 
@@ -114,6 +114,7 @@ export default {
       preUs: {},
       preid: {},
       reId: "",
+      estado:false
 
     };
   },
@@ -194,6 +195,7 @@ export default {
       this.respuesta.hora_fecha = this.us.nombre
       if (!this.respuesta.descripcion) {
         Swal.fire('Error la respuesta esta vacia')
+        this.estado=true
       }
       else {
         axios.post("http://localhost:3000/nuevaRespuesta", this.respuesta)

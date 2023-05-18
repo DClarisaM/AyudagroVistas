@@ -62,7 +62,7 @@
                   v-on:keyup.enter="registrarPregunta()"
                 >
                 </textarea>
-                <h5 style="color:#FF0000" v-if="!pregunta.descripcion">El campo no puede estar vacio</h5> 
+                <h5 style="color:#FF0000" v-if="!pregunta.descripcion && estado==true">*El campo no puede estar vacio</h5> 
 
               </div>
             </form>
@@ -98,6 +98,7 @@ export default {
       },
       userloger: "",
       us: "",
+      estado:false,
     
     };
   },
@@ -141,6 +142,7 @@ export default {
       this.usuario_id=this.us.id_usuario;
       if(!this.pregunta.descripcion){
         Swal.fire('Error la respuesta esta vacia')
+        this.estado=true
 
       }else{  axios.post("http://localhost:3000/nuevaPregunta",this.pregunta)
         .then((res) => {

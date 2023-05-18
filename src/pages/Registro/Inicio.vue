@@ -14,7 +14,7 @@
               v-model="user.nombre"
               required="true"
             />
-            <h7 style="color:#FF0000" v-if="!user.nombre && enviado==true">Debe escribir un nombre</h7> 
+            <h7 style="color:#FF0000" v-if="!user.nombre && enviado==true">*Debe escribir un nombre</h7> 
           </div>
          
           <div class="col-md-6">
@@ -26,7 +26,7 @@
               v-model="user.apellido"
               required
             >
-            <h7 style="color:#FF0000" v-if="!user.apellido && enviado==true">Debe escribir un apellido</h7> 
+            <h7 style="color:#FF0000" v-if="!user.apellido && enviado==true">*Debe escribir un apellido</h7> 
 
             </fg-input>
           </div>
@@ -45,7 +45,7 @@
               
               required="required"
             >
-            <h7 style="color:#FF0000" v-if="!user.correo_electronico && enviado==true">Debe escribir un correo </h7> 
+            <h7 style="color:#FF0000" v-if="!user.correo_electronico && enviado==true">*Debe escribir un correo </h7> 
 
             </fg-input>
           </div>
@@ -59,7 +59,7 @@
               v-model="user.contrasena"
               required
             >
-            <h7 style="color:#FF0000" v-if="!user.contrasena && enviado==true">Debe escribir una contraseña</h7> 
+            <h7 style="color:#FF0000" v-if="!user.contrasena && enviado==true">*Debe escribir una contraseña</h7> 
 
             </fg-input>
           </div>
@@ -73,8 +73,8 @@
               placeholder="******"
               required
             >
-            <h7 style="color:#FF0000" v-if="!user.password && enviado==true">Debe repetir su contraseña</h7> <br>
-            <h7 style="color:#FF0000" v-if="user.contrasena != user.password  &&enviado==true">Las contraseñas deben ser iguales</h7> 
+            <h7 style="color:#FF0000" v-if="!user.password && enviado==true">*Debe repetir su contraseña</h7> <br>
+            <h7 style="color:#FF0000" v-if="user.contrasena != user.password  && enviado==true">*Las contraseñas deben ser iguales</h7> 
 
             </fg-input>
           </div>
@@ -87,8 +87,8 @@
               v-model="user.telefono"
               required
             >
-            <h7 style="color:#FF0000" v-if="!user.telefono && enviado==true" class="mensajeError"> Debe escribir un telefono o celular</h7> <br>
-            <h7 style="color:#FF0000" v-if="!user.telefono && enviado==true" class="mensajeError"> Este capo solo deve contener numero</h7> 
+            <h7 style="color:#FF0000" v-if="!user.telefono && enviado==true" class="mensajeError">*Debe escribir un telefono o celular</h7> <br>
+            <h7 style="color:#FF0000" v-if="!user.telefono && enviado==true" class="mensajeError">*Este capo solo deve contener numero</h7> 
 
 
             </fg-input>
@@ -101,7 +101,7 @@
               placeholder="Cl-#"
               v-model="user.direccion"  
             >
-            <h7 style="color:#FF0000" v-if="!user.direccion && enviado==true">Debe escribir una  direccion</h7> 
+            <h7 style="color:#FF0000" v-if="!user.direccion && enviado==true">*Debe escribir una  direccion</h7> 
 
 
           
