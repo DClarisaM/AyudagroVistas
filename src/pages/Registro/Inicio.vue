@@ -36,11 +36,13 @@
           <div class="col-md-6">
             <fg-input
               type="email" multiple
+              :rules="validateEmail"
               size="32" minlength="10" maxlength="64"
               label="Correo Electronico"
               id="correo_electronico"
               placeholder="gmail.com"
               v-model="user.correo_electronico"
+              
               required="required"
             >
             <h7 style="color:#FF0000" v-if="!user.correo_electronico">Debe escribir un correo </h7> 
@@ -122,14 +124,9 @@
 import Swal from 'sweetalert2/dist/sweetalert2.js'
 import 'sweetalert2/src/sweetalert2.scss'
 import axios from "axios"
-import { useVuelidate } from '@vuelidate/core'
-//import { required, email , minLength} from '@vuelidate/validators'
-import {required, email, minLength} from 'vuelidate/lib/validators'
 
 export default {
-  setup(){
-       return {v$: useVuelidate() }
-  },
+ 
   data() {
     return {
       user: {
@@ -150,6 +147,19 @@ export default {
  
   
   methods: { 
+    validateEmail(value) {
+      // if the field is empty
+      if (!value) {
+        return 'This field is required';
+      }
+      // if the field is not a valid email
+      const regex = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i;
+      if (!regex.test(value)) {
+        return 'This field must be a valid email';
+      }
+      // All is good
+      return true;
+    },
 
   validateEmail(){
                 var emailField = document.getElementById('correo_electronico');
@@ -192,10 +202,10 @@ export default {
       if(!this.user.nombre || !this.user.apellido ||!this.user.correo_electronico || !this.user.telefono || !this.user.direccion ||!this.user.contrasena ||!this.user.password){
           //  alert("Porfavoe revise que todos los campos del registro esten llenos"); 
              Swal.fire({
-  icon: 'error',
-  title: 'Oops...',
-  text: 'algo salio mal !',
-  footer: '<a href="">Porfavor reivise que todos los campos esten llenos para continuar</a>'
+  icon: 'warning',
+  title: 'Campos vacios',
+  text: 'Porfavor reivise que todos los campos esten llenos para continuar!',
+  
 })
 
       }else{
@@ -213,7 +223,11 @@ export default {
         Swal.fire('Las contraseñas no coinsiden')
         // alert("contraseñas no coinciden");
       }}else{
-                  Swal.fire('Porfavor ingrese un correo valido');
+                  Swal.fire({
+                    title: 'Correo no válido',
+                    text: 'Porfavor ingrese un correo valido',
+                    icon:'warning',
+                  });
                  }
         
       }

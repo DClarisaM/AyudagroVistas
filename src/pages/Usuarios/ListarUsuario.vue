@@ -48,7 +48,7 @@
               </tr>
             </thead>
             <tbody>
-              <tr v-for="usuario in listaUsuarios">
+              <tr v-for="usuario in listaUsuarios" :key="usuario.id_usuario">
                 <th scope="row">{{ usuario.id_usuario }}</th>
                 <td>{{ usuario.nombre }}</td>
                 <td>{{ usuario.apellido }}</td>

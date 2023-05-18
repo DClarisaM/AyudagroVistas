@@ -2,22 +2,22 @@
   <div class="wrapper">
     <side-bar v-if="us!=null" >
       <template slot="links">
-        <sidebar-link to="/dashboard" name="Inicio" icon="ti-home" />
-        <sidebar-link to="/stats" name="Perfil" icon="ti-face-smile" />
+        <di v-if="us.rol_id ==1 || us.rol_id==3">  <sidebar-link to="/dashboard" name="Inicio" icon="ti-home" /></di>
+        <di v-if="us.rol_id==1 || us.rol_id==3"><sidebar-link to="/stats" name="Perfil" icon="ti-face-smile" /></di>
+        
         <!-- <sidebar-link to="/categorias" name="Administrar Categorias" icon="ti-layout-list-thumb-alt" /> -->
         <!-- <sidebar-link to="/subcategorias" name="Administrar Subcategorias" icon="ti-layout-list-post" /> -->
-        <!-- <sidebar-link to="/usuario" name="Ver Usuario" icon="ti-user" /> -->
+        <div v-if="us.rol_id==2"><sidebar-link to="/usuario" name="Ver Usuario" icon="ti-user" /></div>
+        <div v-if="us.rol_id==2"><sidebar-link to="/pregunta" name="Ver Pregunta" icon="ti-help" /></div>
         <!-- <sidebar-link to="/sugerencias" name="Ver Sugerencias" icon="ti-light-bulb" /> -->
         <!-- <sidebar-link to="/valorR" name="Ver Valor_R" icon="ti-view-list-alt" /> -->
-        <!-- <sidebar-link to="/pregunta" name="Ver Pregunta" icon="ti-help" /> -->
-        <!-- <sidebar-link to="/respuesta" name="Ver Respuesta" icon="ti-pencil-alt" /> -->
+        <div v-if="us.rol_id==2"><sidebar-link to="/respuesta" name="Ver Respuesta" icon="ti-pencil-alt" /></div>
         <!-- <sidebar-link to="/rol" name="Gestionar Rol" icon="ti-view-list-alt" /> -->
         <!-- <sidebar-link to="/ListaPreguntas" name="preguntas" icon="ti-comments" /> -->
         <!-- <sidebar-link to="/Inicio" name="Login" icon="ti-check-box" /> -->
-        <!--<sidebar-link to="/archivo" name="Gestionar Archivo" icon="ti-save" />-->
         <!-- <sidebar-link to="/sugerenciaArchivo" name="Mostrar Sugerencias Archivo" icon="ti-save-alt" /> -->
         <!-- <sidebar-link to="/preguntaArchivo" name="Listar Pregunta Archivo" icon="ti-view-list-alt" /> -->
-        <sidebar-link v-if="usuariologueado != 1" to="/preguntar" name="preguntar" icon="ti-write" />
+        <div v-if="us.rol_id==1 || us.rol_id==3"><sidebar-link to="/preguntar" name="preguntar" icon="ti-write" /></div>
         <!--<sidebar-link to="/MisPreguntas" name="Mis Preguntas" icon="ti-pencil-alt" /> -->
         <!-- <sidebar-link to="/SinRespuesta" name="Sin Respuesta" icon="ti-info" /> -->
         <!-- <sidebar-link to="/vistas" name="Inicio Sesion" icon="ti-eye" /> -->

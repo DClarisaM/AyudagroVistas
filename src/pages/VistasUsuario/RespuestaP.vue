@@ -95,11 +95,6 @@ import Swal from 'sweetalert2/dist/sweetalert2.js'
 
 import 'sweetalert2/src/sweetalert2.scss'
 import axios from "axios"
-import { useVuelidate } from '@vuelidate/core'
-//import { required, email , minLength} from '@vuelidate/validators'
-import { required, email, minLength } from 'vuelidate/lib/validators'
-
-
 export default {
   components: {},
   data() {

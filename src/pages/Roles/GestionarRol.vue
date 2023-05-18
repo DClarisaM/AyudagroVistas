@@ -41,7 +41,7 @@
                 </tr>
               </thead>
               <tbody>
-                <tr v-for="rol in listaRol">
+                <tr v-for="rol in listaRol" :key="rol.id">
                   <th scope="row">{{ rol.id_rol }}</th>
                   <td>{{ rol.nombre }}</td>
                   <td>

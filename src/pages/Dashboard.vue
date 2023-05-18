@@ -47,19 +47,7 @@
             <small>fecha y hora :{{ pregunta.Usuario.createdAt }}</small>
             <!-- <small>subcategoria de la pregunta{{ pregunta.subcategoria_id }}</small> -->
             <div class="text-right">
-              <!-- <p-button type="info" round @click.native.prevent="">
-                Responder
-              </p-button> -->
-           
-
-        
-             
-              
-              <router-link class="btn bg-dark text-white" :to="{
-                name: 'RespuestaP', params: { preguntaId: pregunta.id_pregunta }
-              }">
-                <i class="fas fa-eye"></i>
-              </router-link>
+ 
               <router-link class="btn btn-success" :to="{
                 name: 'RespuestaP',
                 params: { preguntaId: pregunta.id_pregunta },
