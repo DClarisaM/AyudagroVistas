@@ -67,6 +67,8 @@ export default {
 
           localStorage.setItem("usuarios", JSON.stringify(res.data.user));
           console.log(res.data);
+          window.location.reload();
+
         }
       });
     },

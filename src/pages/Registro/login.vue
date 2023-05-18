@@ -92,6 +92,11 @@ export default {
          // alert("Bienvenido Ayudagro");
           this.$router.push("/dashboard");
 
+
+            window.location.reload();
+          
+          
+
           localStorage.setItem("usuarios", JSON.stringify(res.data.user));
           console.log(res.data.user);
         }
