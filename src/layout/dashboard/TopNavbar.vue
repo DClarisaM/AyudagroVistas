@@ -45,7 +45,9 @@ export default {
 
 localStorage.clear();
 this.$router.push('/login');
-},
+setInterval(()=>{
+            window.location.reload();
+           },100)},
     capitalizeFirstLetter(string) {
       return string.charAt(0).toUpperCase() + string.slice(1);
     },

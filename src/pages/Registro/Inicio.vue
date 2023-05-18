@@ -74,7 +74,7 @@
               required
             >
             <h7 style="color:#FF0000" v-if="!user.password && enviado==true">Debe repetir su contraseña</h7> <br>
-            <h7 style="color:#FF0000" v-if="user.contrasena != user.password">Las contraseñas deben ser iguales</h7> 
+            <h7 style="color:#FF0000" v-if="user.contrasena != user.password  &&enviado==true">Las contraseñas deben ser iguales</h7> 
 
             </fg-input>
           </div>
@@ -199,7 +199,8 @@ export default {
      
     // },
     validatorUser(){
-      if(!this.user.nombre || !this.user.apellido ||!this.user.correo_electronico || !this.user.telefono || !this.user.direccion ||!this.user.contrasena ||!this.user.password){
+      if(!this.user.nombre || !this.user.apellido ||!this.user.correo_electronico || !this.user.telefono 
+      || !this.user.direccion ||!this.user.contrasena ||!this.user.password){
           //  alert("Porfavoe revise que todos los campos del registro esten llenos"); 
              Swal.fire({
   icon: 'warning',
@@ -222,6 +223,8 @@ this.enviado=true
         });
       } else {
         Swal.fire('Las contraseñas no coinsiden')
+        this.enviado=true
+
         // alert("contraseñas no coinciden");
       }}else{
                   Swal.fire({
@@ -229,24 +232,13 @@ this.enviado=true
                     text: 'Porfavor ingrese un correo valido',
                     icon:'warning',
                   });
+                  this.enviado=true
+
                  }
         
       }
     },
-    // validations:{
-    //   user:{
-    //      nombre:{required},
-    //      apellido:{required},
-    //      correo_electronico:{required,email},
-    //      contrasena:{required, minLength : minLength(5) },
-    //      telefono:{required},
-    //     direccion:{required},
-    //     estado: {required},
-    //     password: {required},
-
-    //   }
-
-    // },
+   
   },
 };
 </script>
