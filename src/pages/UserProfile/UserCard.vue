@@ -13,9 +13,9 @@
         <h4 class="title">
           {{ us.nombre +" " +us.apellido }}
         </h4>
-        <label for="">De:</label>
+        <label for="">Dirección:</label>
         <h4 class="title">{{ us.direccion }}</h4>
-        <label for="">Telefono::</label>
+        <label for="">Teléfono:</label>
         <h4 class="title">{{ us.telefono }}</h4>
         <label for="">E-mail:</label>
         <h4 class="title">{{ us.correo_electronico }}</h4>

@@ -9,6 +9,7 @@
           <div>
             <div class="author">
               <img class="avatar border-white" src="@/assets/img/faces/face-4.jpg" alt="..." />
+              <h4 v-if="us.rol_id==3">Profesional</h4>
               <h4 class="title">{{ us.nombre + " " + us.apellido }}</h4>
               <div>
                 <h5 class="title">Vas a responder a la siguiente pregunta:</h5>
