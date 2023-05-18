@@ -12,7 +12,7 @@
         <!-- <sidebar-link to="/sugerencias" name="Ver Sugerencias" icon="ti-light-bulb" /> -->
         <!-- <sidebar-link to="/valorR" name="Ver Valor_R" icon="ti-view-list-alt" /> -->
         <div v-if="us.rol_id==2"><sidebar-link to="/respuesta" name="Ver Respuesta" icon="ti-pencil-alt" /></div>
-        <!-- <sidebar-link to="/rol" name="Gestionar Rol" icon="ti-view-list-alt" /> -->
+        <div v-if="us.rol_id==2"><sidebar-link to="/rol" name="Gestionar Rol" icon="ti-view-list-alt" /></div>
         <!-- <sidebar-link to="/ListaPreguntas" name="preguntas" icon="ti-comments" /> -->
         <!-- <sidebar-link to="/Inicio" name="Login" icon="ti-check-box" /> -->
         <!-- <sidebar-link to="/sugerenciaArchivo" name="Mostrar Sugerencias Archivo" icon="ti-save-alt" /> -->

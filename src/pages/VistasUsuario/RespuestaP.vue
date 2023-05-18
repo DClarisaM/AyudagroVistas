@@ -200,6 +200,9 @@ export default {
           .then((res) => {
             console.log(res.data);
             Swal.fire('Respuesta guardada exitosamente')
+           setInterval(()=>{
+            window.location.reload();
+           },1000);
             // this.reId = res.data.id_respuesta;
             // console.log(this.reId);
 

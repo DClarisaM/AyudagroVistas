@@ -86,6 +86,8 @@ export default {
         .then((res) => {
           //codigo
           console.log(res);
+          Swal.fire("Editado exitosamente")
+
           this.$router.push("/rol");
           //ya se editó
         })

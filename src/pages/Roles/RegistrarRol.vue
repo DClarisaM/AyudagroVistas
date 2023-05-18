@@ -62,6 +62,7 @@ export default {
         axios.post("http://localhost:3000/nuevoRol",this.rol)
         .then((res) => {
             console.log(res);
+            Swal.fire("Rol creado exitosamente")
             this.$router.push("/rol");
         })
         .catch((err) => {
