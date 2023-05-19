@@ -10,6 +10,7 @@
               label="Correo Electronico"
               placeholder="gmail.com"
               v-model="user.correo_electronico"
+              v-on:keyup.enter="login()"
             >
             </fg-input>
           </div>
@@ -80,25 +81,18 @@ export default {
 
     login() {
       console.log(this.user)
+      // if(!this.user.correo_electronico && !this.user.contrasena){
+      //     Swal.fire("No ingresastes ningun dato")}
       axios.post("http://localhost:3000/login", this.user).then((res) => {
+      
         if (res.data.status == "error") {
           //  console.log(res.data.msg);
           Swal.fire(res.data.msg);
         } else {
-
-
-
-          
          // alert("Bienvenido Ayudagro");
           this.$router.push("/dashboard");
-
-
-            window.location.reload();
-          
-          
-
+          window.location.reload();
           localStorage.setItem("usuarios", JSON.stringify(res.data.user));
-          console.log(res.data.user);
         }
       });
     },

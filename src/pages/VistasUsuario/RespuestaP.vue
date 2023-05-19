@@ -28,10 +28,11 @@
 
             <div class="form-group">
               <textarea class="form-control" placeholder="Escriba aquí su respuesta" id="floatingTextarea2"
-                style="height: 50px" v-model="respuesta.descripcion" required>
-              <h5 style="clor:red" v-if="!respuesta.descrripcion">res puesta </h5>
-
-              </textarea>
+                style="height: 50px" 
+                v-model="respuesta.descripcion"   
+                v-on:keyup.enter="RespuestaValided()"
+                 >
+              </textarea >
               <h5 style="color:#FF0000" v-if="!respuesta.descripcion && estado==true">*El campo no puede estar vacio</h5>
              
     

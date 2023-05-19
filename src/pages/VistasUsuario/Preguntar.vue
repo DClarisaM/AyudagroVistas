@@ -59,7 +59,7 @@
                   id="floatingTextarea2"
                   style="height: 80px"
                   v-model="pregunta.descripcion"
-                  v-on:keyup.enter="registrarPregunta()"
+                  v-on:keyup.enter="registrarPreguntaV()"
                 >
                 </textarea>
                 <h5 style="color:#FF0000" v-if="!pregunta.descripcion && estado==true">*El campo no puede estar vacio</h5> 
@@ -124,20 +124,20 @@ export default {
           alert("error del servidor" + err);
         });
     },
-    registrarPregunta() {
-      //  alert("jahkajs")
-      this.usuario_id=this.us.id_usuario;
-      console.log(this.usuario_id);
-      axios.post("http://localhost:3000/nuevaPregunta",this.pregunta)
-        .then((res) => {
-          alert("Pregunta registrada con exito");
-          console.log(res);
-          this.$router.push("/Dashboard");
-        })
-        .catch((err) => {
-          alert("error del servidor" + err);
-        });
-    },
+    // registrarPregunta() {
+    //   //  alert("jahkajs")
+    //   this.usuario_id=this.us.id_usuario;
+    //   console.log(this.usuario_id);
+    //   axios.post("http://localhost:3000/nuevaPregunta",this.pregunta)
+    //     .then((res) => {
+    //       alert("Pregunta registrada con exito");
+    //       console.log(res);
+    //       this.$router.push("/Dashboard");
+    //     })
+    //     .catch((err) => {
+    //       alert("error del servidor" + err);
+    //     });
+    // },
     registrarPreguntaV(){
       this.usuario_id=this.us.id_usuario;
       if(!this.pregunta.descripcion){
