@@ -47,7 +47,7 @@
               </tr>
             </thead>
             <tbody>
-              <tr v-for="pregunta in listaPreguntas">
+              <tr v-for="pregunta in listaPreguntas " :key="pregunta.id_pregunta">
                 <th scope="row">{{ pregunta.id_pregunta }}</th>
                 <td>{{ pregunta.descripcion }}</td>
                 <td>{{ pregunta.usuario_id }}</td>
