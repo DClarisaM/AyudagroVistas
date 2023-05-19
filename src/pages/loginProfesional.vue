@@ -58,7 +58,7 @@ export default {
     // },
 
     login3() {
-      axios.post("http://localhost:3000/login3", this.user).then((res) => {
+      axios.post("http://192.168.56.103:3000/login3", this.user).then((res) => {
         if (res.data.status == "error") {
           //  console.log(res.data.msg);
           alert(res.data.msg);
@@ -74,7 +74,7 @@ export default {
     },
 //iniciar como administrador
     loginadmin() {
-      axios.post("http://localhost:3000/login3", this.user).then((res) => {
+      axios.post("http://192.168.56.103:3000/login3", this.user).then((res) => {
         if (res.data.status == "error") {
           //  console.log(res.data.msg);
           alert(res.data.msg);

@@ -136,7 +136,7 @@ import 'sweetalert2/src/sweetalert2.scss'
         // alert("aaaa")
         axios
           .get(
-            "http://localhost:3000/ListarRespuestasPorPreguntaId/" +
+            "http://192.168.56.103:3000/ListarRespuestasPorPreguntaId/" +
               this.idPregunta
           )
           .then((res) => {
@@ -153,7 +153,7 @@ import 'sweetalert2/src/sweetalert2.scss'
       verPregunta() {
         // alert("aaaa")
         axios
-          .get("http://localhost:3000/verDetallePregunta/" + this.idPregunta)
+          .get("http://192.168.56.103:3000/verDetallePregunta/" + this.idPregunta)
           .then((res) => {
             //codigo
             // alert("bbbb")
@@ -175,7 +175,7 @@ import 'sweetalert2/src/sweetalert2.scss'
         console.log(this.respuesta.descripcion);
         this.respuesta.hora_fecha=this.us.nombre
         axios
-          .post("http://localhost:3000/nuevaRespuesta", this.respuesta)
+          .post("http://192.168.56.103:3000/nuevaRespuesta", this.respuesta)
           .then((res) => {
             console.log(res.data);
             Swal.fire("respuesta exitosa")
@@ -197,7 +197,7 @@ import 'sweetalert2/src/sweetalert2.scss'
       //   console.log(this.us);
       //   console.log(this.reId);
       //   axios
-      //     .get("http://localhost:3000/resxUser/" + this.reId)
+      //     .get("http://192.168.56.103:3000/resxUser/" + this.reId)
       //     .then((res) => {
       //       alert("si lista");
       //       this.preUs = res.data.Usuario;
@@ -208,7 +208,7 @@ import 'sweetalert2/src/sweetalert2.scss'
       //     });
       // },
       // respuestasPorUserid(){
-      //  axios.get("http://localhost:3000/ListarRespuestasPorUsuario/"+this.reId)
+      //  axios.get("http://192.168.56.103:3000/ListarRespuestasPorUsuario/"+this.reId)
       //  .then((res)=>{
       //   console.log(this.preid);
       //   this.preid=res.data

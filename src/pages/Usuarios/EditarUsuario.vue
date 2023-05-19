@@ -87,7 +87,7 @@ export default {
 
     verUsuario() {
       // alert("aaaa")
-      axios.get("http://localhost:3000/verDetalleUsuario/" + this.idUsuario)
+      axios.get("http://192.168.56.103:3000/verDetalleUsuario/" + this.idUsuario)
         .then((res) => {
           //codigo
 
@@ -105,7 +105,7 @@ export default {
     },
     EditarUsario() {
       //   alert("aaaa")
-      axios.put("http://localhost:3000/editarUsuario/" + this.idUsuario, this.usuario)
+      axios.put("http://192.168.56.103:3000/editarUsuario/" + this.idUsuario, this.usuario)
         .then((res) => {
           //codigo
           console.log(res);

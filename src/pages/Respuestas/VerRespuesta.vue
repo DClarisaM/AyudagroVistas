@@ -72,7 +72,7 @@
     methods: {
         VerRespuesta() {
         // alert("aaaa")
-        axios.get("http://localhost:3000/verDetalleRespuesta/"+this.idRespuesta)
+        axios.get("http://192.168.56.103:3000/verDetalleRespuesta/"+this.idRespuesta)
           .then((res) => {
             //codigo
             // alert("bbbb")

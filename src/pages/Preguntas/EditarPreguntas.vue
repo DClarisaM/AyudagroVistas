@@ -61,7 +61,7 @@ export default {
   
     VerPregunta() {
         //  alert("aaaa")
-        axios.get("http://localhost:3000/verDetallePregunta/"+this.idPregunta )
+        axios.get("http://192.168.56.103:3000/verDetallePregunta/"+this.idPregunta )
           .then((res) => {
             //codigo
            
@@ -77,7 +77,7 @@ export default {
     },
     EditarPregunta() {
       // alert("aaaa")
-      axios.put("http://localhost:3000/editarPregunta/"+this.idPregunta,this.pregunta)
+      axios.put("http://192.168.56.103:3000/editarPregunta/"+this.idPregunta,this.pregunta)
         .then((res) => {
           //codigo
           console.log(res);

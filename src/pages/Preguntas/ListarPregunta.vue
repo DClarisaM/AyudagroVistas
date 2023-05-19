@@ -100,7 +100,7 @@ export default {
     listarPreguntas() {
       //alert("jahahsa")
       axios
-        .get("http://localhost:3000/listarPregunta")
+        .get("http://192.168.56.103:3000/listarPregunta")
         .then((res) => {
           this.listaPreguntas = res.data;
           console.log(res.data);
@@ -133,7 +133,7 @@ export default {
           if (result.isConfirmed) {
             
         //  alert(id)
-            axios.delete("http://localhost:3000/eliminarPregunta/"+id);
+            axios.delete("http://192.168.56.103:3000/eliminarPregunta/"+id);
             swalWithBootstrapButtons.fire(
               "Eliminado!",
               "Se elimino con exito.",

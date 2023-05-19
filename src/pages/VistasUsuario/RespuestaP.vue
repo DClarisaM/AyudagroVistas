@@ -134,7 +134,7 @@ export default {
       // alert("aaaa")
       axios
         .get(
-          "http://localhost:3000/ListarRespuestasPorPreguntaId/" +
+          "http://192.168.56.103:3000/ListarRespuestasPorPreguntaId/" +
           this.idPregunta
         )
         .then((res) => {
@@ -151,7 +151,7 @@ export default {
     verPregunta() {
       // alert("aaaa")
       axios
-        .get("http://localhost:3000/verDetallePregunta/" + this.idPregunta)
+        .get("http://192.168.56.103:3000/verDetallePregunta/" + this.idPregunta)
         .then((res) => {
           //codigo
           // alert("bbbb")
@@ -172,7 +172,7 @@ export default {
     //   console.log(this.respuesta.pregunta_id);
     //   console.log(this.respuesta.descripcion);
     //   this.respuesta.hora_fecha=this.us.nombre
-    //   axios .post("http://localhost:3000/nuevaRespuesta", this.respuesta)
+    //   axios .post("http://192.168.56.103:3000/nuevaRespuesta", this.respuesta)
     //     .then((res) => {
     //       console.log(res.data);
     //       alert("respuesta exitosa")
@@ -200,7 +200,7 @@ export default {
         this.estado=true
       }
       else {
-        axios.post("http://localhost:3000/nuevaRespuesta", this.respuesta)
+        axios.post("http://192.168.56.103:3000/nuevaRespuesta", this.respuesta)
           .then((res) => {
             console.log(res.data);
             Swal.fire('Respuesta guardada exitosamente')
@@ -227,7 +227,7 @@ export default {
     //   console.log(this.us);
     //   console.log(this.reId);
     //   axios
-    //     .get("http://localhost:3000/resxUser/" + this.reId)
+    //     .get("http://192.168.56.103:3000/resxUser/" + this.reId)
     //     .then((res) => {
     //       alert("si lista");
     //       this.preUs = res.data.Usuario;
@@ -238,7 +238,7 @@ export default {
     //     });
     // },
     // respuestasPorUserid(){
-    //  axios.get("http://localhost:3000/ListarRespuestasPorUsuario/"+this.reId)
+    //  axios.get("http://192.168.56.103:3000/ListarRespuestasPorUsuario/"+this.reId)
     //  .then((res)=>{
     //   console.log(this.preid);
     //   this.preid=res.data

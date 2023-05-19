@@ -90,7 +90,7 @@ import 'sweetalert2/src/sweetalert2.scss'
         this.contrasena=this.us.contrasena
         
         
-        axios.put("http://localhost:3000/editarUsuario/"+this.us.id_usuario,this.user)
+        axios.put("http://192.168.56.103:3000/editarUsuario/"+this.us.id_usuario,this.user)
         .then((res) => {
             console.log(res);
             Swal.fire("Actualizacion exitosa"+this.us.id_usuario)

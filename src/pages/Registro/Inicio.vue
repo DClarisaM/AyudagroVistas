@@ -161,16 +161,16 @@ export default {
       return true;
     },
 
-  validateEmail(){
-                var emailField = document.getElementById('correo_electronico');
-                var validEmail =  /^\w+([.-_+]?\w+)*@\w+([.-]?\w+)*(\.\w{2,10})+$/;
-                if( validEmail.test(emailField.value) ){
-                  alert('correo valido');
+  // validateEmail(){
+  //               var emailField = document.getElementById('correo_electronico');
+  //               var validEmail =  /^\w+([.-_+]?\w+)*@\w+([.-]?\w+)*(\.\w{2,10})+$/;
+  //               if( validEmail.test(emailField.value) ){
+  //                 alert('correo valido');
                 
-                }else{
-                  alert('correo invalido');
-                 }
-              } ,
+  //               }else{
+  //                 alert('correo invalido');
+  //                }
+  //             } ,
     
     // validar(){
     //   this.enviado=true;
@@ -216,7 +216,7 @@ this.enviado=true
         if( validEmail.test(emailField.value)){
           // Swal.fire('correo valido')
         if (this.user.password == this.user.contrasena) {
-        axios.post("http://localhost:3000/nuevoUser", this.user).then((res) => {
+        axios.post("http://192.168.56.103:3000/nuevoUser", this.user).then((res) => {
           console.log(res);
           Swal.fire('Registro de usuario exitoso')
           this.$router.push("/login");

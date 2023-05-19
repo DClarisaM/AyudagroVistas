@@ -59,7 +59,7 @@ export default {
   methods: {
     registrarRol(){
          //alert("jahkajs")
-        axios.post("http://localhost:3000/nuevoRol",this.rol)
+        axios.post("http://192.168.56.103:3000/nuevoRol",this.rol)
         .then((res) => {
             console.log(res);
             Swal.fire("Rol creado exitosamente")

@@ -104,7 +104,7 @@
     methods: {
       listarRespuestas() {
         //  alert("jahahsa")
-        axios.get("http://localhost:3000/listarRespuesta")
+        axios.get("http://192.168.56.103:3000/listarRespuesta")
         .then((res) => {
   
           this.listaRespuestas = res.data
@@ -135,7 +135,7 @@ swalWithBootstrapButtons.fire({
 }).then((result) => {
   if (result.isConfirmed) {
      //alert(id)
-    axios.delete("http://localhost:3000/eliminarRespuesta/"+id)
+    axios.delete("http://192.168.56.103:3000/eliminarRespuesta/"+id)
     swalWithBootstrapButtons.fire(
       'Eliminado!',
       'Se elimino con exito.',

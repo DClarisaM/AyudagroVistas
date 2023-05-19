@@ -65,7 +65,7 @@ export default {
    
     VerRol() {
          
-        axios.get("http://localhost:3000/verDetalleRol/"+this.idRol )
+        axios.get("http://192.168.56.103:3000/verDetalleRol/"+this.idRol )
           .then((res) => {
             //codigo
           
@@ -82,7 +82,7 @@ export default {
     },
     EditarRol() {
     //   alert("aaaa")
-      axios.put("http://localhost:3000/editarRol/"+this.idRol,this.rol)
+      axios.put("http://192.168.56.103:3000/editarRol/"+this.idRol,this.rol)
         .then((res) => {
           //codigo
           console.log(res);

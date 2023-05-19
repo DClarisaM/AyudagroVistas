@@ -67,7 +67,7 @@ export default {
   methods: {
     registrarRespuesta(){
         // alert("jahkajs")
-        axios.post("http://localhost:3000/nuevaRespuesta",this.respuesta)
+        axios.post("http://192.168.56.103:3000/nuevaRespuesta",this.respuesta)
         .then((res) => {
             console.log(res);
         })

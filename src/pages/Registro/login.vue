@@ -83,7 +83,7 @@ export default {
       console.log(this.user)
       // if(!this.user.correo_electronico && !this.user.contrasena){
       //     Swal.fire("No ingresastes ningun dato")}
-      axios.post("http://localhost:3000/login", this.user).then((res) => {
+      axios.post("http://192.168.56.103:3000/login", this.user).then((res) => {
       
         if (res.data.status == "error") {
           //  console.log(res.data.msg);

@@ -99,7 +99,7 @@ export default {
   methods: {
     listarRol() {
       //alert("jahahsa")
-      axios.get("http://localhost:3000/listarRol")
+      axios.get("http://192.168.56.103:3000/listarRol")
         .then((res) => {
 
           this.listaRol = res.data
@@ -132,7 +132,7 @@ export default {
 
         //  alert(id)
           // id = getIdToDelete();
-          axios.delete(`http://localhost:3000/eliminarRol/`+id)
+          axios.delete(`http://192.168.56.103:3000/eliminarRol/`+id)
           swalWithBootstrapButtons.fire(
             'Eliminado!',
             'Se elimino con exito.',

@@ -113,7 +113,7 @@ export default {
       this.pregunta.usuario_id=this.us.id_usuario
       console.log(this.pregunta.usuario_id)
       axios
-        .get("http://localhost:3000/listarPregunta",this.pregunta)
+        .get("http://192.168.56.103:3000/listarPregunta",this.pregunta)
         .then((res) => {
           //codigo
           this.listaPreguntas = res.data;
@@ -128,7 +128,7 @@ export default {
     //   //  alert("jahkajs")
     //   this.usuario_id=this.us.id_usuario;
     //   console.log(this.usuario_id);
-    //   axios.post("http://localhost:3000/nuevaPregunta",this.pregunta)
+    //   axios.post("http://192.168.56.103:3000/nuevaPregunta",this.pregunta)
     //     .then((res) => {
     //       alert("Pregunta registrada con exito");
     //       console.log(res);
@@ -144,7 +144,7 @@ export default {
         Swal.fire('Error la respuesta esta vacia')
         this.estado=true
 
-      }else{  axios.post("http://localhost:3000/nuevaPregunta",this.pregunta)
+      }else{  axios.post("http://192.168.56.103:3000/nuevaPregunta",this.pregunta)
         .then((res) => {
           Swal.fire("Pregunta registrada con exito");
           console.log(res);

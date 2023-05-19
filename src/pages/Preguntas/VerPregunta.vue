@@ -62,7 +62,7 @@ export default {
     verPregunta() {
       // alert("aaaa")
       axios
-        .get("http://localhost:3000/verDetallePregunta/" + this.idPregunta)
+        .get("http://192.168.56.103:3000/verDetallePregunta/" + this.idPregunta)
         .then((res) => {
           //codigo
           // alert("bbbb")

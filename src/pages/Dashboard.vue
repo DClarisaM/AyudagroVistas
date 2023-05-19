@@ -86,7 +86,7 @@ export default {
     listarPreguntas() {
       // alert("aaaa")
       axios
-        .get("http://localhost:3000/listarPreguntaNombreUsuario")
+        .get("http://192.168.56.103:3000/listarPreguntaNombreUsuario")
         .then((res) => {
           //codigo
           this.listaPreguntas = res.data;
@@ -101,7 +101,7 @@ export default {
   listarPregunta() {
     // alert("aaaa")
     axios
-      .get("http://localhost:3000/ListarPreguntaxId" + this.id_pregunta)
+      .get("http://192.168.56.103:3000/ListarPreguntaxId" + this.id_pregunta)
       .then((res) => {
         //codigo
         this.listaPreguntas = res.data.usuario;

@@ -78,7 +78,7 @@ import 'sweetalert2/src/sweetalert2.scss'
     methods: {
       verUsuario() {
         // alert("aaaa")
-        axios.get("http://localhost:3000/verDetalleUsuario/"+this.idUsuario)
+        axios.get("http://192.168.56.103:3000/verDetalleUsuario/"+this.idUsuario)
           .then((res) => {
             //codigo
             // alert("bbbb")

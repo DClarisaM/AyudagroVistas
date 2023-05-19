@@ -68,7 +68,7 @@ import 'sweetalert2/src/sweetalert2.scss'
     methods: {
         VerRol() {
         // alert("aaaa")
-        axios.get("http://localhost:3000/verDetalleRol/"+this.idRol)
+        axios.get("http://192.168.56.103:3000/verDetalleRol/"+this.idRol)
           .then((res) => {
             //codigo
             // alert("bbbb")

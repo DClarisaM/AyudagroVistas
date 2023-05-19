@@ -101,7 +101,7 @@ export default {
   },
   methods: {
     registrarUsuario(){
-        axios.post("http://localhost:3000/nuevoUsuario",this.usuario)
+        axios.post("http://192.168.56.103:3000/nuevoUsuario",this.usuario)
         .then((res) => {
             console.log(res);
         })

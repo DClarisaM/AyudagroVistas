@@ -107,7 +107,7 @@
     methods: {
       listarUsuarios() {
         //  alert("jahahsa")
-        axios.get("http://localhost:3000/listarUsuario")
+        axios.get("http://192.168.56.103:3000/listarUsuario")
         .then((res) => {
   
           this.listaUsuarios = res.data
@@ -138,7 +138,7 @@ swalWithBootstrapButtons.fire({
 }).then((result) => {
   if (result.isConfirmed) {
     //alert(id)
-    axios.delete("http://localhost:3000/eliminarUsuario/"+id)
+    axios.delete("http://192.168.56.103:3000/eliminarUsuario/"+id)
     swalWithBootstrapButtons.fire(
       'Eliminado!',
       'Se elimino con exito.',
