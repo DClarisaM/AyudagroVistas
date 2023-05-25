@@ -101,13 +101,47 @@ export default {
   },
   methods: {
     registrarUsuario(){
-        axios.post("http://localhost:3000/nuevoUsuario",this.usuario)
-        .then((res) => {
-            console.log(res);
-        })
-        .catch((err) => {
-            Swal.fire("error del servidor")
-        })
+         // },
+ 
+      if(!this.user.nombre || !this.user.apellido ||!this.user.correo_electronico || !this.user.telefono 
+      || !this.user.direccion ||!this.user.contrasena ||!this.user.password){
+          //  alert("Porfavoe revise que todos los campos del registro esten llenos"); 
+             Swal.fire({
+  icon: 'warning',
+  title: 'Campos vacios',
+  text: 'Porfavor reivise que todos los campos esten llenos para continuar!',
+  
+})
+this.enviado=true
+
+      }else{
+                var emailField = document.getElementById('correo_electronico');
+                var validEmail =  /^\w+([.-_+]?\w+)*@\w+([.-]?\w+)*(\.\w{2,10})+$/;
+        if( validEmail.test(emailField.value)){
+          // Swal.fire('correo valido')
+        if (this.user.password == this.user.contrasena) {
+        axios.post("http://localhost:3000/nuevoUser", this.user).then((res) => {
+          console.log(res);
+          Swal.fire('Registro de usuario exitoso')
+          this.$router.push("/login");
+        });
+      } else {
+        Swal.fire('Las contraseñas no coinsiden')
+        this.enviado=true
+
+        // alert("contraseñas no coinciden");
+      }}else{
+                  Swal.fire({
+                    title: 'Correo no válido',
+                    text: 'Porfavor ingrese un correo valido',
+                    icon:'warning',
+                  });
+                  this.enviado=true
+
+                 }
+        
+      }
+    
     }
   }
 };
